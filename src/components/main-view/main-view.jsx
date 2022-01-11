@@ -22,7 +22,7 @@ export class MainView extends React.Component {
 
   return (
     <div className="main-view">
-      {movies.map(movie => <MovieCard key={movie._id} />)}
+      {movies.map(movie => <MovieCard key={movie._id} movieData={movie} />)}
     </div>
   );
 }
