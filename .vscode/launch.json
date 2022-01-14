@@ -5,6 +5,11 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "request": "launch",
+            "name": "Launch Chrome against localhost",
+            "type": "dart"
+        },
+        {
             "command": "npm start",
             "name": "Run npm start",
             "request": "launch",
@@ -27,7 +32,7 @@
             "request": "launch",
             "name": "Launch Chrome against localhost",
             "url": "http://localhost:1234",
-            "webRoot": "${workspaceFolder}"
+            "webRoot": "${myMovies-client}"
         }
     ]
 }
