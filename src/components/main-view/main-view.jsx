@@ -33,6 +33,12 @@ componentDidMount(){
     });
   }
 
+  onLoggedIn(user) {
+    this.setState({
+      user
+    });
+  }
+
   render() {
     const { movies, selectedMovie } = this.state;
     // if (selectedMovie) return <MovieView movie={selectedMovie} />;
