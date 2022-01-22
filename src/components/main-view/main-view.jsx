@@ -51,10 +51,13 @@ onLoggedIn(user) {
   render() {
     const { movies, selectedMovie, user, registration } = this.state;
     // if (selectedMovie) return <MovieView movie={selectedMovie} />;
+    if (!registration) return (<RegistrationView onRegistration={(registration) => this.onRegistration(registration)} />);
     // If there is no user, the LoginView is rendered. If there is a user logged in, the user details are *passed as a prop to the LoginView
     if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
+    // Before the movies have been loaded
     if (movies.length === 0) return <div className="main-view"/>
 
+    // If the state of `selectedMovie` is not null, that selected movie will be returned otherwise, all movies will be returned
     return (
     <div className="main-view">
       {selectedMovie
