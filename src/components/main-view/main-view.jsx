@@ -14,6 +14,7 @@ export class MainView extends React.Component {
           selectedMovie: null
         }
       }
+
 componentDidMount(){
   axios.get('https://mymovie-backend-api.herokuapp.com/movies')
     .then(response => {
@@ -30,7 +31,6 @@ componentDidMount(){
       selectedMovie: newSelectedMovie
     });
   }
-
 
   render() {
     const { movies, selectedMovie } = this.state;
