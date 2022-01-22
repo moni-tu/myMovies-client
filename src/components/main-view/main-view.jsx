@@ -40,9 +40,10 @@ componentDidMount(){
   }
 
   render() {
-    const { movies, selectedMovie } = this.state;
+    const { movies, selectedMovie, user } = this.state;
     // if (selectedMovie) return <MovieView movie={selectedMovie} />;
-
+    // If there is no user, the LoginView is rendered. If there is a user logged in, the user details are *passed as a prop to the LoginView
+    if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
     if (movies.length === 0) return <div className="main-view"/>
 
     return (
