@@ -1,18 +1,3 @@
-:root {
-  --background-color: #ecf0f1;
-  --input-color: #f9f871;
-  --text-color: #4e8397;
-  --primary-color: #52b788;
-  --link-color: #845ec2;
-  --visited-link-color: #d65db1;
-  --active-link-color: #ff6f91;
-  --button-color: #ff9671;
-  --header-color: #006d77;
-  --main-font-size: 14px;
-  --padding: 3rem;
-  --margin: 5rem;
-}
-
 * {
   box-sizing: border-box;
 }
@@ -24,33 +9,6 @@ html {
 body {
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
-  font-size: 1.2rem;
-  line-height: 300%;
-  background-color: var(--background-color);
-  color: var(--text-color);
-  padding: var(--padding);
-  margin: var(--margin);
-}
-
-h1 {
-  font-size: 5rem;
-  font-weight: 700;
-  color: var(--header-color);
-  text-align: center;
-}
-
-h2 {
-  font-size: 4rem;
-  font-weight: 700;
-  color: var(--text-color);
-  text-align: center;
-}
-
-p {
-  font-size: var(--main-font-size);
-  font-weight: 300;
-  color: var(--primary-color);
-  overflow-wrap: break-word;
 }
 
 /* this is the button */
