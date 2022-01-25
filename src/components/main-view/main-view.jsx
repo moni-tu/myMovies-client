@@ -31,9 +31,9 @@ componentDidMount(){
     });
 }
 /*When a movie is clicked, this function is invoked and updates the state of the `selectedMovie` *property to that movie*/
-  setSelectedMovie(Movie) {
+  setSelectedMovie(movie) {
     this.setState({
-      selectedMovie: Movie
+      selectedMovie: movie
     });
   }
 
