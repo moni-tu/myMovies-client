@@ -28,17 +28,17 @@ MovieCard.propTypes = {
         Actors: PropTypes.array.isRequired,
         title: PropTypes.string.isRequired,
         genre: PropTypes.shape({
-            Name: PropTypes.string.isRequired,
-            Description: PropTypes.string.isRequired,
+            name: PropTypes.string.isRequired,
+            description: PropTypes.string.isRequired,
           }),
-        Director: PropTypes.shape({
-            Name: PropTypes.string.isRequired,
-            Bio: PropTypes.stringisRequired,
-            Birth: PropTypes.string.isRequired,
+        director: PropTypes.shape({
+            name: PropTypes.string.isRequired,
+            bio: PropTypes.stringisRequired,
+            birth: PropTypes.string.isRequired,
           }),
-        Description: PropTypes.string.isRequired,
-        ImagePath: PropTypes.string.isRequired,
-        Featured: PropTypes.string.isRequired
+        description: PropTypes.string.isRequired,
+        imagePath: PropTypes.string.isRequired,
+        featured: PropTypes.string.isRequired
     }).isRequired,
     onMovieClick: PropTypes.func.isRequired
   };
