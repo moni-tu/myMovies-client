@@ -25533,7 +25533,7 @@ MovieCard.propTypes = {
         }),
         description: _propTypesDefault.default.string.isRequired,
         imagePath: _propTypesDefault.default.string.isRequired,
-        featured: _propTypesDefault.default.bool.isRequired
+        featured: _propTypesDefault.default.any.isRequired
     }).isRequired,
     onMovieClick: _propTypesDefault.default.func.isRequired
 };
