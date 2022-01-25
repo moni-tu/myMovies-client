@@ -22762,7 +22762,7 @@ class MainView extends _reactDefault.default.Component {
         };
     }
     componentDidMount() {
-        _axiosDefault.default.get('https://mymovie-backend-api.herokuapp.com/myMovies').then((response)=>{
+        _axiosDefault.default.get('https://mymovie-backend-api.herokuapp.com/mymovies').then((response)=>{
             this.setState({
                 movies: response.data
             });
@@ -22788,15 +22788,7 @@ class MainView extends _reactDefault.default.Component {
     render() {
         const { movies , selectedMovie , user , registration  } = this.state;
         // if (selectedMovie) return <MovieView movie={selectedMovie} />;
-        if (!registration) return(/*#__PURE__*/ _jsxRuntime.jsx(_registrationView.RegistrationView, {
-            onRegistration: (registration1)=>this.onRegistration(registration1)
-            ,
-            __source: {
-                fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 57
-            },
-            __self: this
-        }));
+        // if (!registration) return (<RegistrationView onRegistration={(registration) => this.onRegistration(registration)} />);
         // If there is no user, the LoginView is rendered. If there is a user logged in, the user details are *passed as a prop to the LoginView
         if (!user) return(/*#__PURE__*/ _jsxRuntime.jsx(_loginView.LoginView, {
             onLoggedIn: (user1)=>this.onLoggedIn(user1)
