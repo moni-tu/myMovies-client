@@ -25514,7 +25514,7 @@ class MovieCard extends _reactDefault.default.Component {
                 lineNumber: 12
             },
             __self: this,
-            children: movie.Title
+            children: movie.title
         }));
     }
 }
@@ -25587,7 +25587,7 @@ class MovieView extends _reactDefault.default.Component {
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
-                        src: movie.ImagePath,
+                        src: movie.imagePath,
                         __source: {
                             fileName: "src/components/movie-view/movie-view.jsx",
                             lineNumber: 25
@@ -25619,7 +25619,7 @@ class MovieView extends _reactDefault.default.Component {
                                 lineNumber: 29
                             },
                             __self: this,
-                            children: movie.Title
+                            children: movie.title
                         })
                     ]
                 }),
@@ -25647,7 +25647,7 @@ class MovieView extends _reactDefault.default.Component {
                                 lineNumber: 33
                             },
                             __self: this,
-                            children: movie.Description
+                            children: movie.description
                         })
                     ]
                 }),
@@ -25675,7 +25675,7 @@ class MovieView extends _reactDefault.default.Component {
                                 lineNumber: 37
                             },
                             __self: this,
-                            children: movie.Genre
+                            children: movie.genre.name
                         })
                     ]
                 }),
@@ -25703,7 +25703,7 @@ class MovieView extends _reactDefault.default.Component {
                                 lineNumber: 41
                             },
                             __self: this,
-                            children: movie.Director
+                            children: movie.director.name
                         })
                     ]
                 }),
