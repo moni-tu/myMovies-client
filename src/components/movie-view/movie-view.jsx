@@ -34,17 +34,23 @@ export class MovieView extends React.Component {
         </div>
         <div className="movie-genre">
           <span className="label">Genre: </span>
-          <span className="value">{movie.genre.name} {"\n"}</span>
-          <span className="label">Description: </span>
-          <span className="value">{movie.genre.description}</span>
+          <span className="value">{movie.genre.name}</span>
+          <div>
+            <span className="label">Description: </span>
+            <span className="value">{movie.genre.description}</span>
+          </div>
         </div>
         <div className="movie-director">
           <span className="label">Director: </span>
-          <span className="value">{movie.director.name} {"\n"}</span>
-          <span className="label">Bio: </span>
-          <span className="value">{movie.director.bio} {"\n"}</span>
-          <span className="label">Birth Date: </span>
-          <span className="value">{movie.director.birth}</span>
+          <span className="value">{movie.director.name}</span>
+          <div>
+            <span className="label">Bio: </span>
+            <span className="value">{movie.director.bio}</span>
+          </div>
+          <div>
+            <span className="label">Birth Date: </span>
+            <span className="value">{movie.director.birth}</span>
+          </div>
         </div>
 
         <button onClick={() => { onBackClick(null); }}>Back</button>
