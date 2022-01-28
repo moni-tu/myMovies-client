@@ -20,7 +20,7 @@ button {
   border: none;
   width: 100px;
   background: #dfdfdf;
-  color: #d65db1;
+  color: blue;
   font-size: 1.2rem;
   line-height: 1.8rem;
   cursor: pointer;
@@ -125,7 +125,7 @@ h2 {
 p {
   font-size: var(--main-font-size);
   font-weight: 300;
-  color: white;
+  color: blue;
   overflow-wrap: break-word;
 }
 
@@ -151,7 +151,7 @@ button {
   border: none;
   width: 100px;
   background: #dfdfdf;
-  color: #d65db1;
+  color: blue;
   font-size: 1.2rem;
   line-height: 1.8rem;
   cursor: pointer;
@@ -175,7 +175,7 @@ button {
   border: none;
   width: 100px;
   background: #dfdfdf;
-  color: #d65db1;
+  color: blue;
   font-size: 1.2rem;
   line-height: 1.8rem;
   cursor: pointer;
