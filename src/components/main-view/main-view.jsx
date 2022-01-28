@@ -64,7 +64,6 @@ onLoggedIn(user) {
     // If the state of `selectedMovie` is not null, that selected movie will be returned otherwise, all movies will be returned
     return (
       <Container>
-        <MainView>
           <div className="main-view">
           {selectedMovie
             ?( 
@@ -79,8 +78,6 @@ onLoggedIn(user) {
           ))
           }
           </div>
-        </MainView>
-
       </Container>
     
   );

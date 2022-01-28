@@ -950,7 +950,6 @@ var _reactDomDefault = parcelHelpers.interopDefault(_reactDom);
 var _propTypes = require("prop-types");
 var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
 var _mainView = require("./components/main-view/main-view");
-var _mainViewDefault = parcelHelpers.interopDefault(_mainView);
 var _container = require("react-bootstrap/Container");
 var _containerDefault = parcelHelpers.interopDefault(_container);
 // Import statement to indicate that you need to bundle `./index.scss`
@@ -964,7 +963,7 @@ class myMoviesApplication extends _reactDefault.default.Component {
                 lineNumber: 15
             },
             __self: this,
-            children: /*#__PURE__*/ _jsxRuntime.jsx(_mainViewDefault.default, {
+            children: /*#__PURE__*/ _jsxRuntime.jsx(_mainView.MainView, {
                 __source: {
                     fileName: "src/index.jsx",
                     lineNumber: 16
@@ -25081,58 +25080,51 @@ class MainView extends _reactDefault.default.Component {
                 lineNumber: 66
             },
             __self: this,
-            children: /*#__PURE__*/ _jsxRuntime.jsx(MainView, {
+            children: /*#__PURE__*/ _jsxRuntime.jsx("div", {
+                className: "main-view",
                 __source: {
                     fileName: "src/components/main-view/main-view.jsx",
                     lineNumber: 67
                 },
                 __self: this,
-                children: /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                    className: "main-view",
+                children: selectedMovie ? /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
+                    className: "justify-content-md-center",
                     __source: {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 68
+                        lineNumber: 70
                     },
                     __self: this,
-                    children: selectedMovie ? /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
-                        className: "justify-content-md-center",
+                    children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
+                        md: 8,
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
                             lineNumber: 71
                         },
                         __self: this,
-                        children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
-                            md: 8,
+                        children: /*#__PURE__*/ _jsxRuntime.jsx(_movieView.MovieView, {
+                            movie: selectedMovie,
+                            onBackClick: (newSelectedMovie)=>{
+                                this.setSelectedMovie(newSelectedMovie);
+                            },
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
                                 lineNumber: 72
                             },
-                            __self: this,
-                            children: /*#__PURE__*/ _jsxRuntime.jsx(_movieView.MovieView, {
-                                movie: selectedMovie,
-                                onBackClick: (newSelectedMovie)=>{
-                                    this.setSelectedMovie(newSelectedMovie);
-                                },
-                                __source: {
-                                    fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 73
-                                },
-                                __self: this
-                            })
-                        })
-                    }) : movies.map((movie)=>/*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
-                            movie: movie,
-                            onMovieClick: (movie1)=>{
-                                this.setSelectedMovie(movie1);
-                            },
-                            __source: {
-                                fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 77
-                            },
                             __self: this
-                        }, movie._id)
-                    )
-                })
+                        })
+                    })
+                }) : movies.map((movie)=>/*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
+                        movie: movie,
+                        onMovieClick: (movie1)=>{
+                            this.setSelectedMovie(movie1);
+                        },
+                        __source: {
+                            fileName: "src/components/main-view/main-view.jsx",
+                            lineNumber: 76
+                        },
+                        __self: this
+                    }, movie._id)
+                )
             })
         }));
     }
