@@ -958,12 +958,19 @@ var _indexScss = require("./index.scss");
 // Main component (will eventually use all the others)
 class myMoviesApplication extends _reactDefault.default.Component {
     render() {
-        return(/*#__PURE__*/ _jsxRuntime.jsx(_mainViewDefault.default, {
+        return(/*#__PURE__*/ _jsxRuntime.jsx(_containerDefault.default, {
             __source: {
                 fileName: "src/index.jsx",
                 lineNumber: 15
             },
-            __self: this
+            __self: this,
+            children: /*#__PURE__*/ _jsxRuntime.jsx(_mainViewDefault.default, {
+                __source: {
+                    fileName: "src/index.jsx",
+                    lineNumber: 16
+                },
+                __self: this
+            })
         }));
     }
 }
@@ -25423,7 +25430,14 @@ try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "LoginView", ()=>LoginView
-);
+) //LoginView.propTypes = {
+ //user: PropTypes.shape({
+ //username: PropTypes.string.isRequired,
+ //password: PropTypes.string.isRequired
+ //}),
+ //onLoggedIn: PropTypes.func.isRequired,
+ //};
+;
 var _jsxRuntime = require("react/jsx-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
@@ -25523,13 +25537,6 @@ function LoginView(props) {
 }
 _s(LoginView, "9FY2cPL9VBDmuhjwpF2ik6flsHs=");
 _c = LoginView;
-LoginView.propTypes = {
-    user: _propTypesDefault.default.shape({
-        username: _propTypesDefault.default.string.isRequired,
-        password: _propTypesDefault.default.string.isRequired
-    }),
-    onLoggedIn: _propTypesDefault.default.func.isRequired
-};
 var _c;
 $RefreshReg$(_c, "LoginView");
 

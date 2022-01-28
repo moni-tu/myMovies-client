@@ -12,7 +12,9 @@ import './index.scss';
 class myMoviesApplication extends React.Component {
   render() {
     return (
-      <MainView/>
+      <Container>
+        <MainView/>
+      </Container>
     );
   }
 }
