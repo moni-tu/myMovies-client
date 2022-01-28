@@ -7,6 +7,7 @@ import { RegistrationView } from '../registration-view/registration-view';
 import { LoginView } from '../login-view/login-view';
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
+import { Container } from 'react-bootstrap';
 
 export class MainView extends React.Component {
     constructor(){
@@ -62,14 +63,18 @@ onLoggedIn(user) {
 
     // If the state of `selectedMovie` is not null, that selected movie will be returned otherwise, all movies will be returned
     return (
-    <div className="main-view">
-      {selectedMovie
+      <Container>
+        <MainView className="main-view">
+        {selectedMovie
         ? <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }}/>
         : movies.map(movie => (
           <MovieCard key={movie._id} movie={movie} onMovieClick={(movie) => { this.setSelectedMovie(movie) }}/>
         ))
-      }
-    </div>
+        }
+        </MainView>
+
+      </Container>
+    
   );
 }
 }
