@@ -25532,7 +25532,7 @@ MovieCard.propTypes = {
             birth: _propTypesDefault.default.string.isRequired
         }),
         description: _propTypesDefault.default.string.isRequired,
-        imagePath: _propTypesDefault.default.string.isRequired,
+        imagePath: _propTypesDefault.default.any.isRequired,
         featured: _propTypesDefault.default.any.isRequired
     }).isRequired,
     onMovieClick: _propTypesDefault.default.func.isRequired
@@ -25587,6 +25587,7 @@ class MovieView extends _reactDefault.default.Component {
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
+                        crossOrigin: "anonymous",
                         src: movie.imagePath,
                         __source: {
                             fileName: "src/components/movie-view/movie-view.jsx",
