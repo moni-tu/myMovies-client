@@ -72,10 +72,14 @@ onLoggedIn(user) {
                   <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }}/>
                 </Col>
               </Row>
-            ): movies.map(movie => (
+            )
+            :(
+            <Row className='justify-content-md-center'>
+              {movies.map(movie => (
               <MovieCard key={movie._id} movie={movie} onMovieClick={(movie) => { this.setSelectedMovie(movie) }}/>
-          
-          ))
+              ))}
+            </Row>
+            )
           }
           </div>
       </Container>
