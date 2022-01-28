@@ -68,7 +68,7 @@ onLoggedIn(user) {
           <div className="main-view">
           {selectedMovie
             ?( 
-              <Row>
+              <Row className='justify-content-md-center'>
                 <Col md= {8}>
                   <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }}/>
                 </Col>
