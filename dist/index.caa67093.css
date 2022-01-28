@@ -118,7 +118,7 @@ h1 {
 h2 {
   font-size: 4rem;
   font-weight: 700;
-  color: white;
+  color: blue;
   text-align: center;
 }
 
@@ -143,22 +143,15 @@ button {
 * {
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
+  background-color: black;
 }
 
 h1 {
   color: black;
 }
 
-h2 {
-  color: black;
-}
-
-card-title h5 {
-  color: black;
-}
-
 p {
-  color: blue;
+  color: white;
 }
 
 /* this is the button */
@@ -166,8 +159,7 @@ button {
   position: center;
   border: none;
   width: 100px;
-  background: #dfdfdf;
-  color: blue;
+  color: #2c2cf5;
   font-size: 1.2rem;
   line-height: 1.8rem;
   cursor: pointer;
@@ -185,16 +177,8 @@ body {
   font-weight: 500;
 }
 
-h1 {
-  color: black;
-}
-
-h2 {
-  color: black;
-}
-
 p {
-  color: blue;
+  color: #6666f6;
 }
 
 /* this is the button */
@@ -202,8 +186,8 @@ button {
   position: center;
   border: none;
   width: 100px;
-  background: #dfdfdf;
-  color: blue;
+  background-color: #dfdfdf;
+  color: #0000fb;
   font-size: 1.2rem;
   line-height: 1.8rem;
   cursor: pointer;

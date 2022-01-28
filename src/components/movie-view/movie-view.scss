@@ -11,16 +11,8 @@ body {
   font-weight: 500;
 }
 
-h1 {
-  color: black;
-}
-
-h2 {
-  color: black;
-}
-
 p {
-  color: blue;
+  color: rgb(102, 102, 246);
 }
 
 /* this is the button */
@@ -28,8 +20,9 @@ button {
   position: center;
   border: none;
   width: 100px;
-  background: #dfdfdf;
-  color: blue;
+  // these colours do not affect the button
+  background-color: #dfdfdf;
+  color: rgb(0, 0, 251);
   font-size: 1.2rem;
   line-height: 1.8rem;
   cursor: pointer;
