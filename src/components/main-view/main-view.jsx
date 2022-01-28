@@ -64,24 +64,21 @@ onLoggedIn(user) {
     // If the state of `selectedMovie` is not null, that selected movie will be returned otherwise, all movies will be returned
     return (
       <Container>
-          <div className="main-view">
+          <Row className='justify-content-md-center'>
           {selectedMovie
             ?( 
-              <Row className='justify-content-md-center'>
-                <Col md= {8}>
-                  <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }}/>
-                </Col>
-              </Row>
+              <Col md= {8}>
+                <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }}/>
+              </Col>
             )
-            :(
-            <Row className='justify-content-md-center'>
-              {movies.map(movie => (
-              <MovieCard key={movie._id} movie={movie} onMovieClick={(movie) => { this.setSelectedMovie(movie) }}/>
-              ))}
-            </Row>
+            :movies.map(movie => (
+                <Col md= {3}>
+                  <MovieCard key={movie._id} movie={movie} onMovieClick={(movie) => { this.setSelectedMovie(movie) }}/>
+                </Col>
+              )
             )
           }
-          </div>
+          </Row>
       </Container>
     
   );
