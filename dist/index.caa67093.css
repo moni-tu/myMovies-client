@@ -145,6 +145,18 @@ button {
   font-family: "Montserrat", sans-serif;
 }
 
+h1 {
+  color: black;
+}
+
+h2 {
+  color: black;
+}
+
+p {
+  color: blue;
+}
+
 /* this is the button */
 button {
   position: center;
@@ -167,6 +179,18 @@ html {
 body {
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
+}
+
+h1 {
+  color: black;
+}
+
+h2 {
+  color: black;
+}
+
+p {
+  color: blue;
 }
 
 /* this is the button */
