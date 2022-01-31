@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 //import PropTypes from 'prop-types';
 import './main-view.scss';
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import { RegistrationView } from '../registration-view/registration-view';
 import { LoginView } from '../login-view/login-view';
