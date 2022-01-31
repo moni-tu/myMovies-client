@@ -20,14 +20,17 @@ export class MainView extends React.Component {
         }
       }
 
-componentDidMount(){
-  axios.get('https://mymovie-backend-api.herokuapp.com/mymovies')
+  getMovies(token){
+    axios.get('https://mymovie-backend-api.herokuapp.com/mymovies', {
+      headers: { Authorization: `Bearer ${token}`}
+    })
     .then(response => {
+      // Assign the result to the state
       this.setState({
         movies: response.data
       });
     })
-    .catch(error => {
+    .catch(function(error) {
       console.log(error);
     });
 }
