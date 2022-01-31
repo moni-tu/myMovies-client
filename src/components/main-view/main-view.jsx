@@ -90,24 +90,23 @@ export class MainView extends React.Component {
 
     // If the state of `selectedMovie` is not null, that selected movie will be returned otherwise, all movies will be returned
     return (
-      <Container>
+      <Router>
         <button onClick={() => { this.onLoggedOut() }}>Logout</button>
           <Row className='justify-content-md-center'>
-          {selectedMovie
-            ?( 
-              <Col md= {8}>
-                <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }}/>
+          <Route exact path="/" render={() => {
+            return movies.map(m => (
+              <Col md= {3} key={m._id}>
+                <MovieCard movie={m} />
               </Col>
-            )
-            :movies.map(movie => (
-                <Col md= {3}>
-                  <MovieCard key={movie._id} movie={movie} onMovieClick={(movie) => { this.setSelectedMovie(movie) }}/>
-                </Col>
-              )
-            )
-          }
+            ))
+          }} />
+          <Route path="/movies/:movieId" render={({ match }) => {
+            return <Col md= {8}>
+              <MovieView movie={movies.find(m => m._id === match.params.movieId)} />
+            </Col>
+          }} />
           </Row>
-      </Container>
+      </Router>
     
     );
   }

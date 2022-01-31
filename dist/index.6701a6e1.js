@@ -25100,7 +25100,7 @@ class MainView extends _reactDefault.default.Component {
             __self: this
         }));
         // If the state of `selectedMovie` is not null, that selected movie will be returned otherwise, all movies will be returned
-        return(/*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Container, {
+        return(/*#__PURE__*/ _jsxRuntime.jsxs(_reactRouterDom.BrowserRouter, {
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
                 lineNumber: 93
@@ -25118,51 +25118,50 @@ class MainView extends _reactDefault.default.Component {
                     __self: this,
                     children: "Logout"
                 }),
-                /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
+                /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Row, {
                     className: "justify-content-md-center",
                     __source: {
                         fileName: "src/components/main-view/main-view.jsx",
                         lineNumber: 95
                     },
                     __self: this,
-                    children: selectedMovie ? /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
-                        md: 8,
-                        __source: {
-                            fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 98
-                        },
-                        __self: this,
-                        children: /*#__PURE__*/ _jsxRuntime.jsx(_movieView.MovieView, {
-                            movie: selectedMovie,
-                            onBackClick: (newSelectedMovie)=>{
-                                this.setSelectedMovie(newSelectedMovie);
+                    children: [
+                        /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Route, {
+                            exact: true,
+                            path: "/",
+                            render: ()=>{
+                                return movies.map((m)=>/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
+                                        md: 3,
+                                        children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
+                                            movie: m
+                                        })
+                                    }, m._id)
+                                );
                             },
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 99
+                                lineNumber: 96
                             },
                             __self: this
-                        })
-                    }) : movies.map((movie)=>/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
-                            md: 3,
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Route, {
+                            path: "/movies/:movieId",
+                            render: ({ match  })=>{
+                                return(/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
+                                    md: 8,
+                                    children: /*#__PURE__*/ _jsxRuntime.jsx(_movieView.MovieView, {
+                                        movie: movies.find((m)=>m._id === match.params.movieId
+                                        )
+                                    })
+                                }));
+                            },
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
                                 lineNumber: 103
                             },
-                            __self: this,
-                            children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
-                                movie: movie,
-                                onMovieClick: (movie1)=>{
-                                    this.setSelectedMovie(movie1);
-                                },
-                                __source: {
-                                    fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 104
-                                },
-                                __self: this
-                            }, movie._id)
+                            __self: this
                         })
-                    )
+                    ]
                 })
             ]
         }));
