@@ -60,7 +60,7 @@ export function LoginView(props) {
           <CardGroup>
             <Card bg="secondary" text="light" border="light">
               <Card.Body>
-                <Card.Title>Welcome to MyHorror!</Card.Title>
+                <Card.Title>Welcome to MyMovies!</Card.Title>
                   <Form>
                     <Form.Group controlId="formUsername">
                       <Form.Label>Username:</Form.Label>

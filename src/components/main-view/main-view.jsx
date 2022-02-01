@@ -51,13 +51,6 @@ export class MainView extends React.Component {
     }
   }
 
-  /* User registers */
-  onRegistration(registration) {
-    this.setState({
-        registration,
-    });
-  }
-
   /* When a user successfully logs in, this function updates the `user` property in state to that *particular user*/
   onLoggedIn(authData) {
     console.log(authData);
@@ -79,7 +72,7 @@ export class MainView extends React.Component {
   }
 
   render() {
-    const { mymovies, selectedMovie, user, registration } = this.state;
+    const { mymovies, user } = this.state;
     // if (selectedMovie) return <MovieView movie={selectedMovie} />;
     // if (!registration) return (<RegistrationView onRegistration={(registration) => this.onRegistration(registration)} />);
     // If there is no user, the LoginView is rendered. If there is a user logged in, the user details are *passed as a prop to the LoginView
@@ -87,7 +80,23 @@ export class MainView extends React.Component {
     // If the state of `selectedMovie` is not null, that selected movie will be returned otherwise, all movies will be returned
     return (
       <Router>
-        <button onClick={() => { this.onLoggedOut() }}>Logout</button>         
+
+        <Navbar bg="secondary" expand="lg" className="mb-4" sticky="top">
+          <Navbar.Brand className="ml-4">
+            <Link style={{ color: "white" }} to={'/'}>
+                MyMovies
+            </Link>
+          </Navbar.Brand>
+          {user && (
+            <Navbar.Collapse className="justify-content-end">
+                <Link to={`/users/${user}`} className="mr-2">
+                    <Button variant="light" style={{ color: "white" }}>Profile for {user}</Button>
+                </Link>
+                <Button onClick={() => this.onLoggedOut()} variant="light" style={{ color: "white" }}>Logout</Button>
+            </Navbar.Collapse> 
+          )}
+        </Navbar>
+
         <Row className="main-view justify-content-md-center">
         <Route exact path="/" render={() => {
           if (!user) return (
@@ -106,7 +115,11 @@ export class MainView extends React.Component {
         }}/>
 
         <Route exact path="/mymovies/:movieId" render={({ match, history }) => {
-          
+          if (!user) return (
+            <Col>
+              <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
+            </Col>
+          );
           if (mymovies.length === 0) return <div className="main-view" />;
             return 
             <Col md={8}>
@@ -115,7 +128,12 @@ export class MainView extends React.Component {
         }}/>
 
         <Route exact path="/genre/:name" render={({ match, history }) => {
-          if (movies.length === 0) return <div className="main-view" />;
+          if (!user) return (
+            <Col>
+              <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
+            </Col>
+          );
+          if (mymovies.length === 0) return <div className="main-view" />;
           return 
             <Col md={8}>
               <GenreView genre={mymovies.find((m) => m.genre.name === match.params.name).genre} onBackClick={() => history.goBack()} />
@@ -123,14 +141,19 @@ export class MainView extends React.Component {
           }
         }/>
 
-          <Route exact path="/directors/:name" render={({ match }) => {
-            if (mymovies.length === 0) return <div className="main-view" />;
-            return 
-            <Col md={8}>
-              <DirectorView director={mymovies.find(m => m.director.Name === match.params.name).director} />
+        <Route exact path="/director/:name" render={({ match }) => {
+          if (!user) return (
+            <Col>
+              <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
             </Col>
-          }}/>
-        
+          );
+          if (mymovies.length === 0) return <div className="main-view" />;
+          return 
+          <Col md={8}>
+            <DirectorView director={mymovies.find(m => m.director.name === match.params.name).director} />
+          </Col>
+        }}/>
+      
         </Row>
       </Router>
     
