@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import {Navbar, Nav, Form, Button, Card, CardGroup, Containter, Col, Row, Container} from 'react-bootstrap';
+import axios from 'axios';
+import { Link, Router } from "react-router-dom";
 import './registration-view.scss';
 
 export function RegistrationView(props) {
