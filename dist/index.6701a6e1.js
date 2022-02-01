@@ -40995,10 +40995,10 @@ class MovieCard extends _reactDefault.default.Component {
                                 lineNumber: 17
                             },
                             __self: this,
-                            children: movie.Description
+                            children: movie.description
                         }),
                         /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
-                            to: `/movies/${movie._id}`,
+                            to: '/movies/${movie._id}',
                             __source: {
                                 fileName: "src/components/movie-card/movie-card.jsx",
                                 lineNumber: 18
