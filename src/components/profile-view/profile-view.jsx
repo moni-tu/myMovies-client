@@ -60,7 +60,6 @@ export class ProfileView extends React.Component {
             const data = response.data;
             // Update localStorage with the new username
             localStorage.setItem('user', data.username);
-            const data = response.data;
             console.log(data);
             console.log(this.state.username);
             alert('Profile is updated!');
