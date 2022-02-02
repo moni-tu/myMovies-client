@@ -49,23 +49,28 @@ export function RegistrationView(props) {
     // Modify state of MainView to be registered and logged in with new user
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(username, password);
-        axios
-      .post(`https://mymovie-backend-api.herokuapp.com/users`, {
-        username: username,
-        password: password,
-        email: email,
-        birthday: birthday,
-      })
-      .then((response) => {
-        const data = response.data;
-        console.log(data);
-        alert('Registration Successful!');
-        window.open('/', '_self');
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+        const isReq = validate();
+        if(isReq ) {
+          console.log(username, password);
+          axios.post(`https://mymovie-backend-api.herokuapp.com/users`, {
+            name: name,
+            username: username,
+            password: password,
+            email: email,
+            birthday: birthday,
+          })
+          .then((response) => {
+            const data = response.data;
+            console.log(data);
+            alert('Registration Successful, please login!');
+            // the argument _self makes the page open in the current tab
+            window.open('/', '_self');
+          })
+          .catch(response => {
+            console.error(response);
+            alert('unable to register');
+          });
+        }
     };
 
     return (
