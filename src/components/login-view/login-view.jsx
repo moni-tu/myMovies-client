@@ -65,11 +65,15 @@ export function LoginView(props) {
                     <Form.Group controlId="formUsername">
                       <Form.Label>Username:</Form.Label>
                       <Form.Control type="text" onChange={e => setUsername(e.target.value)} />
+                      {/* code added here to display validation error */}
+                      {usernameErr && <p>{usernameErr}</p>}
                     </Form.Group>
 
                     <Form.Group controlId="formPassword">
                       <Form.Label>Password:</Form.Label>
                       <Form.Control type="password" onChange={e => setPassword(e.target.value)} />
+                      {/* code added here to display validation error */}
+                      {usernameErr && <p>{usernameErr}</p>} 
                     </Form.Group>
                     <Button variant="primary" type="submit" onClick={handleSubmit}>
                       Submit

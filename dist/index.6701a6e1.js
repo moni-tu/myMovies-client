@@ -41721,6 +41721,30 @@ class ProfileView extends _reactDefault.default.Component {
         const accessToken = localStorage.getItem('token');
         this.getUser(accessToken);
     }
+    onRemoveFavorite = (e, movie)=>{
+        const username = localStorage.getItem('user');
+        console.log(username);
+        const token = localStorage.getItem('token');
+        _axiosDefault.default.delete(`https://mymovie-backend-api.herokuapp.com/users/${username}/movies/${movie._id}`, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        }).then((response)=>{
+            console.log(response);
+            alert(`${movie.title} was removed from your favorites.`);
+            this.componentDidMount();
+        }).catch(function(error) {
+            console.log(error.response.data);
+        });
+    };
+    onLoggedOut() {
+        localStorage.removeItem('token');
+        localStorage.removeItem('user');
+        this.setState({
+            user: null
+        });
+        window.open('/', '_self');
+    }
     getUserDetails = (token)=>{
         const username = localStorage.getItem('user');
         _axiosDefault.default.get(`https://mymovie-backend-api.herokuapp.com/users/${username}`, {
@@ -41767,7 +41791,7 @@ class ProfileView extends _reactDefault.default.Component {
     };
     // Function for deleting user details. A delete request is made ot the API for this user
     deleteUserDetails() {
-        const Username = localStorage.getItem('user');
+        const username = localStorage.getItem('user');
         const token = localStorage.getItem('token');
         _axiosDefault.default.delete('https://mymovie-backend-api.herokuapp.com/users/${Username}', {
             headers: {
@@ -41788,7 +41812,7 @@ return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
     className: "profile_view",
     __source: {
         fileName: "src/components/profile-view/profile-view.jsx",
-        lineNumber: 97
+        lineNumber: 126
     },
     __self: undefined,
     children: [
@@ -41798,13 +41822,13 @@ return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
             border: "light",
             __source: {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 99
+                lineNumber: 128
             },
             __self: undefined,
             children: /*#__PURE__*/ _jsxRuntime.jsxs(Card.Body, {
                 __source: {
                     fileName: "src/components/profile-view/profile-view.jsx",
-                    lineNumber: 100
+                    lineNumber: 129
                 },
                 __self: undefined,
                 children: [
@@ -41812,7 +41836,7 @@ return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
                         className: "text-center",
                         __source: {
                             fileName: "src/components/profile-view/profile-view.jsx",
-                            lineNumber: 101
+                            lineNumber: 130
                         },
                         __self: undefined,
                         children: [
@@ -41823,7 +41847,7 @@ return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
                     /*#__PURE__*/ _jsxRuntime.jsxs(Card.Text, {
                         __source: {
                             fileName: "src/components/profile-view/profile-view.jsx",
-                            lineNumber: 102
+                            lineNumber: 131
                         },
                         __self: undefined,
                         children: [
@@ -41831,7 +41855,7 @@ return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
                                 className: "profile_heading",
                                 __source: {
                                     fileName: "src/components/profile-view/profile-view.jsx",
-                                    lineNumber: 102
+                                    lineNumber: 131
                                 },
                                 __self: undefined,
                                 children: "Email: "
@@ -41842,7 +41866,7 @@ return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
                     undefined.state.userDetails.Birthdate && /*#__PURE__*/ _jsxRuntime.jsxs(Card.Text, {
                         __source: {
                             fileName: "src/components/profile-view/profile-view.jsx",
-                            lineNumber: 105
+                            lineNumber: 134
                         },
                         __self: undefined,
                         children: [
@@ -41850,7 +41874,7 @@ return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
                                 className: "profile_heading",
                                 __source: {
                                     fileName: "src/components/profile-view/profile-view.jsx",
-                                    lineNumber: 105
+                                    lineNumber: 134
                                 },
                                 __self: undefined,
                                 children: "Date of Birth: "
@@ -41864,20 +41888,20 @@ return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
         /*#__PURE__*/ _jsxRuntime.jsx(Card, {
             __source: {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 111
+                lineNumber: 140
             },
             __self: undefined,
             children: /*#__PURE__*/ _jsxRuntime.jsxs(Card.Body, {
                 __source: {
                     fileName: "src/components/profile-view/profile-view.jsx",
-                    lineNumber: 112
+                    lineNumber: 141
                 },
                 __self: undefined,
                 children: [
                     /*#__PURE__*/ _jsxRuntime.jsx(Card.Title, {
                         __source: {
                             fileName: "src/components/profile-view/profile-view.jsx",
-                            lineNumber: 113
+                            lineNumber: 142
                         },
                         __self: undefined,
                         children: "Update Profile"
@@ -41887,21 +41911,21 @@ return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
                         validated: undefined.state.validated,
                         __source: {
                             fileName: "src/components/profile-view/profile-view.jsx",
-                            lineNumber: 115
+                            lineNumber: 144
                         },
                         __self: undefined,
                         children: [
                             /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Form.Group, {
                                 __source: {
                                     fileName: "src/components/profile-view/profile-view.jsx",
-                                    lineNumber: 116
+                                    lineNumber: 145
                                 },
                                 __self: undefined,
                                 children: [
                                     /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Label, {
                                         __source: {
                                             fileName: "src/components/profile-view/profile-view.jsx",
-                                            lineNumber: 117
+                                            lineNumber: 146
                                         },
                                         __self: undefined,
                                         children: "Username:"
@@ -41913,7 +41937,7 @@ return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
                                         required: true,
                                         __source: {
                                             fileName: "src/components/profile-view/profile-view.jsx",
-                                            lineNumber: 119
+                                            lineNumber: 148
                                         },
                                         __self: undefined
                                     }),
@@ -41921,7 +41945,7 @@ return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
                                         type: "invalid",
                                         __source: {
                                             fileName: "src/components/profile-view/profile-view.jsx",
-                                            lineNumber: 121
+                                            lineNumber: 150
                                         },
                                         __self: undefined,
                                         children: "Please enter a username"
@@ -41931,14 +41955,14 @@ return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
                             /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Form.Group, {
                                 __source: {
                                     fileName: "src/components/profile-view/profile-view.jsx",
-                                    lineNumber: 124
+                                    lineNumber: 153
                                 },
                                 __self: undefined,
                                 children: [
                                     /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Label, {
                                         __source: {
                                             fileName: "src/components/profile-view/profile-view.jsx",
-                                            lineNumber: 125
+                                            lineNumber: 154
                                         },
                                         __self: undefined,
                                         children: "Password:"
@@ -41950,7 +41974,7 @@ return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
                                         required: true,
                                         __source: {
                                             fileName: "src/components/profile-view/profile-view.jsx",
-                                            lineNumber: 126
+                                            lineNumber: 155
                                         },
                                         __self: undefined
                                     }),
@@ -41958,7 +41982,7 @@ return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
                                         type: "invalid",
                                         __source: {
                                             fileName: "src/components/profile-view/profile-view.jsx",
-                                            lineNumber: 127
+                                            lineNumber: 156
                                         },
                                         __self: undefined,
                                         children: "Please enter a password"
@@ -41968,14 +41992,14 @@ return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
                             /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Form.Group, {
                                 __source: {
                                     fileName: "src/components/profile-view/profile-view.jsx",
-                                    lineNumber: 130
+                                    lineNumber: 159
                                 },
                                 __self: undefined,
                                 children: [
                                     /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Label, {
                                         __source: {
                                             fileName: "src/components/profile-view/profile-view.jsx",
-                                            lineNumber: 131
+                                            lineNumber: 160
                                         },
                                         __self: undefined,
                                         children: "Email:"
@@ -41987,7 +42011,7 @@ return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
                                         required: true,
                                         __source: {
                                             fileName: "src/components/profile-view/profile-view.jsx",
-                                            lineNumber: 132
+                                            lineNumber: 161
                                         },
                                         __self: undefined
                                     }),
@@ -41995,7 +42019,7 @@ return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
                                         type: "invalid",
                                         __source: {
                                             fileName: "src/components/profile-view/profile-view.jsx",
-                                            lineNumber: 133
+                                            lineNumber: 162
                                         },
                                         __self: undefined,
                                         children: "Please enter a valid email address"
@@ -42005,14 +42029,14 @@ return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
                             /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Form.Group, {
                                 __source: {
                                     fileName: "src/components/profile-view/profile-view.jsx",
-                                    lineNumber: 136
+                                    lineNumber: 165
                                 },
                                 __self: undefined,
                                 children: [
                                     /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Label, {
                                         __source: {
                                             fileName: "src/components/profile-view/profile-view.jsx",
-                                            lineNumber: 137
+                                            lineNumber: 166
                                         },
                                         __self: undefined,
                                         children: "Date of Birth:"
@@ -42023,7 +42047,7 @@ return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
                                         onChange: undefined.handleFieldChange,
                                         __source: {
                                             fileName: "src/components/profile-view/profile-view.jsx",
-                                            lineNumber: 138
+                                            lineNumber: 167
                                         },
                                         __self: undefined
                                     })
@@ -42038,7 +42062,7 @@ return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
                                 onClick: undefined.updateUserDetails,
                                 __source: {
                                     fileName: "src/components/profile-view/profile-view.jsx",
-                                    lineNumber: 142
+                                    lineNumber: 171
                                 },
                                 __self: undefined,
                                 children: "Update User Details"
@@ -42052,7 +42076,7 @@ return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
                                 },
                                 __source: {
                                     fileName: "src/components/profile-view/profile-view.jsx",
-                                    lineNumber: 146
+                                    lineNumber: 175
                                 },
                                 __self: undefined,
                                 children: "Back"
@@ -42066,7 +42090,7 @@ return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
                                 onClick: undefined.showModal,
                                 __source: {
                                     fileName: "src/components/profile-view/profile-view.jsx",
-                                    lineNumber: 148
+                                    lineNumber: 177
                                 },
                                 __self: undefined,
                                 children: "Delete User Profile"
@@ -42086,14 +42110,14 @@ return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
             },
             __source: {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 156
+                lineNumber: 185
             },
             __self: undefined,
             children: [
                 /*#__PURE__*/ _jsxRuntime.jsxs(Card.Title, {
                     __source: {
                         fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 157
+                        lineNumber: 186
                     },
                     __self: undefined,
                     children: [
@@ -42104,7 +42128,7 @@ return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
                 /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                     __source: {
                         fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 158
+                        lineNumber: 187
                     },
                     __self: undefined,
                     children: FavoriteMoviesArray.map((movie)=>/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
@@ -42112,14 +42136,14 @@ return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
                             className: "my-2",
                             __source: {
                                 fileName: "src/components/profile-view/profile-view.jsx",
-                                lineNumber: 162
+                                lineNumber: 191
                             },
                             __self: undefined,
                             children: /*#__PURE__*/ _jsxRuntime.jsx(MovieCard, {
                                 movie: movie,
                                 __source: {
                                     fileName: "src/components/profile-view/profile-view.jsx",
-                                    lineNumber: 163
+                                    lineNumber: 192
                                 },
                                 __self: undefined
                             })
