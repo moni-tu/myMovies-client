@@ -10,6 +10,12 @@ export function RegistrationView(props) {
     const [ password, setPassword ] = useState('');
     const [ email, setEmail ] = useState('');
     const [ birthday, setBirthday] = useState('');
+    const [ values, setValues] = useState({
+      nameErr: '',
+      usernameErr: '',
+      passwordnameErr: '',
+      emailErr: '',
+    })
 
     // Modify state of MainView to be registered and logged in with new user
     const handleSubmit = (e) => {
