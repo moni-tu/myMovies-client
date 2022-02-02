@@ -78,9 +78,9 @@ export function LoginView(props) {
                     <Button variant="primary" type="submit" onClick={handleSubmit}>
                       Submit
                     </Button>                  
-                    <Link to={`/register`} className="float-right">
+                    {/* <Link to={`/register`} className="float-right">
                       <Button variant="light" style={{ color: "white" }} type="button">No account? Click here to Register!</Button>
-                    </Link>
+                    </Link> */}
                 </Form>
               </Card.Body>
             </Card>
