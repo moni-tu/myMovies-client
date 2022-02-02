@@ -17,6 +17,35 @@ export function RegistrationView(props) {
       emailErr: '',
     })
 
+    const validate = () => {
+      let isReq = true;
+      if(!username){
+       setUsernameErr('Username Required');
+       isReq = false;
+      }else if(username.length < 6){
+       setUsernameErr('Username must be 6 characters long');
+       isReq = false;
+      }
+      if(!password){
+       setPasswordErr('Password Required');
+       isReq = false;
+      }else if(password.length < 8){
+       setPasswordErr('Password must be 8 characters long');
+       isReq = false;
+      }
+      if(!email){
+        setemailErr('Please user valid email')
+      } else if(email.indexOf('@') === -1){
+        setemailErr('Please user valid email')
+        isReq = false;
+      }
+      if(!birthdate){
+        setBirthdateErr('Please enter birthdate')
+        isReq = false;
+      }
+      return isReq;
+  }
+
     // Modify state of MainView to be registered and logged in with new user
     const handleSubmit = (e) => {
         e.preventDefault();
