@@ -53,7 +53,6 @@ export function RegistrationView(props) {
         if(isReq ) {
           console.log(username, password);
           axios.post(`https://mymovie-backend-api.herokuapp.com/users`, {
-            name: name,
             username: username,
             password: password,
             email: email,
@@ -74,21 +73,30 @@ export function RegistrationView(props) {
     };
 
     return (
-        <form>
-            <label>
-                Username:
-                <input type="text" value={username} onChange={e => setUsername(e.target.value)} />
-            </label>
-            <label>
-                Password:
-                <input type="password" value={password} onChange={e => setPassword(e.target.value)} />
-            </label>
-            <label>
-                Email:
-                <input type="email" value={email} onChange={e => setEmail(e.target.value)} />
-            </label>
-            <button type="submit" onClick={handleSubmit}>Submit</button>
-        </form>
+      <Row className="mt-5">
+      <Col md={12}>
+        <Form>
+          <h3>Sign Up</h3>
+          <p></p>
+          <Form.Group controlId='formUsername' className='reg-form-inputs'>
+            <Form.Label> Username:</Form.Label>
+                <Form.Control type="text" value={username} onChange={e => setUsername(e.target.value)} />
+                {values.usernameErr&& <p>{values.usernameErr}</p>}
+          </Form.Group>
+          <Form.Group controlId='formPassword' className='reg-form-inputs'>
+            <Form.Label> Password:</Form.Label>                
+                <Form.Control type="password" value={password} onChange={e => setPassword(e.target.value)} />
+                {values.passwordErr&& <p>{values.passwordErr}</p>}
+          </Form.Group>
+          <Form.Group controlId='formEmail' className='reg-form-inputs'>
+            <Form.Label> Email:</Form.Label>
+                <Form.Control type="email" value={email} onChange={e => setEmail(e.target.value)} />
+                {values.emailErr&& <p>{values.emailErr}</p>}
+          </Form.Group>
+          <Button type="submit" onClick={handleSubmit}>Submit</Button>
+        </Form>
+      </Col>
+      </Row>
     );
 }
 
