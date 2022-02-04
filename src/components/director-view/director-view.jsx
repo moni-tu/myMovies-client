@@ -7,17 +7,17 @@ import "./director-view.scss";
 
 export class DirectorView extends React.Component {
     render() {
-        const { Director, onBackClick } = this.props;
+        const { director, onBackClick } = this.props;
 
         return (
             <Container>
-                <br />
+                <Br />
                 <Card bg="secondary" text="light" border="light" align="center">
                     
                     <Card.Body>
                     <Card.Title>Director</Card.Title>
                         <div className="movie-director">
-                        <span className="label">Director: </span>
+                        <span className="label">Name: </span>
                         <span className="value">{movie.director.name}</span>
                         <div>
                             <span className="label">Bio: </span>
@@ -28,7 +28,7 @@ export class DirectorView extends React.Component {
                             <span className="value">{movie.director.birth}</span>
                         </div>
                         </div>
-                        <br />
+                        <Br />
                         <div className="backButton">
                             <Button size="md" variant="light" style={{ color: "white" }} onClick={() => { onBackClick(null); }}>Back</Button>
                         </div>
