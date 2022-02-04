@@ -84,7 +84,7 @@ export class MainView extends React.Component {
         <Navbar bg="secondary" expand="lg" className="mb-4" sticky="top">
           <Navbar.Brand className="ml-4">
             <Link style={{ color: "white" }} to={'/'}>
-                MyMovies
+                Welcome to MyMovies
             </Link>
           </Navbar.Brand>
           {user && (
