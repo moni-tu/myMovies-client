@@ -41126,7 +41126,7 @@ class MovieCard extends _reactDefault.default.Component {
                             children: movie.description
                         }),
                         /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
-                            to: '/movies/${movie._id}',
+                            to: '/mymovies/${movie._id}',
                             __source: {
                                 fileName: "src/components/movie-card/movie-card.jsx",
                                 lineNumber: 18
@@ -41205,19 +41205,18 @@ var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
 var _movieViewScss = require("./movie-view.scss");
 class MovieView extends _reactDefault.default.Component {
-    /* constructor(props) {
-    super(props);
-    // Create state variables that will be used to add/remove a movie from a users Favorites list
-    this.state = {
-      
-      FavoriteMovies: [],
-      userDetails: []
-  }
-
-    // Bind these additional functions that will get called by onClick events to 'this'
-    this.addFavorite = this.addFavorite.bind(this);
-    this.removeFavorite = this.removeFavorite.bind(this);
-  } */ keypressCallback(event) {
+    constructor(props){
+        super(props);
+        // Create state variables that will be used to add/remove a movie from a users Favorites list
+        this.state = {
+            FavoriteMovies: [],
+            userDetails: []
+        };
+        // Bind these additional functions that will get called by onClick events to 'this'
+        this.addFavorite = this.addFavorite.bind(this);
+        this.removeFavorite = this.removeFavorite.bind(this);
+    }
+    keypressCallback(event) {
         console.log(event.key);
     }
     componentDidMount() {
@@ -41879,7 +41878,7 @@ class ProfileView extends _reactDefault.default.Component {
     }
     // Render function to display items on the DOM
     render() {
-        const { movies  } = this.props;
+        const { mymovies  } = this.props;
         const { favorites , username , email , birthday  } = this.state;
         return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
             className: "profile_view",
