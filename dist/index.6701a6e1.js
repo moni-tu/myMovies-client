@@ -40706,7 +40706,12 @@ function RegistrationView(props) {
 _s(RegistrationView, "93N8+XQpu16jQJutv+fKaJ/yOgE=");
 _c = RegistrationView;
 RegistrationView.propTypes = {
-    onRegistration: _propTypesDefault.default.func.isRequired
+    register: _propTypesDefault.default.shape({
+        name: _propTypesDefault.default.string.isRequired,
+        username: _propTypesDefault.default.string.isRequired,
+        password: _propTypesDefault.default.string.isRequired,
+        email: _propTypesDefault.default.string.isRequired
+    })
 };
 var _c;
 $RefreshReg$(_c, "RegistrationView");
