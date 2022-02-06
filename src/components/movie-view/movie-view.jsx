@@ -7,7 +7,7 @@ import axios from 'axios';
 import './movie-view.scss';
 
 export class MovieView extends React.Component {
-  /* constructor(props) {
+  constructor(props) {
     super(props);
     // Create state variables that will be used to add/remove a movie from a users Favorites list
     this.state = {
@@ -19,7 +19,7 @@ export class MovieView extends React.Component {
     // Bind these additional functions that will get called by onClick events to 'this'
     this.addFavorite = this.addFavorite.bind(this);
     this.removeFavorite = this.removeFavorite.bind(this);
-  } */
+  }
 
   keypressCallback(event) {
     console.log(event.key);
