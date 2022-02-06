@@ -1,9 +1,12 @@
 import React from 'react';
-//import PropTypes from 'prop-types';
-import {Button, Card} from 'react-bootstrap';
-import { Link } from "react-router-dom";
 import axios from 'axios';
+import { Link } from "react-router-dom";
 
+// Import React Bootstrap components
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+
+// import custom SCSS
 import './movie-view.scss';
 
 export class MovieView extends React.Component {

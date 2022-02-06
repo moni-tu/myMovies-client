@@ -1,7 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
+// Import React Bootstrap components
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+
+// Import Custom CSS
 import './movie-card.scss';
 
 import { Link } from "react-router-dom";

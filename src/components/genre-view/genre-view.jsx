@@ -1,8 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Row, Col, Button, Card } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 
+// Import React Bootstrap Components
+import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
+import Card from 'react-bootstrap/Card';
+import { Link } from 'react-router-dom';
+
+// Import custom SCSS
 import "./genre-view.scss";
 
 

@@ -1,9 +1,19 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
-import {Navbar, Nav, Form, Button, Card, CardGroup, Col, Row, Container} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+
+//import custom SCSS
 import './login-view.scss';
+
+//Import React Bootstrap Components
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Card from 'react-bootstrap/Card';
+import CardGroup from 'react-bootstrap/CardGroup';
 
 export function LoginView(props) {
   const [ username, setUsername ] = useState('');
@@ -26,7 +36,7 @@ export function LoginView(props) {
       setPasswordErr('Password Required');
       isReq = false;
     }else if(password.length < 8){
-      setPassword('Password must be 8 characters long');
+      setPasswordErr('Password must be 8 characters long');
       isReq = false;
     }
 

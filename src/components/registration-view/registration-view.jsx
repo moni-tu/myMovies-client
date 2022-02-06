@@ -1,8 +1,15 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import {Navbar, Nav, Form, Button, Card, CardGroup, Col, Row, Container} from 'react-bootstrap';
 import axios from 'axios';
-import { Link, Router } from "react-router-dom";
+
+// Import React Bootstrap Components
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+
+// Import Custom CSS
 import './registration-view.scss';
 
 export function RegistrationView(props) {
@@ -15,6 +22,7 @@ export function RegistrationView(props) {
       usernameErr: '',
       passwordnameErr: '',
       emailErr: '',
+      borthdayErr: '',
     })
 
     const validate = () => {
@@ -42,7 +50,7 @@ export function RegistrationView(props) {
         isReq = false;
       }
       if(!birthday){
-        setBirthdateErr('Please enter birthday')
+        setBirthdayErr('Please enter birthday')
         isReq = false;
       }
       return isReq;

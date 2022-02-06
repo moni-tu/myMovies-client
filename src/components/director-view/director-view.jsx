@@ -1,8 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link } from 'react-router-dom';
-import { Container, Card, Button, Row, Col } from "react-bootstrap";
 
+// Import React Bootstrap Components
+import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
+import Card from 'react-bootstrap/Card';
+import { Link } from 'react-router-dom';
+
+// Import custom SCSS
 import "./director-view.scss";
 
 export class DirectorView extends React.Component {

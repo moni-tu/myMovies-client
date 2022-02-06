@@ -1,30 +1,40 @@
 import React from 'react';
 import axios from 'axios';
+
 //import PropTypes from 'prop-types';
-import './main-view.scss';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import {Navbar, Nav, Form, Card, CardGroup} from 'react-bootstrap';
 
+// Import React components
 import { RegistrationView } from '../registration-view/registration-view';
 import { LoginView } from '../login-view/login-view';
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 import { GenreView } from '../genre-view/genre-view';
 import { DirectorView } from '../director-view/director-view';
-import { Container, Row, Col, Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 import { ProfileView } from '../profile-view/profile-view';
 
+// Import React Bootstrap components
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import { Button } from 'react-bootstrap/Button';
+import { Link } from 'react-router-dom';
+
+// import custom SCSS
+import './main-view.scss';
+
+
 export class MainView extends React.Component {
-    constructor(){
-        // initialises the component's state
-        super();
-        this.state = {
-          movies: [],
-          selectedMovie: null,
-          user: null
-        }
+  constructor(){
+      // initialises the component's state
+      super();
+      this.state = {
+        movies: [],
+        selectedMovie: null,
+        user: null
       }
+    }
 
   getMovies(token){
     axios.get('https://mymovie-backend-api.herokuapp.com/mymovies', {
@@ -76,11 +86,18 @@ export class MainView extends React.Component {
     // if (selectedMovie) return <MovieView movie={selectedMovie} />;
     // if (!registration) return (<RegistrationView onRegistration={(registration) => this.onRegistration(registration)} />);
     // If there is no user, the LoginView is rendered. If there is a user logged in, the user details are *passed as a prop to the LoginView
-
     // If the state of `selectedMovie` is not null, that selected movie will be returned otherwise, all movies will be returned
+    
+   /*  if (!user) return 
+    <Row>
+      <Col>
+        <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
+      </Col>
+    </Row>
+    if (mymovies.length === 0) return <div className="main-view" />;
+     */
     return (
       <Router>
-
         <Navbar bg="secondary" expand="lg" className="mb-4" sticky="top">
           <Navbar.Brand className="ml-4">
             <Link style={{ color: "white" }} to={'/'}>

@@ -4,14 +4,20 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 // react-bootstrap UI
-import { Container, Row, Col, Form, FloatingLabel, Button } from 'react-bootstrap';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Form from 'react-bootstrap/Form';
+import Card from 'react-bootstrap/Card';
 // scss file
 import './profile-view.scss';
 
 export class ProfileView extends React.Component {
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       username: null,
       password: null,
