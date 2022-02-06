@@ -123,7 +123,7 @@ export class ProfileView extends React.Component {
 
   // Render function to display items on the DOM
   render() {
-    const { movies } = this.props;
+    const { mymovies } = this.props;
     const { favorites, username, email, birthday } = this.state;
 
     return (
