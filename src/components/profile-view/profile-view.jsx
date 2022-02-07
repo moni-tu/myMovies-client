@@ -129,7 +129,7 @@ export class ProfileView extends React.Component {
 
   // Render function to display items on the DOM
   render() {
-    const { mymovies } = this.props;
+    const { movies } = this.props;
     const { favorites, username, email, birthday } = this.state;
 
     return (
@@ -137,11 +137,11 @@ export class ProfileView extends React.Component {
         {/* Card for displaying current user details */}
         <Card bg="secondary" text="light" border="light">
           <Card.Body>
-            <Card.Title className="text-center">Profile of {this.state.user.username}</Card.Title>
-            <Card.Text><span className="profile_heading">Email: </span>{this.state.user.email}</Card.Text>
+            <Card.Title className="text-center">Profile of {this.state.userDetails.Username}</Card.Title>
+            <Card.Text><span className="profile_heading">Email: </span>{this.state.userDetails.Email}</Card.Text>
             {/* Only display birthday section if a user has filled that out (since it's the only optional section) */}
             {this.state.userDetails.Birthdate && (
-              <Card.Text><span className="profile_heading">Date of Birth: </span>{Intl.DateTimeFormat().format(new Date(this.state.user.birthday))}</Card.Text>
+              <Card.Text><span className="profile_heading">Date of Birth: </span>{Intl.DateTimeFormat().format(new Date(this.state.userDetails.Birthday))}</Card.Text>
             )}
           </Card.Body>
         </Card>
@@ -193,7 +193,7 @@ export class ProfileView extends React.Component {
 
         {/* Favorites Section*/}
         <Card bg="secondary" text="light" border="light" align="center" style={{ color: "white" }}>
-          <Card.Title>{this.state.user.username}'s Favorites:</Card.Title>
+          <Card.Title>{this.state.userDetails.Username}'s Favorites:</Card.Title>
           <Row>
             {/* Iterate over the FavoriteMoviesArray and create a MovieCard component for each one */}
             {/* At this stage, I don't have a way to remove a Favorite movie from the ProfileView page. It must be done from the MovieView page, although I will likely change this in the future */}
@@ -210,22 +210,22 @@ export class ProfileView extends React.Component {
 
 // Set the PropTypes for the ProfileView
 ProfileView.propTypes = {
-  mymovies: PropTypes.arrayOf(
+  movies: PropTypes.arrayOf(
     PropTypes.shape({
-      title: PropTypes.string.isRequired,
-      description: PropTypes.string.isRequired,
-      genre: PropTypes.shape({
-        name: PropTypes.string,
-        description: PropTypes.string
+      Title: PropTypes.string.isRequired,
+      Description: PropTypes.string.isRequired,
+      Genre: PropTypes.shape({
+        Name: PropTypes.string,
+        Description: PropTypes.string
       }),
-      director: PropTypes.shape({
-        name: PropTypes.string,
-        bio: PropTypes.string,
-        birthyear: PropTypes.string,
-        deathyear: PropTypes.string
+      Director: PropTypes.shape({
+        Name: PropTypes.string,
+        Bio: PropTypes.string,
+        Birthyear: PropTypes.string,
+        Deathyear: PropTypes.string
       }),
-      imagePath: PropTypes.string,
-      featured: PropTypes.any,
+      ImagePath: PropTypes.string,
+      Featured: PropTypes.any,
     })
   ),
   onBackClick: PropTypes.func.isRequired

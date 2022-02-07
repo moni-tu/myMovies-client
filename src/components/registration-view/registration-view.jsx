@@ -13,39 +13,39 @@ import Row from 'react-bootstrap/Row';
 import './registration-view.scss';
 
 export function RegistrationView(props) {
-    const [ username, setUsername ] = useState('');
-    const [ password, setPassword ] = useState('');
-    const [ email, setEmail ] = useState('');
-    const [ birthday, setBirthday] = useState('');
+    const [ Username, setUsername ] = useState('');
+    const [ Password, setPassword ] = useState('');
+    const [ Email, setEmail ] = useState('');
+    const [ Birthday, setBirthday] = useState('');
     const [ values, setValues] = useState({
-      nameErr: '',
-      usernameErr: '',
-      passwordnameErr: '',
-      emailErr: '',
-      borthdayErr: '',
+      NameErr: '',
+      UsernameErr: '',
+      PasswordnameErr: '',
+      EmailErr: '',
+      BirthdayErr: '',
     })
 
     const validate = () => {
       let isReq = true;
-      if(!username){
-       setValues({...values, usernameErr: 'Username Required'});
+      if(!Username){
+       setValues({...values, UsernameErr: 'Username Required'});
        isReq = false;
-      }else if(username.length < 6){
+      }else if(Username.length < 6){
         setValues('Username must be 6 characters long');
        isReq = false;
       }
-      if(!password){
+      if(!Password){
         setValues({...values, passwordErr: 'Password Required'});
        isReq = false;
-      }else if(password.length < 8){
+      }else if(Password.length < 8){
         setValues('Password must be 8 characters long');
        isReq = false;
       }
-      if(!email){
+      if(!Email){
         setValues({...values, emailErr: 'Email Required'});
         isReq = false;
         ('Please user valid email')
-      } else if(email.indexOf('@') === -1){
+      } else if(Email.indexOf('@') === -1){
         setValues({...values, emailErr: 'Please use valid email'})
         isReq = false;
       }
@@ -61,12 +61,12 @@ export function RegistrationView(props) {
         e.preventDefault();
         const isReq = validate();
         if(isReq ) {
-          console.log(username, password);
+          console.log(Username, Password);
           axios.post(`https://mymovie-backend-api.herokuapp.com/users`, {
-            username: username,
-            password: password,
-            email: email,
-            birthday: birthday,
+            Username: Username,
+            Password: Password,
+            Email: Email,
+            Birthday: Birthday,
           })
           .then((response) => {
             const data = response.data;
@@ -90,18 +90,18 @@ export function RegistrationView(props) {
           <p></p>
           <Form.Group controlId='formUsername' className='reg-form-inputs'>
             <Form.Label> Username:</Form.Label>
-                <Form.Control type="text" value={username} onChange={e => setUsername(e.target.value)} />
-                {values.usernameErr&& <p>{values.usernameErr}</p>}
+                <Form.Control type="text" value={Username} onChange={e => setUsername(e.target.value)} />
+                {values.UsernameErr&& <p>{values.UsernameErr}</p>}
           </Form.Group>
           <Form.Group controlId='formPassword' className='reg-form-inputs'>
             <Form.Label> Password:</Form.Label>                
-                <Form.Control type="password" value={password} onChange={e => setPassword(e.target.value)} />
-                {values.passwordErr&& <p>{values.passwordErr}</p>}
+                <Form.Control type="password" value={Password} onChange={e => setPassword(e.target.value)} />
+                {values.PasswordErr&& <p>{values.PasswordErr}</p>}
           </Form.Group>
           <Form.Group controlId='formEmail' className='reg-form-inputs'>
             <Form.Label> Email:</Form.Label>
                 <Form.Control type="email" value={email} onChange={e => setEmail(e.target.value)} />
-                {values.emailErr&& <p>{values.emailErr}</p>}
+                {values.EmailErr&& <p>{values.EmailErr}</p>}
           </Form.Group>
           <Button type="submit" onClick={handleSubmit}>Submit</Button>
         </Form>
@@ -112,9 +112,9 @@ export function RegistrationView(props) {
 
 RegistrationView.propTypes = {
     register: PropTypes.shape({
-      name: PropTypes.string.isRequired,
-      username: PropTypes.string.isRequired,
-      password: PropTypes.string.isRequired,
-      email: PropTypes.string.isRequired,
+      Name: PropTypes.string.isRequired,
+      Username: PropTypes.string.isRequired,
+      Password: PropTypes.string.isRequired,
+      Email: PropTypes.string.isRequired,
     }),
 };

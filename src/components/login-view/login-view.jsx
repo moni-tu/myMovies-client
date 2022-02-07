@@ -16,26 +16,26 @@ import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
 
 export function LoginView(props) {
-  const [ username, setUsername ] = useState('');
-  const [ password, setPassword ] = useState('');
+  const [ Username, setUsername ] = useState('');
+  const [ Password, setPassword ] = useState('');
   // Declare hook for each input 
-  const [ usernameErr, setUsernameErr ] = useState('');
-  const [ passwordErr, setPasswordErr ] = useState('');
+  const [ UsernameErr, setUsernameErr ] = useState('');
+  const [ PasswordErr, setPasswordErr ] = useState('');
 
   // validate user inputs
   const validate = () => {
     let isReq = true;
-    if(!username){
+    if(!Username){
       setUsernameErr('Username Required');
       isReq = false;
-    }else if(username.length < 6){
+    }else if(Username.length < 6){
       setUsernameErr('Username must be 6 characters long');
       isReq = false;
     }
-    if(!password){
+    if(!Password){
       setPasswordErr('Password Required');
       isReq = false;
-    }else if(password.length < 8){
+    }else if(Password.length < 8){
       setPasswordErr('Password must be 8 characters long');
       isReq = false;
     }
@@ -49,8 +49,8 @@ export function LoginView(props) {
     if(isReq) {
       /* Send a request to the server for authentication */
       axios.post('https://mymovie-backend-api.herokuapp.com/mymovies/login', {
-        Username: username,
-        Password: password
+        Username: Username,
+        Password: Password
       })
       .then(response => {
         const data = response.data;
@@ -76,14 +76,14 @@ export function LoginView(props) {
                       <Form.Label>Username:</Form.Label>
                       <Form.Control type="text" onChange={e => setUsername(e.target.value)} />
                       {/* code added here to display validation error */}
-                      {usernameErr && <p>{usernameErr}</p>}
+                      {UsernameErr && <p>{UsernameErr}</p>}
                     </Form.Group>
 
                     <Form.Group controlId="formPassword">
                       <Form.Label>Password:</Form.Label>
                       <Form.Control type="password" onChange={e => setPassword(e.target.value)} />
                       {/* code added here to display validation error */}
-                      {usernameErr && <p>{usernameErr}</p>} 
+                      {UsernameErr && <p>{UsernameErr}</p>} 
                     </Form.Group>
                     <Button variant="primary" type="submit" onClick={handleSubmit}>
                       Submit
@@ -103,9 +103,9 @@ export function LoginView(props) {
 }
 
 LoginView.propTypes = {
-  user: PropTypes.shape({
-      username: PropTypes.string.isRequired,
-      password: PropTypes.string.isRequired
+  User: PropTypes.shape({
+      Username: PropTypes.string.isRequired,
+      Password: PropTypes.string.isRequired
   }),
   onLoggedIn: PropTypes.func.isRequired,
 };
