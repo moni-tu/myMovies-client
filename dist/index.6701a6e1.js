@@ -25251,7 +25251,7 @@ class MainView extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","react-router-dom":"cpyQW","react-bootstrap":"h2YVd","../registration-view/registration-view":"aP2YV","../movie-card/movie-card":"6EiBJ","../movie-view/movie-view":"ikZdr","../genre-view/genre-view":"8WCoL","../director-view/director-view":"ck15y","../profile-view/profile-view":"2E7Aw","react-bootstrap/Container":"2PRIq","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","react-bootstrap/Button":"9CzHT","./main-view.scss":"jyMAr","@parcel/transformer-js/src/esmodule-helpers.js":"kDBJf","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"3jiko","../login-view/login-view":"054li"}],"cpyQW":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","react-router-dom":"cpyQW","react-bootstrap":"h2YVd","../registration-view/registration-view":"aP2YV","../login-view/login-view":"054li","../movie-card/movie-card":"6EiBJ","../movie-view/movie-view":"ikZdr","../genre-view/genre-view":"8WCoL","../director-view/director-view":"ck15y","../profile-view/profile-view":"2E7Aw","react-bootstrap/Container":"2PRIq","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","react-bootstrap/Button":"9CzHT","./main-view.scss":"jyMAr","@parcel/transformer-js/src/esmodule-helpers.js":"kDBJf","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"3jiko"}],"cpyQW":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "MemoryRouter", ()=>_reactRouter.MemoryRouter
@@ -25553,7 +25553,7 @@ NavLink.propTypes = _extendsDefault.default({
     ])
 });
 
-},{"react-router":"l4MNa","@babel/runtime/helpers/esm/inheritsLoose":"eO0be","react":"6TuXu","history":"6R8lq","prop-types":"1tgq3","tiny-warning":"4xDJt","@babel/runtime/helpers/esm/extends":"bKAu6","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"3Rubg","tiny-invariant":"kiE0c","@parcel/transformer-js/src/esmodule-helpers.js":"kDBJf"}],"l4MNa":[function(require,module,exports) {
+},{"react-router":"l4MNa","@babel/runtime/helpers/esm/inheritsLoose":"eO0be","react":"6TuXu","history":"5fuaS","prop-types":"1tgq3","tiny-warning":"4xDJt","@babel/runtime/helpers/esm/extends":"bKAu6","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"3Rubg","tiny-invariant":"kiE0c","@parcel/transformer-js/src/esmodule-helpers.js":"kDBJf"}],"l4MNa":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "MemoryRouter", ()=>MemoryRouter1
@@ -26172,7 +26172,7 @@ if (typeof window !== "undefined") {
     global[key] = "esm";
 }
 
-},{"@babel/runtime/helpers/esm/inheritsLoose":"eO0be","react":"6TuXu","prop-types":"1tgq3","history":"6R8lq","tiny-warning":"4xDJt","mini-create-react-context":"bwjcK","tiny-invariant":"kiE0c","@babel/runtime/helpers/esm/extends":"bKAu6","path-to-regexp":"1CwUw","react-is":"5wFcP","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"3Rubg","hoist-non-react-statics":"jfzb6","@parcel/transformer-js/src/esmodule-helpers.js":"kDBJf"}],"eO0be":[function(require,module,exports) {
+},{"@babel/runtime/helpers/esm/inheritsLoose":"eO0be","react":"6TuXu","prop-types":"1tgq3","history":"3B88x","tiny-warning":"4xDJt","mini-create-react-context":"bwjcK","tiny-invariant":"kiE0c","@babel/runtime/helpers/esm/extends":"bKAu6","path-to-regexp":"1CwUw","react-is":"5wFcP","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"3Rubg","hoist-non-react-statics":"jfzb6","@parcel/transformer-js/src/esmodule-helpers.js":"kDBJf"}],"eO0be":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _setPrototypeOfJs = require("./setPrototypeOf.js");
@@ -26228,7 +26228,7 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}],"6R8lq":[function(require,module,exports) {
+},{}],"3B88x":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "createBrowserHistory", ()=>createBrowserHistory
@@ -27636,7 +27636,737 @@ function hoistNonReactStatics(targetComponent, sourceComponent, blacklist) {
 }
 module.exports = hoistNonReactStatics;
 
-},{"react-is":"5wFcP"}],"h2YVd":[function(require,module,exports) {
+},{"react-is":"5wFcP"}],"5fuaS":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "createBrowserHistory", ()=>createBrowserHistory
+);
+parcelHelpers.export(exports, "createHashHistory", ()=>createHashHistory
+);
+parcelHelpers.export(exports, "createMemoryHistory", ()=>createMemoryHistory
+);
+parcelHelpers.export(exports, "createLocation", ()=>createLocation
+);
+parcelHelpers.export(exports, "locationsAreEqual", ()=>locationsAreEqual
+);
+parcelHelpers.export(exports, "parsePath", ()=>parsePath
+);
+parcelHelpers.export(exports, "createPath", ()=>createPath
+);
+var _extends = require("@babel/runtime/helpers/esm/extends");
+var _extendsDefault = parcelHelpers.interopDefault(_extends);
+var _resolvePathname = require("resolve-pathname");
+var _resolvePathnameDefault = parcelHelpers.interopDefault(_resolvePathname);
+var _valueEqual = require("value-equal");
+var _valueEqualDefault = parcelHelpers.interopDefault(_valueEqual);
+var _tinyWarning = require("tiny-warning");
+var _tinyWarningDefault = parcelHelpers.interopDefault(_tinyWarning);
+var _tinyInvariant = require("tiny-invariant");
+var _tinyInvariantDefault = parcelHelpers.interopDefault(_tinyInvariant);
+function addLeadingSlash(path) {
+    return path.charAt(0) === '/' ? path : '/' + path;
+}
+function stripLeadingSlash(path) {
+    return path.charAt(0) === '/' ? path.substr(1) : path;
+}
+function hasBasename(path, prefix) {
+    return path.toLowerCase().indexOf(prefix.toLowerCase()) === 0 && '/?#'.indexOf(path.charAt(prefix.length)) !== -1;
+}
+function stripBasename(path, prefix) {
+    return hasBasename(path, prefix) ? path.substr(prefix.length) : path;
+}
+function stripTrailingSlash(path) {
+    return path.charAt(path.length - 1) === '/' ? path.slice(0, -1) : path;
+}
+function parsePath(path) {
+    var pathname = path || '/';
+    var search = '';
+    var hash = '';
+    var hashIndex = pathname.indexOf('#');
+    if (hashIndex !== -1) {
+        hash = pathname.substr(hashIndex);
+        pathname = pathname.substr(0, hashIndex);
+    }
+    var searchIndex = pathname.indexOf('?');
+    if (searchIndex !== -1) {
+        search = pathname.substr(searchIndex);
+        pathname = pathname.substr(0, searchIndex);
+    }
+    return {
+        pathname: pathname,
+        search: search === '?' ? '' : search,
+        hash: hash === '#' ? '' : hash
+    };
+}
+function createPath(location) {
+    var pathname = location.pathname, search = location.search, hash = location.hash;
+    var path = pathname || '/';
+    if (search && search !== '?') path += search.charAt(0) === '?' ? search : "?" + search;
+    if (hash && hash !== '#') path += hash.charAt(0) === '#' ? hash : "#" + hash;
+    return path;
+}
+function createLocation(path, state, key, currentLocation) {
+    var location;
+    if (typeof path === 'string') {
+        // Two-arg form: push(path, state)
+        location = parsePath(path);
+        location.state = state;
+    } else {
+        // One-arg form: push(location)
+        location = _extendsDefault.default({
+        }, path);
+        if (location.pathname === undefined) location.pathname = '';
+        if (location.search) {
+            if (location.search.charAt(0) !== '?') location.search = '?' + location.search;
+        } else location.search = '';
+        if (location.hash) {
+            if (location.hash.charAt(0) !== '#') location.hash = '#' + location.hash;
+        } else location.hash = '';
+        if (state !== undefined && location.state === undefined) location.state = state;
+    }
+    try {
+        location.pathname = decodeURI(location.pathname);
+    } catch (e) {
+        if (e instanceof URIError) throw new URIError('Pathname "' + location.pathname + '" could not be decoded. ' + 'This is likely caused by an invalid percent-encoding.');
+        else throw e;
+    }
+    if (key) location.key = key;
+    if (currentLocation) {
+        // Resolve incomplete/relative pathname relative to current location.
+        if (!location.pathname) location.pathname = currentLocation.pathname;
+        else if (location.pathname.charAt(0) !== '/') location.pathname = _resolvePathnameDefault.default(location.pathname, currentLocation.pathname);
+    } else // When there is no prior location and pathname is empty, set it to /
+    if (!location.pathname) location.pathname = '/';
+    return location;
+}
+function locationsAreEqual(a, b) {
+    return a.pathname === b.pathname && a.search === b.search && a.hash === b.hash && a.key === b.key && _valueEqualDefault.default(a.state, b.state);
+}
+function createTransitionManager() {
+    var prompt = null;
+    function setPrompt(nextPrompt) {
+        _tinyWarningDefault.default(prompt == null, 'A history supports only one prompt at a time');
+        prompt = nextPrompt;
+        return function() {
+            if (prompt === nextPrompt) prompt = null;
+        };
+    }
+    function confirmTransitionTo(location, action, getUserConfirmation, callback) {
+        // TODO: If another transition starts while we're still confirming
+        // the previous one, we may end up in a weird state. Figure out the
+        // best way to handle this.
+        if (prompt != null) {
+            var result = typeof prompt === 'function' ? prompt(location, action) : prompt;
+            if (typeof result === 'string') {
+                if (typeof getUserConfirmation === 'function') getUserConfirmation(result, callback);
+                else {
+                    _tinyWarningDefault.default(false, 'A history needs a getUserConfirmation function in order to use a prompt message');
+                    callback(true);
+                }
+            } else // Return false from a transition hook to cancel the transition.
+            callback(result !== false);
+        } else callback(true);
+    }
+    var listeners = [];
+    function appendListener(fn) {
+        var isActive = true;
+        function listener() {
+            if (isActive) fn.apply(void 0, arguments);
+        }
+        listeners.push(listener);
+        return function() {
+            isActive = false;
+            listeners = listeners.filter(function(item) {
+                return item !== listener;
+            });
+        };
+    }
+    function notifyListeners() {
+        for(var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++)args[_key] = arguments[_key];
+        listeners.forEach(function(listener) {
+            return listener.apply(void 0, args);
+        });
+    }
+    return {
+        setPrompt: setPrompt,
+        confirmTransitionTo: confirmTransitionTo,
+        appendListener: appendListener,
+        notifyListeners: notifyListeners
+    };
+}
+var canUseDOM = !!(typeof window !== 'undefined' && window.document && window.document.createElement);
+function getConfirmation(message, callback) {
+    callback(window.confirm(message)); // eslint-disable-line no-alert
+}
+/**
+ * Returns true if the HTML5 history API is supported. Taken from Modernizr.
+ *
+ * https://github.com/Modernizr/Modernizr/blob/master/LICENSE
+ * https://github.com/Modernizr/Modernizr/blob/master/feature-detects/history.js
+ * changed to avoid false negatives for Windows Phones: https://github.com/reactjs/react-router/issues/586
+ */ function supportsHistory() {
+    var ua = window.navigator.userAgent;
+    if ((ua.indexOf('Android 2.') !== -1 || ua.indexOf('Android 4.0') !== -1) && ua.indexOf('Mobile Safari') !== -1 && ua.indexOf('Chrome') === -1 && ua.indexOf('Windows Phone') === -1) return false;
+    return window.history && 'pushState' in window.history;
+}
+/**
+ * Returns true if browser fires popstate on hash change.
+ * IE10 and IE11 do not.
+ */ function supportsPopStateOnHashChange() {
+    return window.navigator.userAgent.indexOf('Trident') === -1;
+}
+/**
+ * Returns false if using go(n) with hash history causes a full page reload.
+ */ function supportsGoWithoutReloadUsingHash() {
+    return window.navigator.userAgent.indexOf('Firefox') === -1;
+}
+/**
+ * Returns true if a given popstate event is an extraneous WebKit event.
+ * Accounts for the fact that Chrome on iOS fires real popstate events
+ * containing undefined state when pressing the back button.
+ */ function isExtraneousPopstateEvent(event) {
+    return event.state === undefined && navigator.userAgent.indexOf('CriOS') === -1;
+}
+var PopStateEvent1 = 'popstate';
+var HashChangeEvent1 = 'hashchange';
+function getHistoryState() {
+    try {
+        return window.history.state || {
+        };
+    } catch (e) {
+        // IE 11 sometimes throws when accessing window.history.state
+        // See https://github.com/ReactTraining/history/pull/289
+        return {
+        };
+    }
+}
+/**
+ * Creates a history object that uses the HTML5 history API including
+ * pushState, replaceState, and the popstate event.
+ */ function createBrowserHistory(props) {
+    if (props === void 0) props = {
+    };
+    !canUseDOM && _tinyInvariantDefault.default(false, 'Browser history needs a DOM');
+    var globalHistory = window.history;
+    var canUseHistory = supportsHistory();
+    var needsHashChangeListener = !supportsPopStateOnHashChange();
+    var _props = props, _props$forceRefresh = _props.forceRefresh, forceRefresh = _props$forceRefresh === void 0 ? false : _props$forceRefresh, _props$getUserConfirm = _props.getUserConfirmation, getUserConfirmation = _props$getUserConfirm === void 0 ? getConfirmation : _props$getUserConfirm, _props$keyLength = _props.keyLength, keyLength = _props$keyLength === void 0 ? 6 : _props$keyLength;
+    var basename = props.basename ? stripTrailingSlash(addLeadingSlash(props.basename)) : '';
+    function getDOMLocation(historyState) {
+        var _ref = historyState || {
+        }, key = _ref.key, state = _ref.state;
+        var _window$location = window.location, pathname = _window$location.pathname, search = _window$location.search, hash = _window$location.hash;
+        var path = pathname + search + hash;
+        _tinyWarningDefault.default(!basename || hasBasename(path, basename), "You are attempting to use a basename on a page whose URL path does not begin with the basename. Expected path \"" + path + '" to begin with "' + basename + '".');
+        if (basename) path = stripBasename(path, basename);
+        return createLocation(path, state, key);
+    }
+    function createKey() {
+        return Math.random().toString(36).substr(2, keyLength);
+    }
+    var transitionManager = createTransitionManager();
+    function setState(nextState) {
+        _extendsDefault.default(history, nextState);
+        history.length = globalHistory.length;
+        transitionManager.notifyListeners(history.location, history.action);
+    }
+    function handlePopState(event) {
+        // Ignore extraneous popstate events in WebKit.
+        if (isExtraneousPopstateEvent(event)) return;
+        handlePop(getDOMLocation(event.state));
+    }
+    function handleHashChange() {
+        handlePop(getDOMLocation(getHistoryState()));
+    }
+    var forceNextPop = false;
+    function handlePop(location) {
+        if (forceNextPop) {
+            forceNextPop = false;
+            setState();
+        } else {
+            var action = 'POP';
+            transitionManager.confirmTransitionTo(location, action, getUserConfirmation, function(ok) {
+                if (ok) setState({
+                    action: action,
+                    location: location
+                });
+                else revertPop(location);
+            });
+        }
+    }
+    function revertPop(fromLocation) {
+        var toLocation = history.location; // TODO: We could probably make this more reliable by
+        // keeping a list of keys we've seen in sessionStorage.
+        // Instead, we just default to 0 for keys we don't know.
+        var toIndex = allKeys.indexOf(toLocation.key);
+        if (toIndex === -1) toIndex = 0;
+        var fromIndex = allKeys.indexOf(fromLocation.key);
+        if (fromIndex === -1) fromIndex = 0;
+        var delta = toIndex - fromIndex;
+        if (delta) {
+            forceNextPop = true;
+            go(delta);
+        }
+    }
+    var initialLocation = getDOMLocation(getHistoryState());
+    var allKeys = [
+        initialLocation.key
+    ]; // Public interface
+    function createHref(location) {
+        return basename + createPath(location);
+    }
+    function push(path, state) {
+        _tinyWarningDefault.default(!(typeof path === 'object' && path.state !== undefined && state !== undefined), "You should avoid providing a 2nd state argument to push when the 1st argument is a location-like object that already has state; it is ignored");
+        var action = 'PUSH';
+        var location = createLocation(path, state, createKey(), history.location);
+        transitionManager.confirmTransitionTo(location, action, getUserConfirmation, function(ok) {
+            if (!ok) return;
+            var href = createHref(location);
+            var key = location.key, state1 = location.state;
+            if (canUseHistory) {
+                globalHistory.pushState({
+                    key: key,
+                    state: state1
+                }, null, href);
+                if (forceRefresh) window.location.href = href;
+                else {
+                    var prevIndex = allKeys.indexOf(history.location.key);
+                    var nextKeys = allKeys.slice(0, prevIndex + 1);
+                    nextKeys.push(location.key);
+                    allKeys = nextKeys;
+                    setState({
+                        action: action,
+                        location: location
+                    });
+                }
+            } else {
+                _tinyWarningDefault.default(state1 === undefined, 'Browser history cannot push state in browsers that do not support HTML5 history');
+                window.location.href = href;
+            }
+        });
+    }
+    function replace(path, state) {
+        _tinyWarningDefault.default(!(typeof path === 'object' && path.state !== undefined && state !== undefined), "You should avoid providing a 2nd state argument to replace when the 1st argument is a location-like object that already has state; it is ignored");
+        var action = 'REPLACE';
+        var location = createLocation(path, state, createKey(), history.location);
+        transitionManager.confirmTransitionTo(location, action, getUserConfirmation, function(ok) {
+            if (!ok) return;
+            var href = createHref(location);
+            var key = location.key, state1 = location.state;
+            if (canUseHistory) {
+                globalHistory.replaceState({
+                    key: key,
+                    state: state1
+                }, null, href);
+                if (forceRefresh) window.location.replace(href);
+                else {
+                    var prevIndex = allKeys.indexOf(history.location.key);
+                    if (prevIndex !== -1) allKeys[prevIndex] = location.key;
+                    setState({
+                        action: action,
+                        location: location
+                    });
+                }
+            } else {
+                _tinyWarningDefault.default(state1 === undefined, 'Browser history cannot replace state in browsers that do not support HTML5 history');
+                window.location.replace(href);
+            }
+        });
+    }
+    function go(n) {
+        globalHistory.go(n);
+    }
+    function goBack() {
+        go(-1);
+    }
+    function goForward() {
+        go(1);
+    }
+    var listenerCount = 0;
+    function checkDOMListeners(delta) {
+        listenerCount += delta;
+        if (listenerCount === 1 && delta === 1) {
+            window.addEventListener(PopStateEvent1, handlePopState);
+            if (needsHashChangeListener) window.addEventListener(HashChangeEvent1, handleHashChange);
+        } else if (listenerCount === 0) {
+            window.removeEventListener(PopStateEvent1, handlePopState);
+            if (needsHashChangeListener) window.removeEventListener(HashChangeEvent1, handleHashChange);
+        }
+    }
+    var isBlocked = false;
+    function block(prompt) {
+        if (prompt === void 0) prompt = false;
+        var unblock = transitionManager.setPrompt(prompt);
+        if (!isBlocked) {
+            checkDOMListeners(1);
+            isBlocked = true;
+        }
+        return function() {
+            if (isBlocked) {
+                isBlocked = false;
+                checkDOMListeners(-1);
+            }
+            return unblock();
+        };
+    }
+    function listen(listener) {
+        var unlisten = transitionManager.appendListener(listener);
+        checkDOMListeners(1);
+        return function() {
+            checkDOMListeners(-1);
+            unlisten();
+        };
+    }
+    var history = {
+        length: globalHistory.length,
+        action: 'POP',
+        location: initialLocation,
+        createHref: createHref,
+        push: push,
+        replace: replace,
+        go: go,
+        goBack: goBack,
+        goForward: goForward,
+        block: block,
+        listen: listen
+    };
+    return history;
+}
+var HashChangeEvent$1 = 'hashchange';
+var HashPathCoders = {
+    hashbang: {
+        encodePath: function encodePath(path) {
+            return path.charAt(0) === '!' ? path : '!/' + stripLeadingSlash(path);
+        },
+        decodePath: function decodePath(path) {
+            return path.charAt(0) === '!' ? path.substr(1) : path;
+        }
+    },
+    noslash: {
+        encodePath: stripLeadingSlash,
+        decodePath: addLeadingSlash
+    },
+    slash: {
+        encodePath: addLeadingSlash,
+        decodePath: addLeadingSlash
+    }
+};
+function stripHash(url) {
+    var hashIndex = url.indexOf('#');
+    return hashIndex === -1 ? url : url.slice(0, hashIndex);
+}
+function getHashPath() {
+    // We can't use window.location.hash here because it's not
+    // consistent across browsers - Firefox will pre-decode it!
+    var href = window.location.href;
+    var hashIndex = href.indexOf('#');
+    return hashIndex === -1 ? '' : href.substring(hashIndex + 1);
+}
+function pushHashPath(path) {
+    window.location.hash = path;
+}
+function replaceHashPath(path) {
+    window.location.replace(stripHash(window.location.href) + '#' + path);
+}
+function createHashHistory(props) {
+    if (props === void 0) props = {
+    };
+    !canUseDOM && _tinyInvariantDefault.default(false, 'Hash history needs a DOM');
+    var globalHistory = window.history;
+    var canGoWithoutReload = supportsGoWithoutReloadUsingHash();
+    var _props = props, _props$getUserConfirm = _props.getUserConfirmation, getUserConfirmation = _props$getUserConfirm === void 0 ? getConfirmation : _props$getUserConfirm, _props$hashType = _props.hashType, hashType = _props$hashType === void 0 ? 'slash' : _props$hashType;
+    var basename = props.basename ? stripTrailingSlash(addLeadingSlash(props.basename)) : '';
+    var _HashPathCoders$hashT = HashPathCoders[hashType], encodePath = _HashPathCoders$hashT.encodePath, decodePath = _HashPathCoders$hashT.decodePath;
+    function getDOMLocation() {
+        var path = decodePath(getHashPath());
+        _tinyWarningDefault.default(!basename || hasBasename(path, basename), "You are attempting to use a basename on a page whose URL path does not begin with the basename. Expected path \"" + path + '" to begin with "' + basename + '".');
+        if (basename) path = stripBasename(path, basename);
+        return createLocation(path);
+    }
+    var transitionManager = createTransitionManager();
+    function setState(nextState) {
+        _extendsDefault.default(history, nextState);
+        history.length = globalHistory.length;
+        transitionManager.notifyListeners(history.location, history.action);
+    }
+    var forceNextPop = false;
+    var ignorePath = null;
+    function locationsAreEqual$$1(a, b) {
+        return a.pathname === b.pathname && a.search === b.search && a.hash === b.hash;
+    }
+    function handleHashChange() {
+        var path = getHashPath();
+        var encodedPath = encodePath(path);
+        if (path !== encodedPath) // Ensure we always have a properly-encoded hash.
+        replaceHashPath(encodedPath);
+        else {
+            var location = getDOMLocation();
+            var prevLocation = history.location;
+            if (!forceNextPop && locationsAreEqual$$1(prevLocation, location)) return; // A hashchange doesn't always == location change.
+            if (ignorePath === createPath(location)) return; // Ignore this change; we already setState in push/replace.
+            ignorePath = null;
+            handlePop(location);
+        }
+    }
+    function handlePop(location) {
+        if (forceNextPop) {
+            forceNextPop = false;
+            setState();
+        } else {
+            var action = 'POP';
+            transitionManager.confirmTransitionTo(location, action, getUserConfirmation, function(ok) {
+                if (ok) setState({
+                    action: action,
+                    location: location
+                });
+                else revertPop(location);
+            });
+        }
+    }
+    function revertPop(fromLocation) {
+        var toLocation = history.location; // TODO: We could probably make this more reliable by
+        // keeping a list of paths we've seen in sessionStorage.
+        // Instead, we just default to 0 for paths we don't know.
+        var toIndex = allPaths.lastIndexOf(createPath(toLocation));
+        if (toIndex === -1) toIndex = 0;
+        var fromIndex = allPaths.lastIndexOf(createPath(fromLocation));
+        if (fromIndex === -1) fromIndex = 0;
+        var delta = toIndex - fromIndex;
+        if (delta) {
+            forceNextPop = true;
+            go(delta);
+        }
+    } // Ensure the hash is encoded properly before doing anything else.
+    var path = getHashPath();
+    var encodedPath = encodePath(path);
+    if (path !== encodedPath) replaceHashPath(encodedPath);
+    var initialLocation = getDOMLocation();
+    var allPaths = [
+        createPath(initialLocation)
+    ]; // Public interface
+    function createHref(location) {
+        var baseTag = document.querySelector('base');
+        var href = '';
+        if (baseTag && baseTag.getAttribute('href')) href = stripHash(window.location.href);
+        return href + '#' + encodePath(basename + createPath(location));
+    }
+    function push(path1, state) {
+        _tinyWarningDefault.default(state === undefined, 'Hash history cannot push state; it is ignored');
+        var action = 'PUSH';
+        var location = createLocation(path1, undefined, undefined, history.location);
+        transitionManager.confirmTransitionTo(location, action, getUserConfirmation, function(ok) {
+            if (!ok) return;
+            var path2 = createPath(location);
+            var encodedPath1 = encodePath(basename + path2);
+            var hashChanged = getHashPath() !== encodedPath1;
+            if (hashChanged) {
+                // We cannot tell if a hashchange was caused by a PUSH, so we'd
+                // rather setState here and ignore the hashchange. The caveat here
+                // is that other hash histories in the page will consider it a POP.
+                ignorePath = path2;
+                pushHashPath(encodedPath1);
+                var prevIndex = allPaths.lastIndexOf(createPath(history.location));
+                var nextPaths = allPaths.slice(0, prevIndex + 1);
+                nextPaths.push(path2);
+                allPaths = nextPaths;
+                setState({
+                    action: action,
+                    location: location
+                });
+            } else {
+                _tinyWarningDefault.default(false, 'Hash history cannot PUSH the same path; a new entry will not be added to the history stack');
+                setState();
+            }
+        });
+    }
+    function replace(path1, state) {
+        _tinyWarningDefault.default(state === undefined, 'Hash history cannot replace state; it is ignored');
+        var action = 'REPLACE';
+        var location = createLocation(path1, undefined, undefined, history.location);
+        transitionManager.confirmTransitionTo(location, action, getUserConfirmation, function(ok) {
+            if (!ok) return;
+            var path2 = createPath(location);
+            var encodedPath1 = encodePath(basename + path2);
+            var hashChanged = getHashPath() !== encodedPath1;
+            if (hashChanged) {
+                // We cannot tell if a hashchange was caused by a REPLACE, so we'd
+                // rather setState here and ignore the hashchange. The caveat here
+                // is that other hash histories in the page will consider it a POP.
+                ignorePath = path2;
+                replaceHashPath(encodedPath1);
+            }
+            var prevIndex = allPaths.indexOf(createPath(history.location));
+            if (prevIndex !== -1) allPaths[prevIndex] = path2;
+            setState({
+                action: action,
+                location: location
+            });
+        });
+    }
+    function go(n) {
+        _tinyWarningDefault.default(canGoWithoutReload, 'Hash history go(n) causes a full page reload in this browser');
+        globalHistory.go(n);
+    }
+    function goBack() {
+        go(-1);
+    }
+    function goForward() {
+        go(1);
+    }
+    var listenerCount = 0;
+    function checkDOMListeners(delta) {
+        listenerCount += delta;
+        if (listenerCount === 1 && delta === 1) window.addEventListener(HashChangeEvent$1, handleHashChange);
+        else if (listenerCount === 0) window.removeEventListener(HashChangeEvent$1, handleHashChange);
+    }
+    var isBlocked = false;
+    function block(prompt) {
+        if (prompt === void 0) prompt = false;
+        var unblock = transitionManager.setPrompt(prompt);
+        if (!isBlocked) {
+            checkDOMListeners(1);
+            isBlocked = true;
+        }
+        return function() {
+            if (isBlocked) {
+                isBlocked = false;
+                checkDOMListeners(-1);
+            }
+            return unblock();
+        };
+    }
+    function listen(listener) {
+        var unlisten = transitionManager.appendListener(listener);
+        checkDOMListeners(1);
+        return function() {
+            checkDOMListeners(-1);
+            unlisten();
+        };
+    }
+    var history = {
+        length: globalHistory.length,
+        action: 'POP',
+        location: initialLocation,
+        createHref: createHref,
+        push: push,
+        replace: replace,
+        go: go,
+        goBack: goBack,
+        goForward: goForward,
+        block: block,
+        listen: listen
+    };
+    return history;
+}
+function clamp(n, lowerBound, upperBound) {
+    return Math.min(Math.max(n, lowerBound), upperBound);
+}
+/**
+ * Creates a history object that stores locations in memory.
+ */ function createMemoryHistory(props) {
+    if (props === void 0) props = {
+    };
+    var _props = props, getUserConfirmation = _props.getUserConfirmation, _props$initialEntries = _props.initialEntries, initialEntries = _props$initialEntries === void 0 ? [
+        '/'
+    ] : _props$initialEntries, _props$initialIndex = _props.initialIndex, initialIndex = _props$initialIndex === void 0 ? 0 : _props$initialIndex, _props$keyLength = _props.keyLength, keyLength = _props$keyLength === void 0 ? 6 : _props$keyLength;
+    var transitionManager = createTransitionManager();
+    function setState(nextState) {
+        _extendsDefault.default(history, nextState);
+        history.length = history.entries.length;
+        transitionManager.notifyListeners(history.location, history.action);
+    }
+    function createKey() {
+        return Math.random().toString(36).substr(2, keyLength);
+    }
+    var index = clamp(initialIndex, 0, initialEntries.length - 1);
+    var entries = initialEntries.map(function(entry) {
+        return typeof entry === 'string' ? createLocation(entry, undefined, createKey()) : createLocation(entry, undefined, entry.key || createKey());
+    }); // Public interface
+    var createHref = createPath;
+    function push(path, state) {
+        _tinyWarningDefault.default(!(typeof path === 'object' && path.state !== undefined && state !== undefined), "You should avoid providing a 2nd state argument to push when the 1st argument is a location-like object that already has state; it is ignored");
+        var action = 'PUSH';
+        var location = createLocation(path, state, createKey(), history.location);
+        transitionManager.confirmTransitionTo(location, action, getUserConfirmation, function(ok) {
+            if (!ok) return;
+            var prevIndex = history.index;
+            var nextIndex = prevIndex + 1;
+            var nextEntries = history.entries.slice(0);
+            if (nextEntries.length > nextIndex) nextEntries.splice(nextIndex, nextEntries.length - nextIndex, location);
+            else nextEntries.push(location);
+            setState({
+                action: action,
+                location: location,
+                index: nextIndex,
+                entries: nextEntries
+            });
+        });
+    }
+    function replace(path, state) {
+        _tinyWarningDefault.default(!(typeof path === 'object' && path.state !== undefined && state !== undefined), "You should avoid providing a 2nd state argument to replace when the 1st argument is a location-like object that already has state; it is ignored");
+        var action = 'REPLACE';
+        var location = createLocation(path, state, createKey(), history.location);
+        transitionManager.confirmTransitionTo(location, action, getUserConfirmation, function(ok) {
+            if (!ok) return;
+            history.entries[history.index] = location;
+            setState({
+                action: action,
+                location: location
+            });
+        });
+    }
+    function go(n) {
+        var nextIndex = clamp(history.index + n, 0, history.entries.length - 1);
+        var action = 'POP';
+        var location = history.entries[nextIndex];
+        transitionManager.confirmTransitionTo(location, action, getUserConfirmation, function(ok) {
+            if (ok) setState({
+                action: action,
+                location: location,
+                index: nextIndex
+            });
+            else // Mimic the behavior of DOM histories by
+            // causing a render after a cancelled POP.
+            setState();
+        });
+    }
+    function goBack() {
+        go(-1);
+    }
+    function goForward() {
+        go(1);
+    }
+    function canGo(n) {
+        var nextIndex = history.index + n;
+        return nextIndex >= 0 && nextIndex < history.entries.length;
+    }
+    function block(prompt) {
+        if (prompt === void 0) prompt = false;
+        return transitionManager.setPrompt(prompt);
+    }
+    function listen(listener) {
+        return transitionManager.appendListener(listener);
+    }
+    var history = {
+        length: entries.length,
+        action: 'POP',
+        location: entries[index],
+        index: index,
+        entries: entries,
+        createHref: createHref,
+        push: push,
+        replace: replace,
+        go: go,
+        goBack: goBack,
+        goForward: goForward,
+        canGo: canGo,
+        block: block,
+        listen: listen
+    };
+    return history;
+}
+
+},{"@babel/runtime/helpers/esm/extends":"bKAu6","resolve-pathname":"8Bknh","value-equal":"j68cW","tiny-warning":"4xDJt","tiny-invariant":"kiE0c","@parcel/transformer-js/src/esmodule-helpers.js":"kDBJf"}],"h2YVd":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Accordion", ()=>_accordionDefault.default
@@ -39774,7 +40504,260 @@ function registerExportsForReactRefresh(module) {
     }
 }
 
-},{"react-refresh/runtime":"bxWi8"}],"6EiBJ":[function(require,module,exports) {
+},{"react-refresh/runtime":"bxWi8"}],"054li":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$02dd = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$02dd.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "LoginView", ()=>LoginView
+);
+var _jsxRuntime = require("react/jsx-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _propTypes = require("prop-types");
+var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
+var _axios = require("axios");
+var _axiosDefault = parcelHelpers.interopDefault(_axios);
+var _reactRouterDom = require("react-router-dom");
+//import custom SCSS
+var _loginViewScss = require("./login-view.scss");
+//Import React Bootstrap Components
+var _form = require("react-bootstrap/Form");
+var _formDefault = parcelHelpers.interopDefault(_form);
+var _button = require("react-bootstrap/Button");
+var _buttonDefault = parcelHelpers.interopDefault(_button);
+var _container = require("react-bootstrap/Container");
+var _containerDefault = parcelHelpers.interopDefault(_container);
+var _row = require("react-bootstrap/Row");
+var _rowDefault = parcelHelpers.interopDefault(_row);
+var _col = require("react-bootstrap/Col");
+var _colDefault = parcelHelpers.interopDefault(_col);
+var _card = require("react-bootstrap/Card");
+var _cardDefault = parcelHelpers.interopDefault(_card);
+var _cardGroup = require("react-bootstrap/CardGroup");
+var _cardGroupDefault = parcelHelpers.interopDefault(_cardGroup);
+var _s = $RefreshSig$();
+function LoginView(props) {
+    _s();
+    const [Username, setUsername] = _react.useState('');
+    const [Password, setPassword] = _react.useState('');
+    // Declare hook for each input 
+    const [UsernameErr, setUsernameErr] = _react.useState('');
+    const [PasswordErr, setPasswordErr] = _react.useState('');
+    // validate user inputs
+    const validate = ()=>{
+        let isReq = true;
+        if (!Username) {
+            setUsernameErr('Username Required');
+            isReq = false;
+        } else if (Username.length < 6) {
+            setUsernameErr('Username must be 6 characters long');
+            isReq = false;
+        }
+        if (!Password) {
+            setPasswordErr('Password Required');
+            isReq = false;
+        } else if (Password.length < 8) {
+            setPasswordErr('Password must be 8 characters long');
+            isReq = false;
+        }
+        return isReq;
+    };
+    const handleSubmit = (e)=>{
+        e.preventDefault();
+        const isReq = validate();
+        if (isReq) /* Send a request to the server for authentication */ _axiosDefault.default.post('https://mymovie-backend-api.herokuapp.com/mymovies/login', {
+            Username: Username,
+            Password: Password
+        }).then((response)=>{
+            const data = response.data;
+            props.onLoggedIn(data);
+        }).catch((e1)=>{
+            console.log('no such user');
+        });
+    };
+    return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
+        className: "login-view",
+        __source: {
+            fileName: "src/components/login-view/login-view.jsx",
+            lineNumber: 66
+        },
+        __self: this,
+        children: /*#__PURE__*/ _jsxRuntime.jsx(_containerDefault.default, {
+            fluid: true,
+            style: {
+                paddingTop: '0.75rem'
+            },
+            __source: {
+                fileName: "src/components/login-view/login-view.jsx",
+                lineNumber: 67
+            },
+            __self: this,
+            children: /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
+                __source: {
+                    fileName: "src/components/login-view/login-view.jsx",
+                    lineNumber: 68
+                },
+                __self: this,
+                children: /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                    __source: {
+                        fileName: "src/components/login-view/login-view.jsx",
+                        lineNumber: 69
+                    },
+                    __self: this,
+                    children: /*#__PURE__*/ _jsxRuntime.jsx(_cardGroupDefault.default, {
+                        __source: {
+                            fileName: "src/components/login-view/login-view.jsx",
+                            lineNumber: 70
+                        },
+                        __self: this,
+                        children: /*#__PURE__*/ _jsxRuntime.jsx(_cardDefault.default, {
+                            bg: "secondary",
+                            text: "light",
+                            border: "light",
+                            __source: {
+                                fileName: "src/components/login-view/login-view.jsx",
+                                lineNumber: 71
+                            },
+                            __self: this,
+                            children: /*#__PURE__*/ _jsxRuntime.jsxs(_cardDefault.default.Body, {
+                                __source: {
+                                    fileName: "src/components/login-view/login-view.jsx",
+                                    lineNumber: 72
+                                },
+                                __self: this,
+                                children: [
+                                    /*#__PURE__*/ _jsxRuntime.jsx(_cardDefault.default.Title, {
+                                        __source: {
+                                            fileName: "src/components/login-view/login-view.jsx",
+                                            lineNumber: 73
+                                        },
+                                        __self: this,
+                                        children: "Welcome to MyMovies!"
+                                    }),
+                                    /*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default, {
+                                        __source: {
+                                            fileName: "src/components/login-view/login-view.jsx",
+                                            lineNumber: 74
+                                        },
+                                        __self: this,
+                                        children: [
+                                            /*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default.Group, {
+                                                controlId: "formUsername",
+                                                __source: {
+                                                    fileName: "src/components/login-view/login-view.jsx",
+                                                    lineNumber: 75
+                                                },
+                                                __self: this,
+                                                children: [
+                                                    /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Label, {
+                                                        __source: {
+                                                            fileName: "src/components/login-view/login-view.jsx",
+                                                            lineNumber: 76
+                                                        },
+                                                        __self: this,
+                                                        children: "Username:"
+                                                    }),
+                                                    /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control, {
+                                                        type: "text",
+                                                        onChange: (e)=>setUsername(e.target.value)
+                                                        ,
+                                                        __source: {
+                                                            fileName: "src/components/login-view/login-view.jsx",
+                                                            lineNumber: 77
+                                                        },
+                                                        __self: this
+                                                    }),
+                                                    UsernameErr && /*#__PURE__*/ _jsxRuntime.jsx("p", {
+                                                        __source: {
+                                                            fileName: "src/components/login-view/login-view.jsx",
+                                                            lineNumber: 79
+                                                        },
+                                                        __self: this,
+                                                        children: UsernameErr
+                                                    })
+                                                ]
+                                            }),
+                                            /*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default.Group, {
+                                                controlId: "formPassword",
+                                                __source: {
+                                                    fileName: "src/components/login-view/login-view.jsx",
+                                                    lineNumber: 82
+                                                },
+                                                __self: this,
+                                                children: [
+                                                    /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Label, {
+                                                        __source: {
+                                                            fileName: "src/components/login-view/login-view.jsx",
+                                                            lineNumber: 83
+                                                        },
+                                                        __self: this,
+                                                        children: "Password:"
+                                                    }),
+                                                    /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control, {
+                                                        type: "password",
+                                                        onChange: (e)=>setPassword(e.target.value)
+                                                        ,
+                                                        __source: {
+                                                            fileName: "src/components/login-view/login-view.jsx",
+                                                            lineNumber: 84
+                                                        },
+                                                        __self: this
+                                                    }),
+                                                    UsernameErr && /*#__PURE__*/ _jsxRuntime.jsx("p", {
+                                                        __source: {
+                                                            fileName: "src/components/login-view/login-view.jsx",
+                                                            lineNumber: 86
+                                                        },
+                                                        __self: this,
+                                                        children: UsernameErr
+                                                    })
+                                                ]
+                                            }),
+                                            /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
+                                                variant: "primary",
+                                                type: "submit",
+                                                onClick: handleSubmit,
+                                                __source: {
+                                                    fileName: "src/components/login-view/login-view.jsx",
+                                                    lineNumber: 88
+                                                },
+                                                __self: this,
+                                                children: "Submit"
+                                            })
+                                        ]
+                                    })
+                                ]
+                            })
+                        })
+                    })
+                })
+            })
+        })
+    }));
+}
+_s(LoginView, "PgWzkTd7gSMOcPNlQUtmGtf45PM=");
+_c = LoginView;
+LoginView.propTypes = {
+    User: _propTypesDefault.default.shape({
+        Username: _propTypesDefault.default.string.isRequired,
+        Password: _propTypesDefault.default.string.isRequired
+    }),
+    onLoggedIn: _propTypesDefault.default.func.isRequired
+};
+var _c;
+$RefreshReg$(_c, "LoginView");
+
+  $parcel$ReactRefreshHelpers$02dd.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","axios":"iYoWk","react-router-dom":"cpyQW","./login-view.scss":"lS4BK","react-bootstrap/Form":"5ykgY","react-bootstrap/Button":"9CzHT","react-bootstrap/Container":"2PRIq","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","react-bootstrap/Card":"MoOk8","react-bootstrap/CardGroup":"lNZc4","@parcel/transformer-js/src/esmodule-helpers.js":"kDBJf","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"3jiko"}],"lS4BK":[function() {},{}],"6EiBJ":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$4249 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -39804,55 +40787,55 @@ class MovieCard extends _reactDefault.default.Component {
         return(/*#__PURE__*/ _jsxRuntime.jsxs(_cardDefault.default, {
             __source: {
                 fileName: "src/components/movie-card/movie-card.jsx",
-                lineNumber: 17
+                lineNumber: 18
             },
             __self: this,
             children: [
                 /*#__PURE__*/ _jsxRuntime.jsx(_cardDefault.default.Img, {
                     variant: "top",
                     crossOrigin: "anonymous",
-                    src: movie.imagePath,
+                    src: movie.ImagePath,
                     __source: {
                         fileName: "src/components/movie-card/movie-card.jsx",
-                        lineNumber: 18
+                        lineNumber: 19
                     },
                     __self: this
                 }),
                 /*#__PURE__*/ _jsxRuntime.jsxs(_cardDefault.default.Body, {
                     __source: {
                         fileName: "src/components/movie-card/movie-card.jsx",
-                        lineNumber: 19
+                        lineNumber: 20
                     },
                     __self: this,
                     children: [
                         /*#__PURE__*/ _jsxRuntime.jsx(_cardDefault.default.Title, {
                             __source: {
                                 fileName: "src/components/movie-card/movie-card.jsx",
-                                lineNumber: 20
+                                lineNumber: 21
                             },
                             __self: this,
-                            children: movie.title
+                            children: movie.Title
                         }),
                         /*#__PURE__*/ _jsxRuntime.jsx(_cardDefault.default.Text, {
                             __source: {
                                 fileName: "src/components/movie-card/movie-card.jsx",
-                                lineNumber: 21
+                                lineNumber: 22
                             },
                             __self: this,
-                            children: movie.description
+                            children: movie.Description
                         }),
                         /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
                             to: '/mymovies/${movie._id}',
                             __source: {
                                 fileName: "src/components/movie-card/movie-card.jsx",
-                                lineNumber: 22
+                                lineNumber: 23
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
                                 variant: "link",
                                 __source: {
                                     fileName: "src/components/movie-card/movie-card.jsx",
-                                    lineNumber: 23
+                                    lineNumber: 24
                                 },
                                 __self: this,
                                 children: "Open"
@@ -39864,7 +40847,7 @@ class MovieCard extends _reactDefault.default.Component {
                             variant: "link",
                             __source: {
                                 fileName: "src/components/movie-card/movie-card.jsx",
-                                lineNumber: 25
+                                lineNumber: 26
                             },
                             __self: this,
                             children: "Open"
@@ -39878,19 +40861,19 @@ class MovieCard extends _reactDefault.default.Component {
 MovieCard.propTypes = {
     movie: _propTypesDefault.default.shape({
         Actors: _propTypesDefault.default.array.isRequired,
-        title: _propTypesDefault.default.string.isRequired,
-        genre: _propTypesDefault.default.shape({
-            name: _propTypesDefault.default.string.isRequired,
-            description: _propTypesDefault.default.string.isRequired
+        Title: _propTypesDefault.default.string.isRequired,
+        Genre: _propTypesDefault.default.shape({
+            Name: _propTypesDefault.default.string.isRequired,
+            Description: _propTypesDefault.default.string.isRequired
         }),
-        director: _propTypesDefault.default.shape({
-            name: _propTypesDefault.default.string.isRequired,
-            bio: _propTypesDefault.default.string.isRequired,
-            birth: _propTypesDefault.default.string.isRequired
+        Director: _propTypesDefault.default.shape({
+            Name: _propTypesDefault.default.string.isRequired,
+            Bio: _propTypesDefault.default.string.isRequired,
+            Birth: _propTypesDefault.default.string.isRequired
         }),
-        description: _propTypesDefault.default.string.isRequired,
-        imagePath: _propTypesDefault.default.any.isRequired,
-        featured: _propTypesDefault.default.any.isRequired
+        Description: _propTypesDefault.default.string.isRequired,
+        ImagePath: _propTypesDefault.default.any.isRequired,
+        Featured: _propTypesDefault.default.any.isRequired
     }).isRequired,
     onMovieClick: _propTypesDefault.default.func.isRequired
 };
@@ -39916,27 +40899,36 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
+var _propTypes = require("prop-types");
+var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
 var _reactRouterDom = require("react-router-dom");
 // Import React Bootstrap components
+var _container = require("react-bootstrap/Container");
+var _containerDefault = parcelHelpers.interopDefault(_container);
 var _button = require("react-bootstrap/Button");
 var _buttonDefault = parcelHelpers.interopDefault(_button);
 var _card = require("react-bootstrap/Card");
 var _cardDefault = parcelHelpers.interopDefault(_card);
+var _row = require("react-bootstrap/Row");
+var _rowDefault = parcelHelpers.interopDefault(_row);
+var _col = require("react-bootstrap/Col");
+var _colDefault = parcelHelpers.interopDefault(_col);
 // import custom SCSS
 var _movieViewScss = require("./movie-view.scss");
 class MovieView extends _reactDefault.default.Component {
-    constructor(props){
-        super(props);
-        // Create state variables that will be used to add/remove a movie from a users Favorites list
-        this.state = {
-            FavoriteMovies: [],
-            userDetails: []
-        };
-        // Bind these additional functions that will get called by onClick events to 'this'
-        this.addFavorite = this.addFavorite.bind(this);
-        this.removeFavorite = this.removeFavorite.bind(this);
-    }
-    keypressCallback(event) {
+    /* constructor(props) {
+    super(props);
+    // Create state variables that will be used to add/remove a movie from a users Favorites list
+    this.state = {
+      
+      FavoriteMovies: [],
+      userDetails: []
+  }
+
+    // Bind these additional functions that will get called by onClick events to 'this'
+    //this.addFavorite = this.addFavorite.bind(this);
+    //this.removeFavorite = this.removeFavorite.bind(this);
+  } */ keypressCallback(event) {
         console.log(event.key);
     }
     componentDidMount() {
@@ -39953,47 +40945,46 @@ class MovieView extends _reactDefault.default.Component {
             border: "light",
             __source: {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 43
+                lineNumber: 47
             },
             __self: this,
             children: /*#__PURE__*/ _jsxRuntime.jsx(_cardDefault.default.Body, {
                 __source: {
                     fileName: "src/components/movie-view/movie-view.jsx",
-                    lineNumber: 44
+                    lineNumber: 48
                 },
                 __self: this,
-                children: /*#__PURE__*/ _jsxRuntime.jsxs(Row, {
+                children: /*#__PURE__*/ _jsxRuntime.jsxs(_rowDefault.default, {
                     __source: {
                         fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 45
+                        lineNumber: 49
                     },
                     __self: this,
                     children: [
-                        /*#__PURE__*/ _jsxRuntime.jsx(Col, {
+                        /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
                             xs: 12,
                             md: 6,
                             __source: {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 46
+                                lineNumber: 50
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsx(_cardDefault.default.Img, {
-                                varient: "top",
-                                src: movie.imagePath,
-                                className: "big_image",
+                                variant: "top",
+                                crossOrigin: "anonymous" /* src={movie.ImagePath} ClassName="" */ ,
                                 __source: {
                                     fileName: "src/components/movie-view/movie-view.jsx",
-                                    lineNumber: 47
+                                    lineNumber: 51
                                 },
                                 __self: this
                             })
                         }),
-                        /*#__PURE__*/ _jsxRuntime.jsxs(Col, {
+                        /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
                             xs: 12,
                             md: 6,
                             __source: {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 49
+                                lineNumber: 53
                             },
                             __self: this,
                             children: [
@@ -40001,24 +40992,24 @@ class MovieView extends _reactDefault.default.Component {
                                     className: "text-center",
                                     __source: {
                                         fileName: "src/components/movie-view/movie-view.jsx",
-                                        lineNumber: 50
+                                        lineNumber: 54
                                     },
                                     __self: this,
-                                    children: movie.title
+                                    children: movie.Title
                                 }),
                                 /*#__PURE__*/ _jsxRuntime.jsx(_cardDefault.default.Text, {
                                     __source: {
                                         fileName: "src/components/movie-view/movie-view.jsx",
-                                        lineNumber: 51
+                                        lineNumber: 55
                                     },
                                     __self: this,
-                                    children: movie.description
+                                    children: movie.Description
                                 }),
-                                movie.genre.name && /*#__PURE__*/ _jsxRuntime.jsxs(_cardDefault.default.Text, {
+                                movie.Genre.Name && /*#__PURE__*/ _jsxRuntime.jsxs(_cardDefault.default.Text, {
                                     className: "genre_heading",
                                     __source: {
                                         fileName: "src/components/movie-view/movie-view.jsx",
-                                        lineNumber: 54
+                                        lineNumber: 58
                                     },
                                     __self: this,
                                     children: [
@@ -40026,7 +41017,7 @@ class MovieView extends _reactDefault.default.Component {
                                             className: "genre_title",
                                             __source: {
                                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                                lineNumber: 54
+                                                lineNumber: 58
                                             },
                                             __self: this,
                                             children: "Genre: "
@@ -40035,21 +41026,21 @@ class MovieView extends _reactDefault.default.Component {
                                             style: {
                                                 color: "white"
                                             },
-                                            to: `/genres/${movie.genre.name}`,
+                                            to: `/genre/${movie.Genre.Name}`,
                                             __source: {
                                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                                lineNumber: 54
+                                                lineNumber: 58
                                             },
                                             __self: this,
-                                            children: movie.genre.name
+                                            children: movie.Genre.Name
                                         })
                                     ]
                                 }),
-                                movie.director.name && /*#__PURE__*/ _jsxRuntime.jsxs(_cardDefault.default.Text, {
+                                movie.Director.Name && /*#__PURE__*/ _jsxRuntime.jsxs(_cardDefault.default.Text, {
                                     className: "director_heading",
                                     __source: {
                                         fileName: "src/components/movie-view/movie-view.jsx",
-                                        lineNumber: 57
+                                        lineNumber: 61
                                     },
                                     __self: this,
                                     children: [
@@ -40057,7 +41048,7 @@ class MovieView extends _reactDefault.default.Component {
                                             className: "director_title",
                                             __source: {
                                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                                lineNumber: 57
+                                                lineNumber: 61
                                             },
                                             __self: this,
                                             children: "Director: "
@@ -40066,13 +41057,13 @@ class MovieView extends _reactDefault.default.Component {
                                             style: {
                                                 color: "white"
                                             },
-                                            to: `/directors/${movie.director.name}`,
+                                            to: `/director/${movie.Director.Name}`,
                                             __source: {
                                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                                lineNumber: 57
+                                                lineNumber: 61
                                             },
                                             __self: this,
-                                            children: movie.director.name
+                                            children: movie.Director.Name
                                         })
                                     ]
                                 }),
@@ -40085,7 +41076,7 @@ class MovieView extends _reactDefault.default.Component {
                                     },
                                     __source: {
                                         fileName: "src/components/movie-view/movie-view.jsx",
-                                        lineNumber: 59
+                                        lineNumber: 63
                                     },
                                     __self: this,
                                     children: "Back"
@@ -40099,7 +41090,7 @@ class MovieView extends _reactDefault.default.Component {
                                     onClick: this.removeFavorite,
                                     __source: {
                                         fileName: "src/components/movie-view/movie-view.jsx",
-                                        lineNumber: 62
+                                        lineNumber: 66
                                     },
                                     __self: this,
                                     children: "Remove from Favorites"
@@ -40112,7 +41103,7 @@ class MovieView extends _reactDefault.default.Component {
                                     onClick: this.addFavorite,
                                     __source: {
                                         fileName: "src/components/movie-view/movie-view.jsx",
-                                        lineNumber: 66
+                                        lineNumber: 70
                                     },
                                     __self: this,
                                     children: "Add to Favorites"
@@ -40131,7 +41122,7 @@ class MovieView extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","react-router-dom":"cpyQW","react-bootstrap/Button":"9CzHT","react-bootstrap/Card":"MoOk8","./movie-view.scss":"kvL93","@parcel/transformer-js/src/esmodule-helpers.js":"kDBJf","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"3jiko"}],"kvL93":[function() {},{}],"8WCoL":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","react-router-dom":"cpyQW","react-bootstrap/Button":"9CzHT","react-bootstrap/Card":"MoOk8","./movie-view.scss":"kvL93","@parcel/transformer-js/src/esmodule-helpers.js":"kDBJf","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"3jiko","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","prop-types":"1tgq3","react-bootstrap/Container":"2PRIq"}],"kvL93":[function() {},{}],"8WCoL":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$5f0a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -40975,7 +41966,7 @@ class ProfileView extends _reactDefault.default.Component {
 }
 // Set the PropTypes for the ProfileView
 ProfileView.propTypes = {
-    movies: _propTypesDefault.default.arrayOf(_propTypesDefault.default.shape({
+    movie: _propTypesDefault.default.arrayOf(_propTypesDefault.default.shape({
         Title: _propTypesDefault.default.string.isRequired,
         Description: _propTypesDefault.default.string.isRequired,
         Genre: _propTypesDefault.default.shape({
@@ -40985,8 +41976,7 @@ ProfileView.propTypes = {
         Director: _propTypesDefault.default.shape({
             Name: _propTypesDefault.default.string,
             Bio: _propTypesDefault.default.string,
-            Birthyear: _propTypesDefault.default.string,
-            Deathyear: _propTypesDefault.default.string
+            Birthday: _propTypesDefault.default.string
         }),
         ImagePath: _propTypesDefault.default.string,
         Featured: _propTypesDefault.default.any
@@ -40999,259 +41989,6 @@ ProfileView.propTypes = {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","prop-types":"1tgq3","react-router-dom":"cpyQW","react-bootstrap/Form":"5ykgY","react-bootstrap/Button":"9CzHT","react-bootstrap/Container":"2PRIq","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","react-bootstrap/Card":"MoOk8","./profile-view.scss":"gb0ga","@parcel/transformer-js/src/esmodule-helpers.js":"kDBJf","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"3jiko"}],"gb0ga":[function() {},{}],"jyMAr":[function() {},{}],"054li":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$02dd = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$02dd.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "LoginView", ()=>LoginView
-);
-var _jsxRuntime = require("react/jsx-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _propTypes = require("prop-types");
-var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
-var _axios = require("axios");
-var _axiosDefault = parcelHelpers.interopDefault(_axios);
-var _reactRouterDom = require("react-router-dom");
-//import custom SCSS
-var _loginViewScss = require("./login-view.scss");
-//Import React Bootstrap Components
-var _form = require("react-bootstrap/Form");
-var _formDefault = parcelHelpers.interopDefault(_form);
-var _button = require("react-bootstrap/Button");
-var _buttonDefault = parcelHelpers.interopDefault(_button);
-var _container = require("react-bootstrap/Container");
-var _containerDefault = parcelHelpers.interopDefault(_container);
-var _row = require("react-bootstrap/Row");
-var _rowDefault = parcelHelpers.interopDefault(_row);
-var _col = require("react-bootstrap/Col");
-var _colDefault = parcelHelpers.interopDefault(_col);
-var _card = require("react-bootstrap/Card");
-var _cardDefault = parcelHelpers.interopDefault(_card);
-var _cardGroup = require("react-bootstrap/CardGroup");
-var _cardGroupDefault = parcelHelpers.interopDefault(_cardGroup);
-var _s = $RefreshSig$();
-function LoginView(props) {
-    _s();
-    const [Username, setUsername] = _react.useState('');
-    const [Password, setPassword] = _react.useState('');
-    // Declare hook for each input 
-    const [UsernameErr, setUsernameErr] = _react.useState('');
-    const [PasswordErr, setPasswordErr] = _react.useState('');
-    // validate user inputs
-    const validate = ()=>{
-        let isReq = true;
-        if (!Username) {
-            setUsernameErr('Username Required');
-            isReq = false;
-        } else if (Username.length < 6) {
-            setUsernameErr('Username must be 6 characters long');
-            isReq = false;
-        }
-        if (!Password) {
-            setPasswordErr('Password Required');
-            isReq = false;
-        } else if (Password.length < 8) {
-            setPasswordErr('Password must be 8 characters long');
-            isReq = false;
-        }
-        return isReq;
-    };
-    const handleSubmit = (e)=>{
-        e.preventDefault();
-        const isReq = validate();
-        if (isReq) /* Send a request to the server for authentication */ _axiosDefault.default.post('https://mymovie-backend-api.herokuapp.com/mymovies/login', {
-            Username: Username,
-            Password: Password
-        }).then((response)=>{
-            const data = response.data;
-            props.onLoggedIn(data);
-        }).catch((e1)=>{
-            console.log('no such user');
-        });
-    };
-    return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
-        className: "login-view",
-        __source: {
-            fileName: "src/components/login-view/login-view.jsx",
-            lineNumber: 66
-        },
-        __self: this,
-        children: /*#__PURE__*/ _jsxRuntime.jsx(_containerDefault.default, {
-            fluid: true,
-            style: {
-                paddingTop: '0.75rem'
-            },
-            __source: {
-                fileName: "src/components/login-view/login-view.jsx",
-                lineNumber: 67
-            },
-            __self: this,
-            children: /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
-                __source: {
-                    fileName: "src/components/login-view/login-view.jsx",
-                    lineNumber: 68
-                },
-                __self: this,
-                children: /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
-                    __source: {
-                        fileName: "src/components/login-view/login-view.jsx",
-                        lineNumber: 69
-                    },
-                    __self: this,
-                    children: /*#__PURE__*/ _jsxRuntime.jsx(_cardGroupDefault.default, {
-                        __source: {
-                            fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 70
-                        },
-                        __self: this,
-                        children: /*#__PURE__*/ _jsxRuntime.jsx(_cardDefault.default, {
-                            bg: "secondary",
-                            text: "light",
-                            border: "light",
-                            __source: {
-                                fileName: "src/components/login-view/login-view.jsx",
-                                lineNumber: 71
-                            },
-                            __self: this,
-                            children: /*#__PURE__*/ _jsxRuntime.jsxs(_cardDefault.default.Body, {
-                                __source: {
-                                    fileName: "src/components/login-view/login-view.jsx",
-                                    lineNumber: 72
-                                },
-                                __self: this,
-                                children: [
-                                    /*#__PURE__*/ _jsxRuntime.jsx(_cardDefault.default.Title, {
-                                        __source: {
-                                            fileName: "src/components/login-view/login-view.jsx",
-                                            lineNumber: 73
-                                        },
-                                        __self: this,
-                                        children: "Welcome to MyMovies!"
-                                    }),
-                                    /*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default, {
-                                        __source: {
-                                            fileName: "src/components/login-view/login-view.jsx",
-                                            lineNumber: 74
-                                        },
-                                        __self: this,
-                                        children: [
-                                            /*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default.Group, {
-                                                controlId: "formUsername",
-                                                __source: {
-                                                    fileName: "src/components/login-view/login-view.jsx",
-                                                    lineNumber: 75
-                                                },
-                                                __self: this,
-                                                children: [
-                                                    /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Label, {
-                                                        __source: {
-                                                            fileName: "src/components/login-view/login-view.jsx",
-                                                            lineNumber: 76
-                                                        },
-                                                        __self: this,
-                                                        children: "Username:"
-                                                    }),
-                                                    /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control, {
-                                                        type: "text",
-                                                        onChange: (e)=>setUsername(e.target.value)
-                                                        ,
-                                                        __source: {
-                                                            fileName: "src/components/login-view/login-view.jsx",
-                                                            lineNumber: 77
-                                                        },
-                                                        __self: this
-                                                    }),
-                                                    UsernameErr && /*#__PURE__*/ _jsxRuntime.jsx("p", {
-                                                        __source: {
-                                                            fileName: "src/components/login-view/login-view.jsx",
-                                                            lineNumber: 79
-                                                        },
-                                                        __self: this,
-                                                        children: UsernameErr
-                                                    })
-                                                ]
-                                            }),
-                                            /*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default.Group, {
-                                                controlId: "formPassword",
-                                                __source: {
-                                                    fileName: "src/components/login-view/login-view.jsx",
-                                                    lineNumber: 82
-                                                },
-                                                __self: this,
-                                                children: [
-                                                    /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Label, {
-                                                        __source: {
-                                                            fileName: "src/components/login-view/login-view.jsx",
-                                                            lineNumber: 83
-                                                        },
-                                                        __self: this,
-                                                        children: "Password:"
-                                                    }),
-                                                    /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control, {
-                                                        type: "password",
-                                                        onChange: (e)=>setPassword(e.target.value)
-                                                        ,
-                                                        __source: {
-                                                            fileName: "src/components/login-view/login-view.jsx",
-                                                            lineNumber: 84
-                                                        },
-                                                        __self: this
-                                                    }),
-                                                    UsernameErr && /*#__PURE__*/ _jsxRuntime.jsx("p", {
-                                                        __source: {
-                                                            fileName: "src/components/login-view/login-view.jsx",
-                                                            lineNumber: 86
-                                                        },
-                                                        __self: this,
-                                                        children: UsernameErr
-                                                    })
-                                                ]
-                                            }),
-                                            /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
-                                                variant: "primary",
-                                                type: "submit",
-                                                onClick: handleSubmit,
-                                                __source: {
-                                                    fileName: "src/components/login-view/login-view.jsx",
-                                                    lineNumber: 88
-                                                },
-                                                __self: this,
-                                                children: "Submit"
-                                            })
-                                        ]
-                                    })
-                                ]
-                            })
-                        })
-                    })
-                })
-            })
-        })
-    }));
-}
-_s(LoginView, "PgWzkTd7gSMOcPNlQUtmGtf45PM=");
-_c = LoginView;
-LoginView.propTypes = {
-    User: _propTypesDefault.default.shape({
-        Username: _propTypesDefault.default.string.isRequired,
-        Password: _propTypesDefault.default.string.isRequired
-    }),
-    onLoggedIn: _propTypesDefault.default.func.isRequired
-};
-var _c;
-$RefreshReg$(_c, "LoginView");
-
-  $parcel$ReactRefreshHelpers$02dd.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","axios":"iYoWk","react-router-dom":"cpyQW","./login-view.scss":"lS4BK","react-bootstrap/Form":"5ykgY","react-bootstrap/Button":"9CzHT","react-bootstrap/Container":"2PRIq","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","react-bootstrap/Card":"MoOk8","react-bootstrap/CardGroup":"lNZc4","@parcel/transformer-js/src/esmodule-helpers.js":"kDBJf","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"3jiko"}],"lS4BK":[function() {},{}],"jUTZ8":[function() {},{}]},["j0QZG","5mKa9","dLPEP"], "dLPEP", "parcelRequirebd5d")
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","prop-types":"1tgq3","react-router-dom":"cpyQW","react-bootstrap/Form":"5ykgY","react-bootstrap/Button":"9CzHT","react-bootstrap/Container":"2PRIq","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","react-bootstrap/Card":"MoOk8","./profile-view.scss":"gb0ga","@parcel/transformer-js/src/esmodule-helpers.js":"kDBJf","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"3jiko"}],"gb0ga":[function() {},{}],"jyMAr":[function() {},{}],"jUTZ8":[function() {},{}]},["j0QZG","5mKa9","dLPEP"], "dLPEP", "parcelRequirebd5d")
 
 //# sourceMappingURL=index.6701a6e1.js.map

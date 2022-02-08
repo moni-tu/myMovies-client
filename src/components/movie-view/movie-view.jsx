@@ -1,16 +1,20 @@
 import React from 'react';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
 
 // Import React Bootstrap components
+import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 // import custom SCSS
 import './movie-view.scss';
 
 export class MovieView extends React.Component {
-  constructor(props) {
+  /* constructor(props) {
     super(props);
     // Create state variables that will be used to add/remove a movie from a users Favorites list
     this.state = {
@@ -20,9 +24,9 @@ export class MovieView extends React.Component {
   }
 
     // Bind these additional functions that will get called by onClick events to 'this'
-    this.addFavorite = this.addFavorite.bind(this);
-    this.removeFavorite = this.removeFavorite.bind(this);
-  }
+    //this.addFavorite = this.addFavorite.bind(this);
+    //this.removeFavorite = this.removeFavorite.bind(this);
+  } */
 
   keypressCallback(event) {
     console.log(event.key);
@@ -44,17 +48,17 @@ export class MovieView extends React.Component {
           <Card.Body>
               <Row>
                   <Col xs={12} md={6}>
-                      <Card.Img varient="top" src={movie.imagePath} className="big_image" />
+                      <Card.Img variant="top" crossOrigin='anonymous' /* src={movie.ImagePath} ClassName="" */ />
                   </Col>
                   <Col xs={12} md={6}>
-                      <Card.Title className="text-center">{movie.title}</Card.Title>
-                      <Card.Text>{movie.description}</Card.Text>
+                      <Card.Title className="text-center">{movie.Title}</Card.Title>
+                      <Card.Text>{movie.Description}</Card.Text>
                       {/* && operator here is an alternative to an if statement. If movie.Genre.Name exists, then it will render the Genre section. If it doesn't exist, it will skip */}
-                      {movie.genre.name && (
-                          <Card.Text className="genre_heading"><span className="genre_title">Genre: </span><Link style={{ color: "white" }} to={`/genres/${movie.genre.name}`}>{movie.genre.name}</Link></Card.Text>
+                      {movie.Genre.Name && (
+                          <Card.Text className="genre_heading"><span className="genre_title">Genre: </span><Link style={{ color: "white" }} to={`/genre/${movie.Genre.Name}`}>{movie.Genre.Name}</Link></Card.Text>
                       )}
-                      {movie.director.name && (
-                          <Card.Text className="director_heading"><span className="director_title">Director: </span><Link style={{ color: "white" }} to={`/directors/${movie.director.name}`}>{movie.director.name}</Link></Card.Text>
+                      {movie.Director.Name && (
+                          <Card.Text className="director_heading"><span className="director_title">Director: </span><Link style={{ color: "white" }} to={`/director/${movie.Director.Name}`}>{movie.Director.Name}</Link></Card.Text>
                       )}
                       <Button onClick={() => onBackClick(null)} variant="light" style={{ color: "white" }}>Back</Button>
                       {/* Use flag defined above to determine if we need an add or remove from Favorites button */}
