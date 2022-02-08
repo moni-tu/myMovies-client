@@ -210,7 +210,7 @@ export class ProfileView extends React.Component {
 
 // Set the PropTypes for the ProfileView
 ProfileView.propTypes = {
-  movies: PropTypes.arrayOf(
+  movie: PropTypes.arrayOf(
     PropTypes.shape({
       Title: PropTypes.string.isRequired,
       Description: PropTypes.string.isRequired,
@@ -221,8 +221,7 @@ ProfileView.propTypes = {
       Director: PropTypes.shape({
         Name: PropTypes.string,
         Bio: PropTypes.string,
-        Birthyear: PropTypes.string,
-        Deathyear: PropTypes.string
+        Birthday: PropTypes.string,
       }),
       ImagePath: PropTypes.string,
       Featured: PropTypes.any,
