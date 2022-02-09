@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import {Navbar, Nav, Form, Card, CardGroup} from 'react-bootstrap';
 
 // Import React components
+import { NavbarView } from '../navbar-view/navbar-view';
 import { RegistrationView } from '../registration-view/registration-view';
 import { LoginView } from '../login-view/login-view';
 import { MovieCard } from '../movie-card/movie-card';
