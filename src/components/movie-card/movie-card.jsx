@@ -12,18 +12,17 @@ import { Link } from "react-router-dom";
 
 export class MovieCard extends React.Component {
   render() {
-    const { movie, onMovieClick } = this.props;
-    
+    const { movie } = this.props;
+
     return (
       <Card>
-        <Card.Img variant="top" crossOrigin='anonymous' src={movie.ImagePath} />
-        <Card.Body>
-          <Card.Title>{movie.Title}</Card.Title>
-          <Card.Text>{movie.Description}</Card.Text>
-            <Link to={'/mymovies/${movie._id}'}>
-              <Button variant="link">Open</Button>
+        <Card.Img variant="top" crossOrigin='anonymous' src={movie.imagePath} />
+      <Card.Body>
+          <Card.Title>{movie.title}</Card.Title>
+          {/* <Card.Text>{movie.description}</Card.Text> */}
+            <Link to={`/mymovies/${movie._id}`}>
+              <Button variant="link" style={{ color: "white", backgroundColor: "grey" }} >Open</Button> {/* onClick={() => onMovieClick(movie)} */}
             </Link>
-          <Button onClick={() => onMovieClick(movie)} variant="link">Open</Button>
         </Card.Body>
       </Card>
     );
@@ -33,19 +32,19 @@ export class MovieCard extends React.Component {
 MovieCard.propTypes = {
   movie: PropTypes.shape({
     Actors: PropTypes.array.isRequired,
-    Title: PropTypes.string.isRequired,
-    Genre: PropTypes.shape({
-        Name: PropTypes.string.isRequired,
-        Description: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    genre: PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
       }),
-    Director: PropTypes.shape({
-        Name: PropTypes.string.isRequired,
-        Bio: PropTypes.string.isRequired,
-        Birth: PropTypes.string.isRequired,
+    director: PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        bio: PropTypes.string.isRequired,
+        birth: PropTypes.string.isRequired,
       }),
-    Description: PropTypes.string.isRequired,
-    ImagePath: PropTypes.any.isRequired,
-    Featured: PropTypes.any.isRequired,
+    description: PropTypes.string.isRequired,
+    imagePath: PropTypes.any.isRequired,
+    featured: PropTypes.any.isRequired,
   }).isRequired,
-  onMovieClick: PropTypes.func.isRequired
+  onMovieClick: PropTypes.func,
 };
