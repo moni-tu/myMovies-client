@@ -3,7 +3,7 @@ import { Navbar, Container, Nav, Button, NavbarBrand } from 'react-bootstrap';
 import NavbarCollapse from 'react-bootstrap/esm/NavbarCollapse';
 import NavbarToggle from 'react-bootstrap/esm/NavbarToggle';
 
-export function Menubar({user}){ 
+export function NavbarView({user}){ 
 
     const onLoggedOut = () => {
         localStorage.clear();
