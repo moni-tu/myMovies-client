@@ -106,8 +106,8 @@ export class MainView extends React.Component {
           )}
         </Navbar> */}
         <Container/>
-        <NavbarView user={user}/>
-          <Row className="main-view justify-content-md-center">
+        <NavbarView/>
+          <Row >
           <Route exact path="/" render={() => {
             if (!user) return (
               <Col>
@@ -122,6 +122,17 @@ export class MainView extends React.Component {
                 <MovieCard movie={m} />
               </Col>
             ))
+          }}/>
+
+          <Route exact path= "/register" render= {() => {
+            if (user) {
+              return <Redirect to="/"/>;
+            }
+            return (
+              <Col>
+              <RegistrationView/>
+              </Col>
+            );
           }}/>
 
           <Route exact path="/mymovies/:movie_id" render={({ match, history }) => {
