@@ -6,13 +6,13 @@ import NavbarToggle from 'react-bootstrap/esm/NavbarToggle';
 export function Menubar({user}){ 
 
     return (
-        <Navbar>
-            <Container>
-                <NavbarBrand> MyMovies </NavbarBrand>
-                <NavbarToggle/>
-                <NavbarCollapse>
-                    <Nav>
-                        
+        <Navbar className="main-nav" sticky="top" expand="lg" variant="dark">
+            <Container fluid>
+                <NavbarBrand lassName="navbar-logo" href="/"> MyMovies </NavbarBrand>
+                <NavbarToggle aria-controls="responsive-navbar-nav"/>
+                <NavbarCollapse id="responsive-navbar-nav">
+                    <Nav className="ml-auto">                    
+
                     </Nav>
                 </NavbarCollapse>
 
