@@ -5,6 +5,11 @@ import NavbarToggle from 'react-bootstrap/esm/NavbarToggle';
 
 export function Menubar({user}){ 
 
+    const onLoggedOut = () => {
+        localStorage.clear();
+        window.open('/', '_self');
+    };
+
     const isAuth = () => {
         if (typeof window == "undefined") {
             return false;
