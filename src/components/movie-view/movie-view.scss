@@ -12,7 +12,7 @@ body {
 }
 
 p {
-  color: rgb(102, 102, 246);
+  color: grey;
 }
 
 /* this is the button */
@@ -21,8 +21,7 @@ button {
   border: none;
   width: 100px;
   // these colours do not affect the button
-  background-color: #dfdfdf;
-  color: rgb(0, 0, 251);
+  background-color: black;
   font-size: 1.2rem;
   line-height: 1.8rem;
   cursor: pointer;
