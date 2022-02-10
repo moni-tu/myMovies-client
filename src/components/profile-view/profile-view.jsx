@@ -194,9 +194,9 @@ export class ProfileView extends React.Component {
         {/* Favorites Section*/}
         <Card bg="secondary" text="light" border="light" align="center" style={{ color: "white" }}>
           <Card.Title>{this.Username}'s Favorites:</Card.Title>
+          <Card.Img src= {movies.imagePath}></Card.Img>
           <Row>
             {/* Iterate over the FavoriteMoviesArray and create a MovieCard component for each one */}
-            {/* At this stage, I don't have a way to remove a Favorite movie from the ProfileView page. It must be done from the MovieView page, although I will likely change this in the future */}
             {Favorites.map(movie => (
               <Col md={4} key={movie._id} className="my-2">
                 <MovieCard movie={movie} />

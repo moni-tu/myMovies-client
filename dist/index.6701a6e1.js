@@ -42086,10 +42086,18 @@ class ProfileView extends _reactDefault.default.Component {
                                 "'s Favorites:"
                             ]
                         }),
-                        /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
+                        /*#__PURE__*/ _jsxRuntime.jsx(_cardDefault.default.Img, {
+                            src: movies.imagePath,
                             __source: {
                                 fileName: "src/components/profile-view/profile-view.jsx",
                                 lineNumber: 197
+                            },
+                            __self: this
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
+                            __source: {
+                                fileName: "src/components/profile-view/profile-view.jsx",
+                                lineNumber: 198
                             },
                             __self: this,
                             children: Favorites.map((movie)=>/*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
