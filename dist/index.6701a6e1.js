@@ -25120,14 +25120,13 @@ class MainView extends _reactDefault.default.Component {
                             path: "/",
                             render: ()=>{
                                 // if there is no user, Login view is rendered. if a user is logged in, its details are passed as a prop to LoginView
-                                if (!user) return;
-                                /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
+                                if (!user) return(/*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
                                     children: /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
                                         children: /*#__PURE__*/ _jsxRuntime.jsx(_loginView.LoginView, {
                                             onLoggedIn: (user1)=>this.onLoggedIn(user1)
                                         })
                                     })
-                                });
+                                }));
                                 // before the movies have been loaded
                                 if (movies.length === 0) return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
                                     className: "main-view"
@@ -25156,7 +25155,7 @@ class MainView extends _reactDefault.default.Component {
                             },
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 113
+                                lineNumber: 114
                             },
                             __self: this
                         }),
@@ -25183,7 +25182,7 @@ class MainView extends _reactDefault.default.Component {
                             },
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 121
+                                lineNumber: 122
                             },
                             __self: this
                         }),
@@ -25203,7 +25202,7 @@ class MainView extends _reactDefault.default.Component {
                             },
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 137
+                                lineNumber: 138
                             },
                             __self: this
                         }),
@@ -25234,7 +25233,7 @@ class MainView extends _reactDefault.default.Component {
                             },
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 155
+                                lineNumber: 156
                             },
                             __self: this
                         }),
@@ -25261,7 +25260,7 @@ class MainView extends _reactDefault.default.Component {
                             },
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 171
+                                lineNumber: 172
                             },
                             __self: this
                         }),
@@ -25287,7 +25286,7 @@ class MainView extends _reactDefault.default.Component {
                             },
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 187
+                                lineNumber: 188
                             },
                             __self: this
                         })
@@ -25296,7 +25295,7 @@ class MainView extends _reactDefault.default.Component {
                 /*#__PURE__*/ _jsxRuntime.jsx(_containerDefault.default, {
                     __source: {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 203
+                        lineNumber: 204
                     },
                     __self: this
                 })
@@ -40243,7 +40242,7 @@ function NavbarView({ user  }) {
                             isAuth() && /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
                                 variant: "link",
                                 onClick: ()=>{
-                                    this.onLoggedOut();
+                                    onLoggedOut();
                                 },
                                 __source: {
                                     fileName: "src/components/navbar-view/navbar-view.jsx",
@@ -40253,7 +40252,7 @@ function NavbarView({ user  }) {
                                 children: "Logout"
                             }),
                             !isAuth() && /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Nav.Link, {
-                                href: "/login",
+                                href: "/",
                                 __source: {
                                     fileName: "src/components/navbar-view/navbar-view.jsx",
                                     lineNumber: 40

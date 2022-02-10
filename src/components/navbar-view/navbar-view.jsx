@@ -33,11 +33,11 @@ export function NavbarView({user}){
                         )}
                         {isAuth() && (
                             <Button variant="link" onClick={() => {
-                                this.onLoggedOut()
+                                onLoggedOut()
                             }}>Logout</Button>
                         )}
                         {!isAuth() && (
-                            <Nav.Link href="/login">Login</Nav.Link>
+                            <Nav.Link href="/">Login</Nav.Link>
                         )}
                         {!isAuth() && (
                             <Nav.Link href="/register">Register</Nav.Link>
