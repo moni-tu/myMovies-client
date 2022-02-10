@@ -90,44 +90,25 @@ export class MainView extends React.Component {
      
     return (
       <Router>
-        {/* <Navbar bg="secondary" expand="lg" className="mb-4" sticky="top">
-          <Navbar.Brand className="ml-4">
-            <Link style={{ color: "white" }} to={'/'}>
-                Welcome to MyMovies
-            </Link>
-          </Navbar.Brand>
-          {user && (
-            <Navbar.Collapse className="justify-content-end">
-                <Link to={`/users/${user}`} className="mr-2">
-                    <Button variant="light" style={{ color: "white" }}>Profile for {user}</Button>
-                </Link>
-                <Button onClick={() => this.onLoggedOut()} variant="light" style={{ color: "white" }}>Logout</Button>
-            </Navbar.Collapse> 
-          )}
-        </Navbar> */}
         <Container/>
         <NavbarView/>
           <Row >
           <Route exact path="/" render={() => {
-            if (!user) return (
+            if (!user) return 
+            <Row>
               <Col>
                 <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
-              </Col>
-            );
-
-            if (movies.length === 0) return <div className="main-view" />;
-            
-            return movies.map(m => (
+              </Col> 
+            </Row>
+                 
+              return movies.map(m => (
               <Col md={3} key={m._id}>
                 <MovieCard movie={m} />
               </Col>
             ))
           }}/>
 
-          <Route exact path= "/register" render= {() => {
-            if (user) {
-              return <Redirect to="/"/>;
-            }
+          <Route path= "/register" render= {() => {  
             return (
               <Col>
               <RegistrationView/>
@@ -135,13 +116,49 @@ export class MainView extends React.Component {
             );
           }}/>
 
-          <Route exact path="/mymovies/:movie_id" render={({ match, history }) => {
-            if (!user) return (
+          <Route exact path= "/login" render= {() => {
+            if (!user) return 
+            <Row>
               <Col>
                 <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
+              </Col> 
+            </Row>
+              
+              if (movies.length === 0) return <div className="main-view"></div> 
+            return (
+              <Col>
+              <LoginView onLoggedIn={user => this.onLoggedIn(user)}/>
               </Col>
             );
-            if (movies.length === 0) return <div className="main-view" />;
+          }}/>
+
+          <Route path= {`/users/${user}`} render= {({match, history}) => {
+            if (!user) return <Redirect to="/"/>
+            return (
+              <Col>
+              <ProfileView movies={movies} user={user} onBackClick={()=> history.goBack()}/>
+              </Col>
+            );
+          }}/>
+
+          {/* <Route path= {`/user-update/${user}`} render= {({match, history}) => {
+            if (!user) return <Redirect to="/"/>
+            return (
+              <Col>
+              <UserUpdate user={user} onBackClick={()=> history.goBack()}/>
+              </Col>
+            );
+          }}/> */}
+
+          <Route exact path="/mymovies/:movie_id" render={({ match, history }) => {
+            if (!user) return 
+            <Row>
+              <Col>
+                <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
+              </Col> 
+            </Row>
+            
+            if (movies.length === 0) return <div className="main-view"/>;
               return (
                 <Col md={8}>
                 <MovieView movie={movies.find(m => m._id === match.params.movie_id)} user={user} onBackClick={() => history.goBack()} />
@@ -150,11 +167,12 @@ export class MainView extends React.Component {
           }}/>
 
           <Route exact path="/genre/:name" render={({ match, history }) => {
-            if (!user) return (
+            if (!user) { return (
               <Col>
                 <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
               </Col>
             );
+            }
             if (movies.length === 0) return <div className="main-view" />;
             return (
               <Col md={8}>
@@ -165,12 +183,13 @@ export class MainView extends React.Component {
           }/>
 
           <Route exact path="/director/:name" render={({ match }) => {
-            if (!user) return (
+            if (!user) { return (
               <Col>
                 <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
               </Col>
             );
-            if (movies.length === 0) return <div className="main-view" />;
+            }
+            if (movies.length === 0) return <div className="main-view"/>;
             return (
               <Col md={8}>
               <DirectorView Director={movies.find(m => m.director.name === match.params.name).director} />
