@@ -41665,22 +41665,22 @@ class ProfileView extends _reactDefault.default.Component {
     constructor(props){
         super(props);
         this.state = {
-            username: null,
-            password: null,
-            email: null,
-            birthday: null,
-            favorites: []
+            Username: null,
+            Password: null,
+            Email: null,
+            Birthday: null,
+            Favorites: []
         };
     }
     componentDidMount() {
         const accessToken = localStorage.getItem('token');
-        this.getUser(accessToken);
+        this.getUserDetails(accessToken);
     }
     onRemoveFavorite = (e, movie)=>{
-        const username = localStorage.getItem('user');
-        console.log(username);
+        const Username = localStorage.getItem('user');
+        console.log(Username);
         const token = localStorage.getItem('token');
-        _axiosDefault.default.delete(`https://mymovie-backend-api.herokuapp.com/users/${username}/movies/${movie._id}`, {
+        _axiosDefault.default.delete(`https://mymovie-backend-api.herokuapp.com/users/${Username}/mymovies/${movie._id}`, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -41701,18 +41701,18 @@ class ProfileView extends _reactDefault.default.Component {
         window.open('/', '_self');
     }
     getUserDetails = (token)=>{
-        const username = localStorage.getItem('user');
-        _axiosDefault.default.get(`https://mymovie-backend-api.herokuapp.com/users/${username}`, {
+        const Username = localStorage.getItem('user');
+        _axiosDefault.default.get(`https://mymovie-backend-api.herokuapp.com/users/${Username}`, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
         }).then((response)=>{
             this.setState({
-                username: response.data.username,
-                password: response.data.password,
-                email: response.data.email,
-                birthday: response.data.birthday,
-                favorites: response.data.favoriteMovies
+                Username: response.data.Username,
+                Password: response.data.Password,
+                Email: response.data.Email,
+                Birthday: response.data.Birthday,
+                Favorites: response.data.Favorites
             });
         }).catch(function(error) {
             console.log(error.response.data);
@@ -41720,13 +41720,13 @@ class ProfileView extends _reactDefault.default.Component {
     };
     editUser = (e)=>{
         e.preventDefault();
-        const username = localStorage.getItem('user');
+        const Username = localStorage.getItem('user');
         const token = localStorage.getItem('token');
-        _axiosDefault.default.put('https://mymovie-backend-api.herokuapp.com/users/${username}', {
-            username: this.state.username,
-            password: this.state.password,
-            email: this.state.email,
-            birthday: this.state.birthdate
+        _axiosDefault.default.put(`https://mymovie-backend-api.herokuapp.com/users/${Username}`, {
+            Username: this.state.Username,
+            Password: this.state.Password,
+            Email: this.state.Email,
+            Birthday: this.state.Birthday
         }, {
             headers: {
                 Authorization: `Bearer ${token}`
@@ -41734,21 +41734,21 @@ class ProfileView extends _reactDefault.default.Component {
         }).then((response)=>{
             const data = response.data;
             // Update localStorage with the new username
-            localStorage.setItem('user', data.username);
+            localStorage.setItem('user', data.Username);
             console.log(data);
-            console.log(this.state.username);
+            console.log(this.state.Username);
             alert('Profile is updated!');
             // Reload the page to make sure that the user can immediately start using their new details
-            window.open(`/users/${data.username}`, '_self');
+            window.open(`/users/${data.Username}`, '_self');
         }).catch((error)=>{
             console.log('error updating user details');
         });
     };
     // Function for deleting user details. A delete request is made ot the API for this user
     deleteUserDetails() {
-        const username = localStorage.getItem('user');
+        const Username = localStorage.getItem('user');
         const token = localStorage.getItem('token');
-        _axiosDefault.default.delete('https://mymovie-backend-api.herokuapp.com/users/${Username}', {
+        _axiosDefault.default.delete(`https://mymovie-backend-api.herokuapp.com/users/${Username}`, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -41764,8 +41764,8 @@ class ProfileView extends _reactDefault.default.Component {
     }
     // Render function to display items on the DOM
     render() {
-        const { movies  } = this.props;
-        const { favorites , username , email , birthday  } = this.state;
+        const { movies , onBackClick  } = this.props;
+        const { Favorites , Username , Email , Birthday  } = this.state;
         return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
             className: "profile_view",
             __source: {
@@ -41799,7 +41799,7 @@ class ProfileView extends _reactDefault.default.Component {
                                 __self: this,
                                 children: [
                                     "Profile of ",
-                                    this.state.userDetails.Username
+                                    this.state.Username
                                 ]
                             }),
                             /*#__PURE__*/ _jsxRuntime.jsxs(_cardDefault.default.Text, {
@@ -41818,10 +41818,10 @@ class ProfileView extends _reactDefault.default.Component {
                                         __self: this,
                                         children: "Email: "
                                     }),
-                                    this.state.userDetails.Email
+                                    this.state.Email
                                 ]
                             }),
-                            this.state.userDetails.Birthdate && /*#__PURE__*/ _jsxRuntime.jsxs(_cardDefault.default.Text, {
+                            this.Birthday && /*#__PURE__*/ _jsxRuntime.jsxs(_cardDefault.default.Text, {
                                 __source: {
                                     fileName: "src/components/profile-view/profile-view.jsx",
                                     lineNumber: 144
@@ -41837,7 +41837,7 @@ class ProfileView extends _reactDefault.default.Component {
                                         __self: this,
                                         children: "Date of Birth: "
                                     }),
-                                    Intl.DateTimeFormat().format(new Date(this.state.userDetails.Birthday))
+                                    Intl.DateTimeFormat().format(new Date(this.state.Birthday))
                                 ]
                             })
                         ]
@@ -42014,6 +42014,7 @@ class ProfileView extends _reactDefault.default.Component {
                                     /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
                                         variant: "light",
                                         style: {
+                                            backgroundColor: "grey",
                                             color: "white"
                                         },
                                         type: "submit",
@@ -42030,6 +42031,7 @@ class ProfileView extends _reactDefault.default.Component {
                                         ,
                                         variant: "light",
                                         style: {
+                                            backgroundColor: "grey",
                                             color: "white"
                                         },
                                         __source: {
@@ -42043,6 +42045,7 @@ class ProfileView extends _reactDefault.default.Component {
                                         className: "float-right",
                                         variant: "light",
                                         style: {
+                                            backgroundColor: "grey",
                                             color: "white"
                                         },
                                         onClick: this.showModal,
@@ -42079,7 +42082,7 @@ class ProfileView extends _reactDefault.default.Component {
                             },
                             __self: this,
                             children: [
-                                this.state.userDetails.Username,
+                                this.Username,
                                 "'s Favorites:"
                             ]
                         }),
@@ -42089,7 +42092,7 @@ class ProfileView extends _reactDefault.default.Component {
                                 lineNumber: 197
                             },
                             __self: this,
-                            children: FavoriteMoviesArray.map((movie)=>/*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                            children: Favorites.map((movie)=>/*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
                                     md: 4,
                                     className: "my-2",
                                     __source: {
@@ -42116,21 +42119,22 @@ class ProfileView extends _reactDefault.default.Component {
 }
 // Set the PropTypes for the ProfileView
 ProfileView.propTypes = {
-    movie: _propTypesDefault.default.arrayOf(_propTypesDefault.default.shape({
+    movies: _propTypesDefault.default.arrayOf(_propTypesDefault.default.shape({
+        Actors: _propTypesDefault.default.array.isRequired,
         title: _propTypesDefault.default.string.isRequired,
-        description: _propTypesDefault.default.string.isRequired,
         genre: _propTypesDefault.default.shape({
-            name: _propTypesDefault.default.string,
-            description: _propTypesDefault.default.string
+            name: _propTypesDefault.default.string.isRequired,
+            description: _propTypesDefault.default.string.isRequired
         }),
         director: _propTypesDefault.default.shape({
-            name: _propTypesDefault.default.string,
-            bio: _propTypesDefault.default.string,
-            birthday: _propTypesDefault.default.string
+            name: _propTypesDefault.default.string.isRequired,
+            bio: _propTypesDefault.default.string.isRequired,
+            birth: _propTypesDefault.default.string.isRequired
         }),
-        imagePath: _propTypesDefault.default.string,
-        featured: _propTypesDefault.default.any
-    })),
+        description: _propTypesDefault.default.string.isRequired,
+        imagePath: _propTypesDefault.default.any.isRequired,
+        featured: _propTypesDefault.default.any.isRequired
+    })).isRequired,
     onBackClick: _propTypesDefault.default.func.isRequired
 };
 

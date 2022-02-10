@@ -19,26 +19,26 @@ export class ProfileView extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: null,
-      password: null,
-      email: null,
-      birthday: null,
-      favorites: [],
+      Username: null,
+      Password: null,
+      Email: null,
+      Birthday: null,
+      Favorites: [],
     };
   }
 
   componentDidMount() {
     const accessToken = localStorage.getItem('token');
-    this.getUser(accessToken);
+    this.getUserDetails(accessToken);
   }
 
   onRemoveFavorite = (e, movie) => {
-    const username = localStorage.getItem('user');
-    console.log(username);
+    const Username = localStorage.getItem('user');
+    console.log(Username);
     const token = localStorage.getItem('token');
     axios
       .delete(
-        `https://mymovie-backend-api.herokuapp.com/users/${username}/movies/${movie._id}`,
+        `https://mymovie-backend-api.herokuapp.com/users/${Username}/mymovies/${movie._id}`,
         { headers: { Authorization: `Bearer ${token}` } }
       )
       .then((response) => {
@@ -61,18 +61,18 @@ export class ProfileView extends React.Component {
   };
 
   getUserDetails = (token) => {
-    const username = localStorage.getItem('user');
+    const Username = localStorage.getItem('user');
     axios
-      .get(`https://mymovie-backend-api.herokuapp.com/users/${username}`, {
-        headers: { Authorization: `Bearer ${token}` },
+      .get(`https://mymovie-backend-api.herokuapp.com/users/${Username}`, {
+        headers: { Authorization: `Bearer ${token}` },        
       })
-      .then((response) => {
+        .then((response) => {
         this.setState({
-          username: response.data.username,
-          password: response.data.password,
-          email: response.data.email,
-          birthday: response.data.birthday,
-          favorites: response.data.favoriteMovies,
+          Username: response.data.Username,
+          Password: response.data.Password,
+          Email: response.data.Email,
+          Birthday: response.data.Birthday,
+          Favorites: response.data.Favorites,
         });
       })
       .catch(function (error) {
@@ -82,24 +82,24 @@ export class ProfileView extends React.Component {
 
   editUser = (e) => {
     e.preventDefault();
-    const username = localStorage.getItem('user');
+    const Username = localStorage.getItem('user');
     const token = localStorage.getItem('token');
-    axios.put('https://mymovie-backend-api.herokuapp.com/users/${username}', {
-      username: this.state.username,
-      password: this.state.password,
-      email: this.state.email,
-      birthday: this.state.birthdate
+    axios.put(`https://mymovie-backend-api.herokuapp.com/users/${Username}`, {
+      Username: this.state.Username,
+      Password: this.state.Password,
+      Email: this.state.Email,
+      Birthday: this.state.Birthday
     }, {
       headers: { Authorization: `Bearer ${token}` }
     }).then(response => {
       const data = response.data;
       // Update localStorage with the new username
-      localStorage.setItem('user', data.username);
+      localStorage.setItem('user', data.Username);
       console.log(data);
-      console.log(this.state.username);
+      console.log(this.state.Username);
       alert('Profile is updated!');
       // Reload the page to make sure that the user can immediately start using their new details
-      window.open(`/users/${data.username}`, '_self');
+      window.open(`/users/${data.Username}`, '_self');
     }).catch(error => {
       console.log('error updating user details')
     });
@@ -108,11 +108,11 @@ export class ProfileView extends React.Component {
 
   // Function for deleting user details. A delete request is made ot the API for this user
   deleteUserDetails() {
-    const username = localStorage.getItem('user');
+    const Username = localStorage.getItem('user');
     const token = localStorage.getItem('token');
 
     axios
-      .delete('https://mymovie-backend-api.herokuapp.com/users/${Username}', {
+      .delete(`https://mymovie-backend-api.herokuapp.com/users/${Username}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => {
@@ -129,19 +129,19 @@ export class ProfileView extends React.Component {
 
   // Render function to display items on the DOM
   render() {
-    const { movies } = this.props;
-    const { favorites, username, email, birthday } = this.state;
+    const { movies, onBackClick } = this.props;
+    const { Favorites, Username, Email, Birthday } = this.state;
 
     return (
       <div className="profile_view">
         {/* Card for displaying current user details */}
         <Card bg="secondary" text="light" border="light">
           <Card.Body>
-            <Card.Title className="text-center">Profile of {this.state.userDetails.Username}</Card.Title>
-            <Card.Text><span className="profile_heading">Email: </span>{this.state.userDetails.Email}</Card.Text>
+            <Card.Title className="text-center">Profile of {this.state.Username}</Card.Title>
+            <Card.Text><span className="profile_heading">Email: </span>{this.state.Email}</Card.Text>
             {/* Only display birthday section if a user has filled that out (since it's the only optional section) */}
-            {this.state.userDetails.Birthdate && (
-              <Card.Text><span className="profile_heading">Date of Birth: </span>{Intl.DateTimeFormat().format(new Date(this.state.userDetails.Birthday))}</Card.Text>
+            {this.Birthday && (
+              <Card.Text><span className="profile_heading">Date of Birth: </span>{Intl.DateTimeFormat().format(new Date(this.state.Birthday))}</Card.Text>
             )}
           </Card.Body>
         </Card>
@@ -178,13 +178,13 @@ export class ProfileView extends React.Component {
               </Form.Group>
 
               {/* Button for updating the details which will call updateUserDetails (defined above) */}
-              <Button variant="light" style={{ color: "white" }} type="submit" onClick={this.updateUserDetails}>
+              <Button variant="light" style={{ backgroundColor: "grey", color: "white" }} type="submit" onClick={this.updateUserDetails}>
                 Update User Details
               </Button>
               {/* Button to go back to the previous view */}
-              <Button onClick={() => onBackClick(null)} variant="light" style={{ color: "white" }}>Back</Button>
+              <Button onClick={() => onBackClick(null)} variant="light" style={{ backgroundColor: "grey", color: "white" }}>Back</Button>
               {/* Button for deleting the user. This will first open the Modal defined above */}
-              <Button className="float-right" variant="light" style={{ color: "white" }} onClick={this.showModal}>
+              <Button className="float-right" variant="light" style={{ backgroundColor: "grey", color: "white" }} onClick={this.showModal}>
                 Delete User Profile
               </Button>
             </Form>
@@ -193,11 +193,11 @@ export class ProfileView extends React.Component {
 
         {/* Favorites Section*/}
         <Card bg="secondary" text="light" border="light" align="center" style={{ color: "white" }}>
-          <Card.Title>{this.state.userDetails.Username}'s Favorites:</Card.Title>
+          <Card.Title>{this.Username}'s Favorites:</Card.Title>
           <Row>
             {/* Iterate over the FavoriteMoviesArray and create a MovieCard component for each one */}
             {/* At this stage, I don't have a way to remove a Favorite movie from the ProfileView page. It must be done from the MovieView page, although I will likely change this in the future */}
-            {FavoriteMoviesArray.map(movie => (
+            {Favorites.map(movie => (
               <Col md={4} key={movie._id} className="my-2">
                 <MovieCard movie={movie} />
               </Col>))}
@@ -210,24 +210,24 @@ export class ProfileView extends React.Component {
 
 // Set the PropTypes for the ProfileView
 ProfileView.propTypes = {
-  movie: PropTypes.arrayOf(
+  movies: PropTypes.arrayOf(
     PropTypes.shape({
+      Actors: PropTypes.array.isRequired,
       title: PropTypes.string.isRequired,
-      description: PropTypes.string.isRequired,
       genre: PropTypes.shape({
-        name: PropTypes.string,
-        description: PropTypes.string
+        name: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
       }),
       director: PropTypes.shape({
-        name: PropTypes.string,
-        bio: PropTypes.string,
-        birthday: PropTypes.string,
+        name: PropTypes.string.isRequired,
+        bio: PropTypes.string.isRequired,
+        birth: PropTypes.string.isRequired,
       }),
-      imagePath: PropTypes.string,
-      featured: PropTypes.any,
-    })
-  ),
-  onBackClick: PropTypes.func.isRequired
+      description: PropTypes.string.isRequired,
+      imagePath: PropTypes.any.isRequired,
+      featured: PropTypes.any.isRequired,
+    })).isRequired,
+  onBackClick: PropTypes.func.isRequired,
 };
 
 
