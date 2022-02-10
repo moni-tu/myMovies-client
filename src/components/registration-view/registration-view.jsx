@@ -18,11 +18,9 @@ export function RegistrationView(props) {
     const [ Email, setEmail ] = useState('');
     const [ Birthday, setBirthday] = useState('');
     const [ values, setValues] = useState({
-      NameErr: '',
       UsernameErr: '',
       PasswordnameErr: '',
       EmailErr: '',
-      BirthdayErr: '',
     })
 
     const validate = () => {
@@ -49,10 +47,6 @@ export function RegistrationView(props) {
         setValues({...values, emailErr: 'Please use valid email'})
         isReq = false;
       }
-      if(!birthday){
-        setBirthdayErr('Please enter birthday')
-        isReq = false;
-      }
       return isReq;
   }
 
@@ -67,6 +61,7 @@ export function RegistrationView(props) {
             Password: Password,
             Email: Email,
             Birthday: Birthday,
+            Favorites: []
           })
           .then((response) => {
             const data = response.data;
@@ -88,19 +83,19 @@ export function RegistrationView(props) {
         <Form>
           <h3>Sign Up</h3>
           <p></p>
-          <Form.Group controlId='formUsername' className='reg-form-inputs'>
+          <Form.Group controlId='formUsername'>
             <Form.Label> Username:</Form.Label>
                 <Form.Control type="text" value={Username} onChange={e => setUsername(e.target.value)} />
                 {values.UsernameErr&& <p>{values.UsernameErr}</p>}
           </Form.Group>
-          <Form.Group controlId='formPassword' className='reg-form-inputs'>
+          <Form.Group controlId='formPassword'>
             <Form.Label> Password:</Form.Label>                
                 <Form.Control type="password" value={Password} onChange={e => setPassword(e.target.value)} />
                 {values.PasswordErr&& <p>{values.PasswordErr}</p>}
           </Form.Group>
-          <Form.Group controlId='formEmail' className='reg-form-inputs'>
+          <Form.Group controlId='formEmail'>
             <Form.Label> Email:</Form.Label>
-                <Form.Control type="email" value={email} onChange={e => setEmail(e.target.value)} />
+                <Form.Control type="email" value={Email} onChange={e => setEmail(e.target.value)} />
                 {values.EmailErr&& <p>{values.EmailErr}</p>}
           </Form.Group>
           <Button type="submit" onClick={handleSubmit}>Submit</Button>
