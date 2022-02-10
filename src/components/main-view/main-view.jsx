@@ -90,17 +90,19 @@ export class MainView extends React.Component {
      
     return (
       <Router>
-        <Container/>
-        <NavbarView/>
-          <Row >
+        <NavbarView user= { user }/>
+        <Container/>        
+          <Row className='main-view justify-content-md-center' >
           <Route exact path="/" render={() => {
+            // if there is no user, Login view is rendered. if a user is logged in, its details are passed as a prop to LoginView
             if (!user) return 
             <Row>
               <Col>
                 <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
               </Col> 
             </Row>
-                 
+            // before the movies have been loaded
+            if (movies.length === 0) return <div className="main-view"></div>   
               return movies.map(m => (
               <Col md={3} key={m._id}>
                 <MovieCard movie={m} />
