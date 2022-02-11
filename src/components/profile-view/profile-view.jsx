@@ -130,18 +130,18 @@ export class ProfileView extends React.Component {
   // Render function to display items on the DOM
   render() {
     const { movies, onBackClick } = this.props;
-    const { Favorites, Username, Email, Birthday } = this.state;
+    const { Favorites, Username, Email, Birthday, Password } = this.state;
 
     return (
       <div className="profile_view">
         {/* Card for displaying current user details */}
         <Card bg="secondary" text="light" border="light">
           <Card.Body>
-            <Card.Title className="text-center">Profile of {this.state.Username}</Card.Title>
-            <Card.Text><span className="profile_heading">Email: </span>{this.state.Email}</Card.Text>
+            <Card.Title className="text-center">Profile of {Username}</Card.Title>
+            <Card.Text><span className="profile_heading">Email: </span>{Email}</Card.Text>
             {/* Only display birthday section if a user has filled that out (since it's the only optional section) */}
             {this.Birthday && (
-              <Card.Text><span className="profile_heading">Date of Birth: </span>{Intl.DateTimeFormat().format(new Date(this.state.Birthday))}</Card.Text>
+              <Card.Text><span className="profile_heading">Date of Birth: </span>{Intl.DateTimeFormat().format(new Date(Birthday))}</Card.Text>
             )}
           </Card.Body>
         </Card>

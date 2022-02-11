@@ -41765,7 +41765,7 @@ class ProfileView extends _reactDefault.default.Component {
     // Render function to display items on the DOM
     render() {
         const { movies , onBackClick  } = this.props;
-        const { Favorites , Username , Email , Birthday  } = this.state;
+        const { Favorites , Username , Email , Birthday , Password  } = this.state;
         return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
             className: "profile_view",
             __source: {
@@ -41799,7 +41799,7 @@ class ProfileView extends _reactDefault.default.Component {
                                 __self: this,
                                 children: [
                                     "Profile of ",
-                                    this.state.Username
+                                    Username
                                 ]
                             }),
                             /*#__PURE__*/ _jsxRuntime.jsxs(_cardDefault.default.Text, {
@@ -41818,7 +41818,7 @@ class ProfileView extends _reactDefault.default.Component {
                                         __self: this,
                                         children: "Email: "
                                     }),
-                                    this.state.Email
+                                    Email
                                 ]
                             }),
                             this.Birthday && /*#__PURE__*/ _jsxRuntime.jsxs(_cardDefault.default.Text, {
@@ -41837,7 +41837,7 @@ class ProfileView extends _reactDefault.default.Component {
                                         __self: this,
                                         children: "Date of Birth: "
                                     }),
-                                    Intl.DateTimeFormat().format(new Date(this.state.Birthday))
+                                    Intl.DateTimeFormat().format(new Date(Birthday))
                                 ]
                             })
                         ]
