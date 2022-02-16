@@ -40971,6 +40971,7 @@ class MovieCard extends _reactDefault.default.Component {
     render() {
         const { movie  } = this.props;
         return(/*#__PURE__*/ _jsxRuntime.jsxs(_cardDefault.default, {
+            border: "dark",
             __source: {
                 fileName: "src/components/movie-card/movie-card.jsx",
                 lineNumber: 18
@@ -41716,6 +41717,7 @@ class ProfileView extends _reactDefault.default.Component {
                         children: [
                             /*#__PURE__*/ _jsxRuntime.jsxs(_cardDefault.default.Title, {
                                 className: "text-center",
+                                as: "h3",
                                 __source: {
                                     fileName: "src/components/profile-view/profile-view.jsx",
                                     lineNumber: 142
@@ -41781,6 +41783,7 @@ class ProfileView extends _reactDefault.default.Component {
                         __self: this,
                         children: [
                             /*#__PURE__*/ _jsxRuntime.jsx(_cardDefault.default.Title, {
+                                as: "h3",
                                 __source: {
                                     fileName: "src/components/profile-view/profile-view.jsx",
                                     lineNumber: 154
@@ -41938,7 +41941,7 @@ class ProfileView extends _reactDefault.default.Component {
                                     /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
                                         variant: "light",
                                         style: {
-                                            backgroundColor: "grey",
+                                            backgroundColor: "blue",
                                             color: "white"
                                         },
                                         type: "submit",
@@ -41969,7 +41972,7 @@ class ProfileView extends _reactDefault.default.Component {
                                         className: "float-right",
                                         variant: "light",
                                         style: {
-                                            backgroundColor: "grey",
+                                            backgroundColor: "red",
                                             color: "white"
                                         },
                                         onClick: this.showModal,
@@ -41999,16 +42002,14 @@ class ProfileView extends _reactDefault.default.Component {
                     },
                     __self: this,
                     children: [
-                        /*#__PURE__*/ _jsxRuntime.jsxs(_cardDefault.default.Title, {
+                        /*#__PURE__*/ _jsxRuntime.jsx(_cardDefault.default.Title, {
+                            as: "h3",
                             __source: {
                                 fileName: "src/components/profile-view/profile-view.jsx",
                                 lineNumber: 198
                             },
                             __self: this,
-                            children: [
-                                Username,
-                                "'s Favorites:"
-                            ]
+                            children: " Favorite Movies:"
                         }),
                         /*#__PURE__*/ _jsxRuntime.jsxs(_cardDefault.default.Body, {
                             __source: {

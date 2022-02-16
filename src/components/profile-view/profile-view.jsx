@@ -139,7 +139,7 @@ onRemoveFavorite = (e, movie) => {
         {/* Card for displaying current user details */}
         <Card bg="secondary" text="light" border="light">
           <Card.Body>
-            <Card.Title className="text-center">Profile of {Username}</Card.Title>
+            <Card.Title className="text-center" as= "h3">Profile of {Username}</Card.Title>
             <Card.Text><span className="profile_heading">Email: </span>{Email}</Card.Text>
             {/* Only display birthday section if a user has filled that out (since it's the only optional section) */}
             {this.Birthday && (
@@ -151,7 +151,7 @@ onRemoveFavorite = (e, movie) => {
         {/* Card for displaying the form which will be used to update user details */}
         <Card>
           <Card.Body>
-            <Card.Title>Update Profile</Card.Title>
+            <Card.Title as= "h3">Update Profile</Card.Title>
             {/* noValidate prevents default HTML5 validation. validated is then used as part of Bootstraps validation process */}
             <Form noValidate validated={this.state.validated}>
               <Form.Group>
@@ -180,13 +180,13 @@ onRemoveFavorite = (e, movie) => {
               </Form.Group>
 
               {/* Button for updating the details which will call updateUserDetails (defined above) */}
-              <Button variant="light" style={{ backgroundColor: "grey", color: "white" }} type="submit" onClick={this.updateUserDetails}>
+              <Button variant="light" style={{ backgroundColor: "blue", color: "white" }} type="submit" onClick={this.updateUserDetails}>
                 Update User Details
               </Button>
               {/* Button to go back to the previous view */}
               <Button onClick={() => onBackClick(null)} variant="light" style={{ backgroundColor: "grey", color: "white" }}>Back</Button>
               {/* Button for deleting the user. This will first open the Modal defined above */}
-              <Button className="float-right" variant="light" style={{ backgroundColor: "grey", color: "white" }} onClick={this.showModal}>
+              <Button className="float-right" variant="light" style={{ backgroundColor: "red", color: "white" }} onClick={this.showModal}>
                 Delete User Profile
               </Button>
             </Form>
@@ -195,7 +195,7 @@ onRemoveFavorite = (e, movie) => {
 
         {/* Favorites Section*/}
         <Card bg="secondary" text="light" border="light" align="center" style={{ color: "white" }}>
-          <Card.Title>{Username}'s Favorites:</Card.Title>
+          <Card.Title as= "h3"> Favorite Movies:</Card.Title>
           <Card.Body>
                 {Favorites.length === 0 && (
                   <div className="text-center">No Favorite Movies</div>
