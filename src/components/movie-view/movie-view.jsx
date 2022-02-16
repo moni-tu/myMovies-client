@@ -14,19 +14,30 @@ import Col from 'react-bootstrap/Col';
 import './movie-view.scss';
 
 export class MovieView extends React.Component {
-  /* constructor(props) {
+  constructor(props) {
     super(props);
-    // Create state variables that will be used to add/remove a movie from a users Favorites list
-    this.state = {
-      
-      FavoriteMovies: [],
-      userDetails: []
-  }
+  } 
 
-    // Bind these additional functions that will get called by onClick events to 'this'
-    //this.addFavorite = this.addFavorite.bind(this);
-    //this.removeFavorite = this.removeFavorite.bind(this);
-  } */
+  addFavoriteMovie() {
+    const token = localStorage.getItem('token');
+    const Username = localStorage.getItem('user');
+
+    axios
+      .post(
+        `https://mymovie-backend-api.herokuapp.com/users/${Username}/Favorites/${this.props.movie._id}`,
+        {},
+        {
+          headers: { Authorization: `Bearer ${token}` },
+          method: 'POST',
+        }
+      )
+      .then((response) => {
+        alert(`Added ${this.props.movie.title} to your favorites!`);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
 
   keypressCallback(event) {
     console.log(event.key);
@@ -60,15 +71,11 @@ export class MovieView extends React.Component {
                         <Card.Text className="director_heading"><span className="director_name">Director: </span><Link style={{ color: "white", backgroundColor:"blue" }} to={`/director/${movie.director.name}`}>{movie.director.name}</Link></Card.Text>
                         )}
                         <Button onClick={() => onBackClick(null)} variant="light" style={{ color: "white", backgroundColor: "grey" }} className = "button">Back</Button>
-                        {/* {isFavoriteNew ? (
-                            <Button className="float-right" variant="light" style={{ color: "white" }} onClick={this.removeFavorite}>
-                                Remove from Favorites
-                            </Button>
-                        ) : (
-                            <Button className="float-right" variant="light" style={{ color: "white" }} onClick={this.addFavorite}>
-                                Add to Favorites
-                            </Button>
-                        )} */}
+                    
+                        <Button className="btn-outline-primary" variant="light" style={{ color: "white", backgroundColor:"green " }} onClick={(e) => this.addFavoriteMovie(e, movie)}>
+                            Add to Favorites
+                        </Button>
+                        
                         
                     </Col>
                 </Row>
