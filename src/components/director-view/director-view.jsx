@@ -20,6 +20,20 @@ export class DirectorView extends React.Component {
                         <Card bg="secondary" text="light" border="light" align="center">                            
                             <Card.Body>
                             <Card.Title>Director</Card.Title>
+                                <Route exact path="/director/:name" render={({ match, history }) => {
+                                    if (!user) { return (
+                                    <Col>
+                                    <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
+                                    </Col>
+                                    );
+                                    }
+                                    if (movies.length === 0) return <div className="main-view"/>;
+                                    return (
+                                    <Col md={8}>
+                                    <DirectorView movie={movies.find(m => m.director.name === match.params.name)} onBackClick={() => history.goBack()} />
+                                    </Col>
+                                    )
+                                }}/>
                                 <div className="movie-director">
                                 <span className="label">Name: </span>
                                 <span className="value">{director.name}</span>
