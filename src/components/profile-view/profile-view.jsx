@@ -32,25 +32,6 @@ export class ProfileView extends React.Component {
     this.getUserDetails(accessToken);
   }
 
-  onRemoveFavorite = (e, movie) => {
-    const Username = localStorage.getItem('user');
-    console.log(Username);
-    const token = localStorage.getItem('token');
-    axios
-      .delete(
-        `https://mymovie-backend-api.herokuapp.com/users/${Username}/mymovies/${movie._id}`,
-        { headers: { Authorization: `Bearer ${token}` } }
-      )
-      .then((response) => {
-        console.log(response);
-        alert(`${movie.title} was removed from your favorites.`);
-        this.componentDidMount();
-      })
-      .catch(function (error) {
-        console.log(error.response.data);
-      });
-  };
-
   onLoggedOut() {
     localStorage.removeItem('token');
     localStorage.removeItem('user');
@@ -127,6 +108,27 @@ export class ProfileView extends React.Component {
       });
   };
 
+// Function for removing this movie from a users Favorites list. Makes a delete request to the server using information passed in through the props
+onRemoveFavorite = (e, movie) => {
+  const Username = localStorage.getItem('user');
+  console.log(Username);
+  const token = localStorage.getItem('token');
+  axios
+    .delete(
+      `https://mymovie-backend-api.herokuapp.com/users/${Username}/favorites/${movie._id}`,
+      { headers: { Authorization: `Bearer ${token}` } }
+    )
+    .then((response) => {
+      console.log(response);
+      alert(`${movie.title} was removed from your favorites.`);
+      this.componentDidMount();
+    })
+    .catch(function (error) {
+      console.log(error.response.data);
+    });
+};
+
+
   // Render function to display items on the DOM
   render() {
     const { movies, onBackClick } = this.props;
@@ -193,15 +195,50 @@ export class ProfileView extends React.Component {
 
         {/* Favorites Section*/}
         <Card bg="secondary" text="light" border="light" align="center" style={{ color: "white" }}>
-          <Card.Title>{this.Username}'s Favorites:</Card.Title>
-          <Card.Img src= {movies.imagePath}></Card.Img>
-          <Row>
-            {/* Iterate over the FavoriteMoviesArray and create a MovieCard component for each one */}
+          <Card.Title>{Username}'s Favorites:</Card.Title>
+          <Card.Body>
+                {Favorites.length === 0 && (
+                  <div className="text-center">No Favorite Movies</div>
+                )}
+                {Favorites.length > 0 &&
+                  movies.map((movie) => {
+                    if (
+                      movie._id ===
+                      Favorites.find((fav) => fav === movie._id)
+                    ) {
+                      return (
+                        <Container className="card-holder" key={movie._id}>
+                          <Card className="favorite-movie">
+                            <Card.Img crossOrigin='anonymous'
+                              className="fav-poster"
+                              variant="top"
+                              src={movie.imagePath}
+                            />
+                            <Card.Body className="favorite-movie-body">
+                              <Card.Title className="movie-title">
+                                {movie.title}
+                              </Card.Title>
+                              <Button
+                                size="sm"
+                                variant="danger"
+                                value={movie._id}
+                                onClick={(e) => this.onRemoveFavorite(e, movie)}
+                              >
+                                Remove
+                              </Button>
+                            </Card.Body>
+                          </Card>
+                        </Container>
+                      );
+                    }
+                  })}
+              </Card.Body>
+          {/* <Row>            
             {Favorites.map(movie => (
               <Col md={4} key={movie._id} className="my-2">
                 <MovieCard movie={movie} />
               </Col>))}
-          </Row>
+          </Row> */}
         </Card>
       </div>
     );
