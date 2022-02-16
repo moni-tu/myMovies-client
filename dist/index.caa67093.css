@@ -168,7 +168,9 @@ button {
   line-height: 1.8rem;
   cursor: pointer;
 }
-
+card-header {
+  color: blue;
+}
 
 
 * {
