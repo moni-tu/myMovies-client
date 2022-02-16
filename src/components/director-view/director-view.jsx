@@ -27,21 +27,13 @@ export class DirectorView extends React.Component {
         return (
             <Router>
                 
-                        <Card bg="secondary" text="light" border="light" align="center">                            
+                        <Card bg="secondary" text="light"  border="info" align="center">                            
                             <Card.Body>
-                            <Card.Title>Director</Card.Title>                            
-                                <div className="movie-director">
-                                <span className="label">Name: </span>
-                                <span className="value">{movie.director.name}</span>
-                                <div>
-                                    <span className="label">Bio: </span>
-                                    <span className="value">{movie.director.bio}</span>
-                                </div>
-                                <div>
-                                    <span className="label">Birth Date: </span>
-                                    <span className="value">{movie.director.birth}</span>
-                                </div>
-                                </div>                            
+                            <Card.Header className="card-header" as="h3">{movie.director.name} </Card.Header>                            
+                            <Card.Text>{movie.director.bio}</Card.Text>       
+                            <Card.Text> Birthday: {movie.director.birth}</Card.Text>                          
+                                
+                                                           
                                 <div className="backButton">
                                     <Button size="md" variant="light" style={{ color: "white", backgroundColor: "grey"}} onClick={() => { onBackClick(null); }}>Back</Button>
                                 </div>
