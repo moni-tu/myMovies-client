@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+// Import React components
+import { GenreView } from '../genre-view/genre-view';
+
 // Import React Bootstrap Components
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
@@ -14,7 +17,7 @@ import "./genre-view.scss";
 
 export class GenreView extends React.Component {
     render() {
-        const { genre, onBackClick, mymovies } = this.props;
+        const { genre, onBackClick, movie } = this.props;
    return (
       <>
         <Card bg="secondary" text="light" border="light" align="center">
@@ -29,7 +32,7 @@ export class GenreView extends React.Component {
                     <span className="value">{movie.genre.description}</span>
                 </div>
                 <Link to={`/`}>
-                <Button onClick={() => onBackClick(null)} variant="light" style={{ color: "white" }}>Back</Button>
+                <Button onClick={() => onBackClick(null)} variant="light" style={{ color: "white", backgroundColor: "grey" }}>Back</Button>
               </Link>
           </Card.Body>
         </Card>
