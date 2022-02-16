@@ -41166,6 +41166,7 @@ class MovieView extends _reactDefault.default.Component {
                             children: [
                                 /*#__PURE__*/ _jsxRuntime.jsx(_cardDefault.default.Title, {
                                     className: "text-center",
+                                    as: "h3",
                                     __source: {
                                         fileName: "src/components/movie-view/movie-view.jsx",
                                         lineNumber: 54
@@ -41200,7 +41201,8 @@ class MovieView extends _reactDefault.default.Component {
                                         }),
                                         /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
                                             style: {
-                                                color: "white"
+                                                color: "white",
+                                                backgroundColor: "blue"
                                             },
                                             to: `/genre/${movie.genre.name}`,
                                             __source: {
@@ -41231,7 +41233,8 @@ class MovieView extends _reactDefault.default.Component {
                                         }),
                                         /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
                                             style: {
-                                                color: "white"
+                                                color: "white",
+                                                backgroundColor: "blue"
                                             },
                                             to: `/director/${movie.director.name}`,
                                             __source: {

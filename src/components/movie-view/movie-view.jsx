@@ -51,13 +51,13 @@ export class MovieView extends React.Component {
                         <Card.Img variant="top" crossOrigin='anonymous' src={movie.imagePath} className="movie-poster" />
                     </Col>
                     <Col xs={12} md={6}>
-                        <Card.Title className="text-center">{movie.title}</Card.Title>
+                        <Card.Title className="text-center" as="h3">{movie.title}</Card.Title>
                         <Card.Text>{movie.description}</Card.Text>
                         {movie.genre.name && (
-                            <Card.Text className="genre_heading"><span className="genre_name">Genre: </span><Link style={{ color: "white" }} to={`/genre/${movie.genre.name}`}>{movie.genre.name}</Link></Card.Text>
+                        <Card.Text className="genre_heading"><span className="genre_name">Genre: </span><Link style={{ color: "white", backgroundColor:"blue"}} to={`/genre/${movie.genre.name}`}>{movie.genre.name}</Link></Card.Text>
                         )}
                         {movie.director.name && (
-                            <Card.Text className="director_heading"><span className="director_name">Director: </span><Link style={{ color: "white" }} to={`/director/${movie.director.name}`}>{movie.director.name}</Link></Card.Text>
+                        <Card.Text className="director_heading"><span className="director_name">Director: </span><Link style={{ color: "white", backgroundColor:"blue" }} to={`/director/${movie.director.name}`}>{movie.director.name}</Link></Card.Text>
                         )}
                         <Button onClick={() => onBackClick(null)} variant="light" style={{ color: "white", backgroundColor: "grey" }} className = "button">Back</Button>
                         {/* {isFavoriteNew ? (
