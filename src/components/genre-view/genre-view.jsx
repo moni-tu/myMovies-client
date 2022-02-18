@@ -22,10 +22,10 @@ export class GenreView extends React.Component {
       <>
         <Card bg="secondary" text="light" border="info" align="center">
             <Card.Body>
-                    <Card.Header className="card-header" as="h3">{movie.genre.name} </Card.Header>                                 
-                    <Card.Text>{movie.genre.description}</Card.Text>                                            
+                <Card.Header className="card-header" as="h3">{movie.genre.name} </Card.Header>                                 
+                <Card.Text>{movie.genre.description}</Card.Text>                                            
                 <Link to={`/`}>
-                    <Button onClick={() => onBackClick(null)} variant="light" style={{ color: "white", backgroundColor: "grey" }}>Back</Button>
+                    <Button className="backButton" onClick={() => onBackClick(null)} variant="light" style={{ color: "white", backgroundColor: "grey" }}>Back</Button>
                 </Link>
           </Card.Body>
         </Card>

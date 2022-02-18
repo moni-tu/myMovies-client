@@ -74,6 +74,12 @@ export class ProfileView extends React.Component {
       headers: { Authorization: `Bearer ${token}` }
     }).then(response => {
       const data = response.data;
+      this.setState({
+        Username: data.Username,
+        Password: data.Password,
+        Email: data.Email,
+        Birthday: data.Birthday,
+      });
       // Update localStorage with the new username
       localStorage.setItem('user', data.Username);
       console.log(data);
@@ -127,8 +133,7 @@ onRemoveFavorite = (e, movie) => {
       console.log(error.response.data);
     });
 };
-
-
+  
   // Render function to display items on the DOM
   render() {
     const { movies, onBackClick } = this.props;
@@ -156,9 +161,7 @@ onRemoveFavorite = (e, movie) => {
             <Form noValidate validated={this.state.validated}>
               <Form.Group>
                 <Form.Label>Username:</Form.Label>
-                {/* When the input is changed, call handleFieldChange to update the state variables as required */}
                 <Form.Control name="Username" type="text" onChange={this.handleFieldChange} required />
-                {/* Validation message which will only display on failed validation */}
                 <Form.Control.Feedback type="invalid">Please enter a username</Form.Control.Feedback>
               </Form.Group>
 
@@ -180,13 +183,13 @@ onRemoveFavorite = (e, movie) => {
               </Form.Group>
 
               {/* Button for updating the details which will call updateUserDetails (defined above) */}
-              <Button variant="light" style={{ backgroundColor: "blue", color: "white" }} type="submit" onClick={this.updateUserDetails}>
+              <Button variant="light" style={{ backgroundColor: "blue", color: "white" }} type="submit" onClick={this.editUser}>
                 Update User Details
               </Button>
               {/* Button to go back to the previous view */}
               <Button onClick={() => onBackClick(null)} variant="light" style={{ backgroundColor: "grey", color: "white" }}>Back</Button>
               {/* Button for deleting the user. This will first open the Modal defined above */}
-              <Button className="float-right" variant="light" style={{ backgroundColor: "red", color: "white" }} onClick={this.showModal}>
+              <Button className="float-right" variant="light" style={{ backgroundColor: "red", color: "white" }} onClick={() => this.deleteUserDetails()}>
                 Delete User Profile
               </Button>
             </Form>
