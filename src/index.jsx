@@ -2,8 +2,13 @@ import React from 'react';
 import axios from 'axios';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
-import {MainView} from './components/main-view/main-view';
 import Container from 'react-bootstrap/Container';
+// import React Redux components
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import moviesApp from './reducers/reducers';
+// import react components
+import {MainView} from './components/main-view/main-view';
 
 // Import statement to indicate that you need to bundle `./index.scss`
 import './index.scss';
@@ -12,9 +17,11 @@ import './index.scss';
 class myMoviesApplication extends React.Component {
   render() {
     return (
-      <Container>
-        <MainView/>
-      </Container>
+      <Provider store= {store}>
+        <Container>
+          <MainView/>
+        </Container>
+      </Provider>
     );
   }
 }
