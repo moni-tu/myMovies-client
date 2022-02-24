@@ -27629,6 +27629,11 @@ class MainView extends _reactDefault.default.Component {
         }));
     }
 }
+let mapStateToProps = (state)=>{
+    return {
+        movies: state.movies
+    };
+};
 
   $parcel$ReactRefreshHelpers$35bf.postlude(module);
 } finally {

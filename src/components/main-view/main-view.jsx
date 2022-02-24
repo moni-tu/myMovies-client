@@ -222,3 +222,7 @@ class MainView extends React.Component {
     );
   }
 }
+
+let mapStateToProps = state => {
+  return {movies: state.movies}
+}
