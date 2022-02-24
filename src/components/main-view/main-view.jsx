@@ -1,6 +1,18 @@
 import React from 'react';
 import axios from 'axios';
 
+//import Redux components
+import { connect } from 'react-redux';
+// #0
+import { setMovies } from '../../actions/actions';
+// we haven't written this one yet
+//import MoviesList from '../movies-list/movies-list';
+/* 
+  #1 The rest of components import statements but without the MovieCard's 
+  because it will be imported and used in the MoviesList component rather
+  than in here. 
+*/
+
 //import PropTypes from 'prop-types';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import {Navbar, Nav, Form, Card, CardGroup} from 'react-bootstrap';
