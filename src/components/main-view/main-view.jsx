@@ -38,7 +38,7 @@ import { Link } from 'react-router-dom';
 import './main-view.scss';
 
 
-export class MainView extends React.Component {
+class MainView extends React.Component {
   constructor(){
       // initialises the component's state
       super();
