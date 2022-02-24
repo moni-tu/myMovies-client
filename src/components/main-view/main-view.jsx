@@ -43,7 +43,7 @@ class MainView extends React.Component {
       // initialises the component's state
       super();
       this.state = {
-        movies: [],
+        //movies: [],
         selectedMovie: null, // is this needed?
         user: null
       }

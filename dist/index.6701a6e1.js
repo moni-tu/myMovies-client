@@ -27359,7 +27359,7 @@ class MainView extends _reactDefault.default.Component {
         // initialises the component's state
         super();
         this.state = {
-            movies: [],
+            //movies: [],
             selectedMovie: null,
             user: null
         };
