@@ -67,10 +67,11 @@ class MainView extends React.Component {
     })
     .then(response => {
       // Assign the result to the state
-      this.setState({
-        movies: response.data,
+      //this.setState({
+        //movies: response.data,
 
-      });
+      //});
+      this.props.setMovies(response.data);
     })
     .catch(function(error) {
       console.log(error);
