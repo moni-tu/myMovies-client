@@ -6,7 +6,6 @@ import { connect } from 'react-redux';
 // #0
 import { setMovies } from '../../actions/actions';
 // we haven't written this one yet
-//import MoviesList from '../movies-list/movies-list';
 /* 
   #1 The rest of components import statements but without the MovieCard's 
   because it will be imported and used in the MoviesList component rather
@@ -26,6 +25,7 @@ import { MovieView } from '../movie-view/movie-view';
 import { GenreView } from '../genre-view/genre-view';
 import { DirectorView } from '../director-view/director-view';
 import { ProfileView } from '../profile-view/profile-view';
+import MoviesList from '../movies-list/movies-list'
 
 // Import React Bootstrap components
 import Container from 'react-bootstrap/Container';

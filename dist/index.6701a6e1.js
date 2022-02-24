@@ -27329,7 +27329,6 @@ var _reactRedux = require("react-redux");
 // #0
 var _actions = require("../../actions/actions");
 // we haven't written this one yet
-//import MoviesList from '../movies-list/movies-list';
 /* 
   #1 The rest of components import statements but without the MovieCard's 
   because it will be imported and used in the MoviesList component rather
@@ -27346,6 +27345,8 @@ var _movieView = require("../movie-view/movie-view");
 var _genreView = require("../genre-view/genre-view");
 var _directorView = require("../director-view/director-view");
 var _profileView = require("../profile-view/profile-view");
+var _moviesList = require("../movies-list/movies-list");
+var _moviesListDefault = parcelHelpers.interopDefault(_moviesList);
 // Import React Bootstrap components
 var _container = require("react-bootstrap/Container");
 var _containerDefault = parcelHelpers.interopDefault(_container);
@@ -27458,7 +27459,7 @@ class MainView extends _reactDefault.default.Component {
                                 if (movies.length === 0) return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
                                     className: "main-view"
                                 }));
-                                return(/*#__PURE__*/ _jsxRuntime.jsx(MoviesList, {
+                                return(/*#__PURE__*/ _jsxRuntime.jsx(_moviesListDefault.default, {
                                     movies: movies
                                 }));
                             /* return movies.map(m => (
@@ -27645,7 +27646,7 @@ exports.default = _reactRedux.connect(mapStateToProps, {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","react-redux":"2L0if","../../actions/actions":"1Ttfj","react-router-dom":"cpyQW","react-bootstrap":"h2YVd","../navbar-view/navbar-view":"j0Dt2","../registration-view/registration-view":"aP2YV","../login-view/login-view":"054li","../movie-card/movie-card":"6EiBJ","../movie-view/movie-view":"ikZdr","../genre-view/genre-view":"8WCoL","../director-view/director-view":"ck15y","../profile-view/profile-view":"2E7Aw","react-bootstrap/Container":"2PRIq","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","react-bootstrap/Button":"9CzHT","./main-view.scss":"jyMAr","@parcel/transformer-js/src/esmodule-helpers.js":"kDBJf","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"3jiko"}],"cpyQW":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","react-redux":"2L0if","../../actions/actions":"1Ttfj","react-router-dom":"cpyQW","react-bootstrap":"h2YVd","../navbar-view/navbar-view":"j0Dt2","../registration-view/registration-view":"aP2YV","../login-view/login-view":"054li","../movie-card/movie-card":"6EiBJ","../movie-view/movie-view":"ikZdr","../genre-view/genre-view":"8WCoL","../director-view/director-view":"ck15y","../profile-view/profile-view":"2E7Aw","react-bootstrap/Container":"2PRIq","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","react-bootstrap/Button":"9CzHT","./main-view.scss":"jyMAr","@parcel/transformer-js/src/esmodule-helpers.js":"kDBJf","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"3jiko","../movies-list/movies-list":"1kGQ5"}],"cpyQW":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "MemoryRouter", ()=>_reactRouter.MemoryRouter
@@ -44195,6 +44196,69 @@ ProfileView.propTypes = {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","prop-types":"1tgq3","react-router-dom":"cpyQW","react-bootstrap/Form":"5ykgY","react-bootstrap/Button":"9CzHT","react-bootstrap/Container":"2PRIq","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","react-bootstrap/Card":"MoOk8","./profile-view.scss":"gb0ga","@parcel/transformer-js/src/esmodule-helpers.js":"kDBJf","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"3jiko"}],"gb0ga":[function() {},{}],"jyMAr":[function() {},{}],"jUTZ8":[function() {},{}]},["j0QZG","5mKa9","dLPEP"], "dLPEP", "parcelRequirebd5d")
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","prop-types":"1tgq3","react-router-dom":"cpyQW","react-bootstrap/Form":"5ykgY","react-bootstrap/Button":"9CzHT","react-bootstrap/Container":"2PRIq","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","react-bootstrap/Card":"MoOk8","./profile-view.scss":"gb0ga","@parcel/transformer-js/src/esmodule-helpers.js":"kDBJf","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"3jiko"}],"gb0ga":[function() {},{}],"jyMAr":[function() {},{}],"1kGQ5":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$2519 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$2519.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxRuntime = require("react/jsx-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _col = require("react-bootstrap/Col");
+var _colDefault = parcelHelpers.interopDefault(_col);
+var _reactRedux = require("react-redux");
+var _movieCard = require("../movie-card/movie-card");
+const mapStateToProps = (state)=>{
+    const { visibilityFilter  } = state;
+    return {
+        visibilityFilter
+    };
+};
+function MoviesList(props) {
+    const { movies , visibilityFilter  } = props;
+    let filteredMovies = movies;
+    if (visibilityFilter !== '') filteredMovies = movies.filter((m)=>m.Title.toLowerCase().includes(visibilityFilter.toLowerCase())
+    );
+    if (!movies) return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
+        className: "main-view",
+        __source: {
+            fileName: "src/components/movies-list/movies-list.jsx",
+            lineNumber: 19
+        },
+        __self: this
+    }));
+    return filteredMovies.map((m)=>/*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+            md: 3,
+            __source: {
+                fileName: "src/components/movies-list/movies-list.jsx",
+                lineNumber: 22
+            },
+            __self: this,
+            children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
+                movie: m,
+                __source: {
+                    fileName: "src/components/movies-list/movies-list.jsx",
+                    lineNumber: 23
+                },
+                __self: this
+            })
+        }, m._id)
+    );
+}
+_c = MoviesList;
+exports.default = _reactRedux.connect(mapStateToProps)(MoviesList);
+var _c;
+$RefreshReg$(_c, "MoviesList");
+
+  $parcel$ReactRefreshHelpers$2519.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap/Col":"fbam0","react-redux":"2L0if","../movie-card/movie-card":"6EiBJ","@parcel/transformer-js/src/esmodule-helpers.js":"kDBJf","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"3jiko"}],"jUTZ8":[function() {},{}]},["j0QZG","5mKa9","dLPEP"], "dLPEP", "parcelRequirebd5d")
 
 //# sourceMappingURL=index.6701a6e1.js.map
