@@ -2,7 +2,7 @@
   "name": "mymovies-client",
   "version": "1.0.0",
   "description": "",
-  "main": "src/index.html",
+  
   "scripts": {
     "start": "node index.jsx"
   },
