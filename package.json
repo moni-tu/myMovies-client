@@ -4,7 +4,7 @@
   "description": "",
   
   "scripts": {
-    "start": "CI='' parcel build src/index.html --no-optimize"
+    "build": "CI='' parcel build src/index.html --no-optimize"
   },
   "keywords": [],
   "author": "",
