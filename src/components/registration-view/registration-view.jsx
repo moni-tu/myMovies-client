@@ -79,7 +79,7 @@ export function RegistrationView(props) {
 
     return (
       <Row className="mt-5">
-      <Col md={12}>
+      <Col md={10}>
         <Form>
           <h3>Sign Up</h3>
           <p></p>
