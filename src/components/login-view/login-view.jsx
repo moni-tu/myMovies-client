@@ -57,18 +57,17 @@ export function LoginView(props) {
         props.onLoggedIn(data);
       })
       .catch(e => {
-        console.log('no such user')
+        alert('No such user, check username/password or register')
       });
     }
   };
 
   return (
-    <div className="login-view">
-    <Container fluid style={{paddingTop: '0.75rem'}}>
-      <Row>
-        <Col>
+    
+      <Row className="mt-5">
+        <Col md={10}>
           <CardGroup>
-            <Card bg="secondary" text="light" border="light">
+            <Card bg="primary" text="light" border="dark">
               <Card.Body>
                 <Card.Title>Welcome to MyMovies!</Card.Title>
                   <Form>
@@ -87,18 +86,20 @@ export function LoginView(props) {
                     </Form.Group>
                     <Button variant="primary" type="submit" onClick={handleSubmit}>
                       Submit
-                    </Button>                  
-                    {/* <Link to={`/register`}>
-                      <Button variant="light" style={{ color: "white" }} type="button">No account? Click here to Register!</Button>
-                    </Link> */}
+                    </Button>    
+                    <div>             
+                      <Link to={`/register`}>
+                        No account? Click here to Register!
+                      </Link>
+                    </div> 
                 </Form>
               </Card.Body>
             </Card>
           </CardGroup>
         </Col>
       </Row>
-    </Container>
-    </div> 
+    
+    
   );
 }
 
