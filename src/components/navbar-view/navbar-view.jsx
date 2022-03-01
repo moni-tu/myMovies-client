@@ -1,4 +1,5 @@
 import React from 'react';
+import logo from './logo-dark.png';
 import { Navbar, Container, Nav, Button, NavbarBrand } from 'react-bootstrap';
 import NavbarCollapse from 'react-bootstrap/esm/NavbarCollapse';
 import NavbarToggle from 'react-bootstrap/esm/NavbarToggle';
@@ -24,7 +25,9 @@ export function NavbarView({user}){
     return (
         <Navbar className="main-nav" sticky="top" expand="lg" variant="dark">
             <Container fluid>
-                <NavbarBrand className="navbar-logo" href="/"> MyMovies </NavbarBrand>
+                <NavbarBrand className="navbar-logo" href="/" > 
+                <img src={logo} alt="logo-dark"/>
+                </NavbarBrand>
                 <NavbarToggle aria-controls="responsive-navbar-nav"/>
                 <NavbarCollapse id="responsive-navbar-nav">
                     <Nav className="ml-auto">  
