@@ -55,7 +55,7 @@ export class MovieView extends React.Component {
     const { movie, onBackClick } = this.props;
 
     return (
-        <Card bg="secondary" text="light" border="light">
+        <Card bg="secondary" text="light" border="primary">
             <Card.Body>
                 <Row>
                     <Col xs={12} md={6}>
@@ -65,14 +65,14 @@ export class MovieView extends React.Component {
                         <Card.Title className="text-center" as="h3">{movie.title}</Card.Title>
                         <Card.Text>{movie.description}</Card.Text>
                         {movie.genre.name && (
-                        <Card.Text className="genre_heading"><span className="genre_name">Genre: </span><Link style={{ color: "white", backgroundColor:"blue"}} to={`/genre/${movie.genre.name}`}>{movie.genre.name}</Link></Card.Text>
+                        <Card.Text className="genre_heading"><span className="genre_name">Genre: </span><Link style={{ color: "white"}} to={`/genre/${movie.genre.name}`}>{movie.genre.name}</Link></Card.Text>
                         )}
                         {movie.director.name && (
-                        <Card.Text className="director_heading"><span className="director_name">Director: </span><Link style={{ color: "white", backgroundColor:"blue" }} to={`/director/${movie.director.name}`}>{movie.director.name}</Link></Card.Text>
+                        <Card.Text className="director_heading"><span className="director_name">Director: </span><Link style={{ color: "white" }} to={`/director/${movie.director.name}`}>{movie.director.name}</Link></Card.Text>
                         )}
-                        <Button onClick={() => onBackClick(null)} variant="light" style={{ color: "white", backgroundColor: "grey" }} className = "button">Back</Button>
+                        <Button onClick={() => onBackClick(null)} variant="outline-secondary" size='sm' className = "button">Back</Button>
                     
-                        <Button className="btn-outline-primary" variant="light" style={{ color: "white", backgroundColor:"green " }} onClick={(e) => this.addFavoriteMovie(e, movie)}>
+                        <Button className="btn-outline-primary" variant="outline-primary" size='md' onClick={(e) => this.addFavoriteMovie(e, movie)}>
                             Add to Favorites
                         </Button>
                         
