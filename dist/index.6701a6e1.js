@@ -42301,7 +42301,7 @@ function NavbarView({ user  }) {
                                     lineNumber: 32
                                 },
                                 __self: this,
-                                children: user
+                                children: "Profile"
                             }),
                             isAuth() && /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
                                 variant: "link",
@@ -44306,7 +44306,7 @@ function VisibilityFilterInput(props) {
         onChange: (e)=>props.setFilter(e.target.value)
         ,
         value: props.visibilityFilter,
-        placeholder: "filter",
+        placeholder: "Search by movie title",
         __source: {
             fileName: "src/components/visibility-filter-input/visibility-filter-input.jsx",
             lineNumber: 9
