@@ -28,13 +28,16 @@ export function NavbarView({user}){
                 <NavbarToggle aria-controls="responsive-navbar-nav"/>
                 <NavbarCollapse id="responsive-navbar-nav">
                     <Nav className="ml-auto">  
-                    {isAuth() && (
+                         {isAuth() && (
+                            <Nav.Link href={`/`}>Home</Nav.Link>
+                        )}
+                        {isAuth() && (
                             <Nav.Link href={`/users/${user}`}>Profile</Nav.Link>
                         )}
                         {isAuth() && (
-                            <Button variant="link" onClick={() => {
+                            <Nav.Link variant='dark' onClick={() => {
                                 onLoggedOut()
-                            }}>Logout</Button>
+                            }}>Logout</Nav.Link>
                         )}
                         {!isAuth() && (
                             <Nav.Link href="/">Login</Nav.Link>

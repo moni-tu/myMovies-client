@@ -42295,22 +42295,31 @@ function NavbarView({ user  }) {
                         __self: this,
                         children: [
                             isAuth() && /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Nav.Link, {
-                                href: `/users/${user}`,
+                                href: `/`,
                                 __source: {
                                     fileName: "src/components/navbar-view/navbar-view.jsx",
                                     lineNumber: 32
                                 },
                                 __self: this,
+                                children: "Home"
+                            }),
+                            isAuth() && /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Nav.Link, {
+                                href: `/users/${user}`,
+                                __source: {
+                                    fileName: "src/components/navbar-view/navbar-view.jsx",
+                                    lineNumber: 35
+                                },
+                                __self: this,
                                 children: "Profile"
                             }),
-                            isAuth() && /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
-                                variant: "link",
+                            isAuth() && /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Nav.Link, {
+                                variant: "dark",
                                 onClick: ()=>{
                                     onLoggedOut();
                                 },
                                 __source: {
                                     fileName: "src/components/navbar-view/navbar-view.jsx",
-                                    lineNumber: 35
+                                    lineNumber: 38
                                 },
                                 __self: this,
                                 children: "Logout"
@@ -42319,7 +42328,7 @@ function NavbarView({ user  }) {
                                 href: "/",
                                 __source: {
                                     fileName: "src/components/navbar-view/navbar-view.jsx",
-                                    lineNumber: 40
+                                    lineNumber: 43
                                 },
                                 __self: this,
                                 children: "Login"
@@ -42328,7 +42337,7 @@ function NavbarView({ user  }) {
                                 href: "/register",
                                 __source: {
                                     fileName: "src/components/navbar-view/navbar-view.jsx",
-                                    lineNumber: 43
+                                    lineNumber: 46
                                 },
                                 __self: this,
                                 children: "Register"
@@ -43075,11 +43084,8 @@ class MovieCard extends _reactDefault.default.Component {
                             __self: this,
                             children: [
                                 /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
-                                    variant: "link",
-                                    style: {
-                                        color: "white",
-                                        backgroundColor: "grey"
-                                    },
+                                    variant: "outline-secondary",
+                                    size: "sm",
                                     __source: {
                                         fileName: "src/components/movie-card/movie-card.jsx",
                                         lineNumber: 24
@@ -43186,7 +43192,7 @@ class MovieView extends _reactDefault.default.Component {
         return(/*#__PURE__*/ _jsxRuntime.jsx(_cardDefault.default, {
             bg: "secondary",
             text: "light",
-            border: "light",
+            border: "primary",
             __source: {
                 fileName: "src/components/movie-view/movie-view.jsx",
                 lineNumber: 58
@@ -43271,8 +43277,7 @@ class MovieView extends _reactDefault.default.Component {
                                         }),
                                         /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
                                             style: {
-                                                color: "white",
-                                                backgroundColor: "blue"
+                                                color: "white"
                                             },
                                             to: `/genre/${movie.genre.name}`,
                                             __source: {
@@ -43303,8 +43308,7 @@ class MovieView extends _reactDefault.default.Component {
                                         }),
                                         /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
                                             style: {
-                                                color: "white",
-                                                backgroundColor: "blue"
+                                                color: "white"
                                             },
                                             to: `/director/${movie.director.name}`,
                                             __source: {
@@ -43319,11 +43323,8 @@ class MovieView extends _reactDefault.default.Component {
                                 /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
                                     onClick: ()=>onBackClick(null)
                                     ,
-                                    variant: "light",
-                                    style: {
-                                        color: "white",
-                                        backgroundColor: "grey"
-                                    },
+                                    variant: "outline-secondary",
+                                    size: "sm",
                                     className: "button",
                                     __source: {
                                         fileName: "src/components/movie-view/movie-view.jsx",
@@ -43334,11 +43335,8 @@ class MovieView extends _reactDefault.default.Component {
                                 }),
                                 /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
                                     className: "btn-outline-primary",
-                                    variant: "light",
-                                    style: {
-                                        color: "white",
-                                        backgroundColor: "green "
-                                    },
+                                    variant: "outline-primary",
+                                    size: "md",
                                     onClick: (e)=>this.addFavoriteMovie(e, movie)
                                     ,
                                     __source: {
@@ -43770,9 +43768,8 @@ class ProfileView extends _reactDefault.default.Component {
             __self: this,
             children: [
                 /*#__PURE__*/ _jsxRuntime.jsx(_cardDefault.default, {
-                    bg: "secondary",
                     text: "light",
-                    border: "light",
+                    border: "dark",
                     __source: {
                         fileName: "src/components/profile-view/profile-view.jsx",
                         lineNumber: 145
@@ -43840,6 +43837,7 @@ class ProfileView extends _reactDefault.default.Component {
                     })
                 }),
                 /*#__PURE__*/ _jsxRuntime.jsx(_cardDefault.default, {
+                    border: "dark",
                     __source: {
                         fileName: "src/components/profile-view/profile-view.jsx",
                         lineNumber: 157
@@ -44009,11 +44007,7 @@ class ProfileView extends _reactDefault.default.Component {
                                         ]
                                     }),
                                     /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
-                                        variant: "light",
-                                        style: {
-                                            backgroundColor: "blue",
-                                            color: "white"
-                                        },
+                                        variant: "primary",
                                         type: "submit",
                                         onClick: this.editUser,
                                         __source: {
@@ -44026,11 +44020,7 @@ class ProfileView extends _reactDefault.default.Component {
                                     /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
                                         onClick: ()=>onBackClick(null)
                                         ,
-                                        variant: "light",
-                                        style: {
-                                            backgroundColor: "grey",
-                                            color: "white"
-                                        },
+                                        variant: "secondary",
                                         __source: {
                                             fileName: "src/components/profile-view/profile-view.jsx",
                                             lineNumber: 190
@@ -44040,11 +44030,7 @@ class ProfileView extends _reactDefault.default.Component {
                                     }),
                                     /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
                                         className: "float-right",
-                                        variant: "light",
-                                        style: {
-                                            backgroundColor: "red",
-                                            color: "white"
-                                        },
+                                        variant: "danger",
                                         onClick: ()=>this.deleteUserDetails()
                                         ,
                                         __source: {
@@ -44060,9 +44046,9 @@ class ProfileView extends _reactDefault.default.Component {
                     })
                 }),
                 /*#__PURE__*/ _jsxRuntime.jsxs(_cardDefault.default, {
+                    border: "dark",
                     bg: "secondary",
                     text: "light",
-                    border: "light",
                     align: "center",
                     style: {
                         color: "white"
@@ -44303,6 +44289,7 @@ var _formDefault = parcelHelpers.interopDefault(_form);
 var _actions = require("../../actions/actions");
 function VisibilityFilterInput(props) {
     return(/*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control, {
+        color: "black",
         onChange: (e)=>props.setFilter(e.target.value)
         ,
         value: props.visibilityFilter,
