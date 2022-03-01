@@ -142,7 +142,7 @@ onRemoveFavorite = (e, movie) => {
     return (
       <div className="profile_view">
         {/* Card for displaying current user details */}
-        <Card bg="secondary" text="light" border="light">
+        <Card text="light" border="dark">
           <Card.Body>
             <Card.Title className="text-center" as= "h3">Profile of {Username}</Card.Title>
             <Card.Text><span className="profile_heading">Email: </span>{Email}</Card.Text>
@@ -154,7 +154,7 @@ onRemoveFavorite = (e, movie) => {
         </Card>
 
         {/* Card for displaying the form which will be used to update user details */}
-        <Card>
+        <Card border="dark">
           <Card.Body>
             <Card.Title as= "h3">Update Profile</Card.Title>
             {/* noValidate prevents default HTML5 validation. validated is then used as part of Bootstraps validation process */}
@@ -183,13 +183,13 @@ onRemoveFavorite = (e, movie) => {
               </Form.Group>
 
               {/* Button for updating the details which will call updateUserDetails (defined above) */}
-              <Button variant="light" style={{ backgroundColor: "blue", color: "white" }} type="submit" onClick={this.editUser}>
+              <Button variant="primary" type="submit" onClick={this.editUser}>
                 Update User Details
               </Button>
               {/* Button to go back to the previous view */}
-              <Button onClick={() => onBackClick(null)} variant="light" style={{ backgroundColor: "grey", color: "white" }}>Back</Button>
+              <Button onClick={() => onBackClick(null)} variant="secondary">Back</Button>
               {/* Button for deleting the user. This will first open the Modal defined above */}
-              <Button className="float-right" variant="light" style={{ backgroundColor: "red", color: "white" }} onClick={() => this.deleteUserDetails()}>
+              <Button className="float-right" variant="danger" onClick={() => this.deleteUserDetails()}>
                 Delete User Profile
               </Button>
             </Form>
@@ -197,7 +197,7 @@ onRemoveFavorite = (e, movie) => {
         </Card>
 
         {/* Favorites Section*/}
-        <Card bg="secondary" text="light" border="light" align="center" style={{ color: "white" }}>
+        <Card border="dark" bg="secondary" text="light" align="center" style={{ color: "white" }}>
           <Card.Title as= "h3"> Favorite Movies:</Card.Title>
           <Card.Body>
                 {Favorites.length === 0 && (
