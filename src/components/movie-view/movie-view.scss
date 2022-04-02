@@ -1,0 +1,28 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: var(--main-font-size);
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+}
+
+p {
+  color: grey;
+}
+
+/* this is the button */
+button {
+  position: center;
+  border: none;
+  width: 100px;
+  // these colours do not affect the button
+  background-color: black;
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  cursor: pointer;
+}
