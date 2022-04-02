@@ -64,40 +64,52 @@ export function LoginView(props) {
 
   return (
     
-      <Row className="mt-5">
-        <Col md={10}>
-          <CardGroup>
-            <Card bg="primary" text="light" border="dark">
+      //<Row>
+        //<Col md={10}>
+           //<CardGroup>
+            <Card bg="primary" text="light" border="dark" style={{width:"450px", marginTop: "50px"}}>
               <Card.Body>
-                <Card.Title>Welcome to MyMovies!</Card.Title>
-                  <Form>
-                    <Form.Group controlId="formUsername">
-                      <Form.Label>Username:</Form.Label>
-                      <Form.Control type="text" onChange={e => setUsername(e.target.value)} />
-                      {/* code added here to display validation error */}
-                      {UsernameErr && <p>{UsernameErr}</p>}
-                    </Form.Group>
+                <Card.Title style= {{textAlign: "center", marginTop: "30px", fontSize: "22px"}}>Welcome to MyMovies!</Card.Title>
+                <Form style={{marginRight:"40px", marginLeft:"40px", marginTop: "20px"}}>
+                  <Form.Group controlId="formUsername" style={{ marginBottom: "1px"}}>
+                    <Form.Label class="card-subtitle text-muted">Username:</Form.Label>
+                    <Form.Control 
+                    type="text" 
+                    placeholder="Enter username here"
+                    onChange={e => setUsername(e.target.value)} />
+                    {/* code added here to display validation error */}
+                    {UsernameErr && <p>{UsernameErr}</p>}
+                  </Form.Group>
 
-                    <Form.Group controlId="formPassword">
-                      <Form.Label>Password:</Form.Label>
-                      <Form.Control type="password" onChange={e => setPassword(e.target.value)} />
-                      {/* code added here to display validation error */}
-                      {PasswordErr && <p>{PasswordErr}</p>} 
-                    </Form.Group>
-                    <Button variant="primary" type="submit" onClick={handleSubmit}>
-                      Submit
-                    </Button>    
-                    <div>             
-                      <Link to={`/register`}>
-                        No account? Click here to Register!
-                      </Link>
-                    </div> 
+                  <Form.Group controlId="formPassword">
+                    <Form.Label class="card-subtitle text-muted">Password:</Form.Label>
+                    <Form.Control 
+                    type="password" 
+                    placeholder="Enter password here"
+                    onChange={e => setPassword(e.target.value)} />
+                    {/* code added here to display validation error */}
+                    {PasswordErr && <p>{PasswordErr}</p>} 
+                  </Form.Group>
+                  <Button 
+                  style= {{marginTop: "80px"}}
+                  class= "btn btn-primary btn-block"
+                  fontSize= "30px"
+                  /* variant="primary" */ 
+                  type="submit" 
+                  onClick={handleSubmit}>
+                    Submit
+                  </Button>    
+                  <div style= {{marginTop: "5px", marginBottom: "20px"}}>             
+                    <Link to={`/register`} style={{textAlign: "center"}}>
+                      No account? Click here to Register!
+                    </Link>
+                  </div> 
                 </Form>
               </Card.Body>
             </Card>
-          </CardGroup>
-        </Col>
-      </Row>
+          //</CardGroup>
+        //</Col>
+      //</Row> 
     
     
   );
