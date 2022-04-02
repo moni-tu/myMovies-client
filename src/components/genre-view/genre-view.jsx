@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 // Import React components
-import { GenreView } from '../genre-view/genre-view';
+/* import { GenreView } from '../genre-view/genre-view'; */
 
 // Import React Bootstrap Components
 import Button from 'react-bootstrap/Button';
