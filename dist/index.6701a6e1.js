@@ -42917,6 +42917,8 @@ var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
 var _reactRouterDom = require("react-router-dom");
+var _movieSalaPng = require("./movie-sala.png");
+var _movieSalaPngDefault = parcelHelpers.interopDefault(_movieSalaPng);
 //import custom SCSS
 var _loginViewScss = require("./login-view.scss");
 //Import React Bootstrap Components
@@ -42977,172 +42979,184 @@ function LoginView(props) {
     return(//<Row>
     //<Col md={10}>
     //<CardGroup>
-    /*#__PURE__*/ _jsxRuntime.jsx(_cardDefault.default, {
+    /*#__PURE__*/ _jsxRuntime.jsxs(_cardDefault.default, {
         bg: "primary",
         text: "light",
         border: "dark",
         style: {
-            width: "450px",
-            marginTop: "50px"
+            width: "750px",
+            marginTop: "50px",
+            backgroundImage: "url(/movie-sala.png)"
         },
         __source: {
             fileName: "src/components/login-view/login-view.jsx",
-            lineNumber: 70
+            lineNumber: 72
         },
         __self: this,
-        children: /*#__PURE__*/ _jsxRuntime.jsxs(_cardDefault.default.Body, {
-            __source: {
-                fileName: "src/components/login-view/login-view.jsx",
-                lineNumber: 71
-            },
-            __self: this,
-            children: [
-                /*#__PURE__*/ _jsxRuntime.jsx(_cardDefault.default.Title, {
-                    style: {
-                        textAlign: "center",
-                        marginTop: "30px",
-                        fontSize: "22px"
-                    },
-                    __source: {
-                        fileName: "src/components/login-view/login-view.jsx",
-                        lineNumber: 72
-                    },
-                    __self: this,
-                    children: "Welcome to MyMovies!"
-                }),
-                /*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default, {
-                    style: {
-                        marginRight: "40px",
-                        marginLeft: "40px",
-                        marginTop: "20px"
-                    },
-                    __source: {
-                        fileName: "src/components/login-view/login-view.jsx",
-                        lineNumber: 73
-                    },
-                    __self: this,
-                    children: [
-                        /*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default.Group, {
-                            controlId: "formUsername",
-                            style: {
-                                marginBottom: "1px"
-                            },
-                            __source: {
-                                fileName: "src/components/login-view/login-view.jsx",
-                                lineNumber: 74
-                            },
-                            __self: this,
-                            children: [
-                                /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Label, {
-                                    class: "card-subtitle text-muted",
-                                    __source: {
-                                        fileName: "src/components/login-view/login-view.jsx",
-                                        lineNumber: 75
-                                    },
-                                    __self: this,
-                                    children: "Username:"
-                                }),
-                                /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control, {
-                                    type: "text",
-                                    placeholder: "Enter username here",
-                                    onChange: (e)=>setUsername(e.target.value)
-                                    ,
-                                    __source: {
-                                        fileName: "src/components/login-view/login-view.jsx",
-                                        lineNumber: 76
-                                    },
-                                    __self: this
-                                }),
-                                UsernameErr && /*#__PURE__*/ _jsxRuntime.jsx("p", {
-                                    __source: {
-                                        fileName: "src/components/login-view/login-view.jsx",
-                                        lineNumber: 81
-                                    },
-                                    __self: this,
-                                    children: UsernameErr
-                                })
-                            ]
-                        }),
-                        /*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default.Group, {
-                            controlId: "formPassword",
-                            __source: {
-                                fileName: "src/components/login-view/login-view.jsx",
-                                lineNumber: 84
-                            },
-                            __self: this,
-                            children: [
-                                /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Label, {
-                                    class: "card-subtitle text-muted",
-                                    __source: {
-                                        fileName: "src/components/login-view/login-view.jsx",
-                                        lineNumber: 85
-                                    },
-                                    __self: this,
-                                    children: "Password:"
-                                }),
-                                /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control, {
-                                    type: "password",
-                                    placeholder: "Enter password here",
-                                    onChange: (e)=>setPassword(e.target.value)
-                                    ,
-                                    __source: {
-                                        fileName: "src/components/login-view/login-view.jsx",
-                                        lineNumber: 86
-                                    },
-                                    __self: this
-                                }),
-                                PasswordErr && /*#__PURE__*/ _jsxRuntime.jsx("p", {
-                                    __source: {
-                                        fileName: "src/components/login-view/login-view.jsx",
-                                        lineNumber: 91
-                                    },
-                                    __self: this,
-                                    children: PasswordErr
-                                })
-                            ]
-                        }),
-                        /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
-                            style: {
-                                marginTop: "80px"
-                            },
-                            class: "btn btn-primary btn-block",
-                            fontSize: "30px",
-                            /* variant="primary" */ type: "submit",
-                            onClick: handleSubmit,
-                            __source: {
-                                fileName: "src/components/login-view/login-view.jsx",
-                                lineNumber: 93
-                            },
-                            __self: this,
-                            children: "Submit"
-                        }),
-                        /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                            style: {
-                                marginTop: "5px",
-                                marginBottom: "20px"
-                            },
-                            __source: {
-                                fileName: "src/components/login-view/login-view.jsx",
-                                lineNumber: 102
-                            },
-                            __self: this,
-                            children: /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
-                                to: `/register`,
+        children: [
+            /*#__PURE__*/ _jsxRuntime.jsxs(_cardDefault.default.Body, {
+                __source: {
+                    fileName: "src/components/login-view/login-view.jsx",
+                    lineNumber: 73
+                },
+                __self: this,
+                children: [
+                    /*#__PURE__*/ _jsxRuntime.jsx(_cardDefault.default.Title, {
+                        style: {
+                            textAlign: "center",
+                            marginTop: "20px",
+                            fontSize: "22px"
+                        },
+                        __source: {
+                            fileName: "src/components/login-view/login-view.jsx",
+                            lineNumber: 74
+                        },
+                        __self: this,
+                        children: "Welcome to MyMovies!"
+                    }),
+                    /*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default, {
+                        style: {
+                            marginRight: "40px",
+                            marginLeft: "40px",
+                            marginTop: "20px"
+                        },
+                        __source: {
+                            fileName: "src/components/login-view/login-view.jsx",
+                            lineNumber: 75
+                        },
+                        __self: this,
+                        children: [
+                            /*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default.Group, {
+                                controlId: "formUsername",
                                 style: {
-                                    textAlign: "center"
+                                    marginBottom: "1px"
+                                },
+                                __source: {
+                                    fileName: "src/components/login-view/login-view.jsx",
+                                    lineNumber: 76
+                                },
+                                __self: this,
+                                children: [
+                                    /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Label, {
+                                        class: "card-subtitle text-muted",
+                                        __source: {
+                                            fileName: "src/components/login-view/login-view.jsx",
+                                            lineNumber: 77
+                                        },
+                                        __self: this,
+                                        children: "Username:"
+                                    }),
+                                    /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control, {
+                                        type: "text",
+                                        placeholder: "Enter username here",
+                                        onChange: (e)=>setUsername(e.target.value)
+                                        ,
+                                        __source: {
+                                            fileName: "src/components/login-view/login-view.jsx",
+                                            lineNumber: 78
+                                        },
+                                        __self: this
+                                    }),
+                                    UsernameErr && /*#__PURE__*/ _jsxRuntime.jsx("p", {
+                                        __source: {
+                                            fileName: "src/components/login-view/login-view.jsx",
+                                            lineNumber: 83
+                                        },
+                                        __self: this,
+                                        children: UsernameErr
+                                    })
+                                ]
+                            }),
+                            /*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default.Group, {
+                                controlId: "formPassword",
+                                __source: {
+                                    fileName: "src/components/login-view/login-view.jsx",
+                                    lineNumber: 85
+                                },
+                                __self: this,
+                                children: [
+                                    /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Label, {
+                                        class: "card-subtitle text-muted",
+                                        __source: {
+                                            fileName: "src/components/login-view/login-view.jsx",
+                                            lineNumber: 86
+                                        },
+                                        __self: this,
+                                        children: "Password:"
+                                    }),
+                                    /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control, {
+                                        type: "password",
+                                        placeholder: "Enter password here",
+                                        onChange: (e)=>setPassword(e.target.value)
+                                        ,
+                                        __source: {
+                                            fileName: "src/components/login-view/login-view.jsx",
+                                            lineNumber: 87
+                                        },
+                                        __self: this
+                                    }),
+                                    PasswordErr && /*#__PURE__*/ _jsxRuntime.jsx("p", {
+                                        __source: {
+                                            fileName: "src/components/login-view/login-view.jsx",
+                                            lineNumber: 92
+                                        },
+                                        __self: this,
+                                        children: PasswordErr
+                                    })
+                                ]
+                            }),
+                            /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
+                                style: {
+                                    marginTop: "80px"
+                                },
+                                class: "btn btn-primary btn-block",
+                                fontSize: "30px",
+                                /* variant="primary" */ type: "submit",
+                                onClick: handleSubmit,
+                                __source: {
+                                    fileName: "src/components/login-view/login-view.jsx",
+                                    lineNumber: 94
+                                },
+                                __self: this,
+                                children: "Submit"
+                            }),
+                            /*#__PURE__*/ _jsxRuntime.jsx("div", {
+                                style: {
+                                    marginTop: "5px",
+                                    marginBottom: "20px"
                                 },
                                 __source: {
                                     fileName: "src/components/login-view/login-view.jsx",
                                     lineNumber: 103
                                 },
                                 __self: this,
-                                children: "No account? Click here to Register!"
+                                children: /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                                    to: `/register`,
+                                    style: {
+                                        textAlign: "center"
+                                    },
+                                    __source: {
+                                        fileName: "src/components/login-view/login-view.jsx",
+                                        lineNumber: 104
+                                    },
+                                    __self: this,
+                                    children: "No account? Click here to Register!"
+                                })
                             })
-                        })
-                    ]
-                })
-            ]
-        })
+                        ]
+                    })
+                ]
+            }),
+            /*#__PURE__*/ _jsxRuntime.jsx("img", {
+                src: _movieSalaPngDefault.default,
+                alt: "movie-sala",
+                __source: {
+                    fileName: "src/components/login-view/login-view.jsx",
+                    lineNumber: 110
+                },
+                __self: this
+            })
+        ]
     }));
 }
 _s(LoginView, "PgWzkTd7gSMOcPNlQUtmGtf45PM=");
@@ -43162,7 +43176,10 @@ $RefreshReg$(_c, "LoginView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","axios":"iYoWk","react-router-dom":"cpyQW","./login-view.scss":"lS4BK","react-bootstrap/Form":"5ykgY","react-bootstrap/Button":"9CzHT","react-bootstrap/Container":"2PRIq","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","react-bootstrap/Card":"MoOk8","react-bootstrap/CardGroup":"lNZc4","@parcel/transformer-js/src/esmodule-helpers.js":"kDBJf","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"3jiko"}],"lS4BK":[function() {},{}],"6EiBJ":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","axios":"iYoWk","react-router-dom":"cpyQW","./login-view.scss":"lS4BK","react-bootstrap/Form":"5ykgY","react-bootstrap/Button":"9CzHT","react-bootstrap/Container":"2PRIq","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","react-bootstrap/Card":"MoOk8","react-bootstrap/CardGroup":"lNZc4","@parcel/transformer-js/src/esmodule-helpers.js":"kDBJf","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"3jiko","./movie-sala.png":"7IWYM"}],"lS4BK":[function() {},{}],"7IWYM":[function(require,module,exports) {
+module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "movie-sala.e737650e.png";
+
+},{"./helpers/bundle-url":"85SYM"}],"6EiBJ":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$4249 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;

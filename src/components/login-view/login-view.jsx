@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import backgroundImage from './movie-sala.png';
 
 //import custom SCSS
 import './login-view.scss';
@@ -66,10 +67,11 @@ export function LoginView(props) {
     
       //<Row>
         //<Col md={10}>
-           //<CardGroup>
-            <Card bg="primary" text="light" border="dark" style={{width:"450px", marginTop: "50px"}}>
+          //<CardGroup>
+            
+            <Card bg="primary" text="light" border="dark" style={{width:"750px", marginTop: "50px", backgroundImage: "url(/movie-sala.png)"}}>
               <Card.Body>
-                <Card.Title style= {{textAlign: "center", marginTop: "30px", fontSize: "22px"}}>Welcome to MyMovies!</Card.Title>
+                <Card.Title style= {{textAlign: "center", marginTop: "20px", fontSize: "22px"}}>Welcome to MyMovies!</Card.Title>
                 <Form style={{marginRight:"40px", marginLeft:"40px", marginTop: "20px"}}>
                   <Form.Group controlId="formUsername" style={{ marginBottom: "1px"}}>
                     <Form.Label class="card-subtitle text-muted">Username:</Form.Label>
@@ -80,7 +82,6 @@ export function LoginView(props) {
                     {/* code added here to display validation error */}
                     {UsernameErr && <p>{UsernameErr}</p>}
                   </Form.Group>
-
                   <Form.Group controlId="formPassword">
                     <Form.Label class="card-subtitle text-muted">Password:</Form.Label>
                     <Form.Control 
@@ -106,6 +107,7 @@ export function LoginView(props) {
                   </div> 
                 </Form>
               </Card.Body>
+              <img src={backgroundImage} alt="movie-sala"/>
             </Card>
           //</CardGroup>
         //</Col>
