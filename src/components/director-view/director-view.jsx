@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 // Import React components
 import { LoginView } from '../login-view/login-view';
-import { DirectorView } from '../director-view/director-view';
+/* import { DirectorView } from '../director-view/director-view'; */
 
 //import PropTypes from 'prop-types';
 import { BrowserRouter as Router, Route } from "react-router-dom";
@@ -15,7 +15,6 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 import Container from 'react-bootstrap/Container';
-import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 
 // Import custom SCSS

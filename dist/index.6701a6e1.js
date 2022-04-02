@@ -43629,8 +43629,7 @@ var _propTypes = require("prop-types");
 var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
 // Import React components
 var _loginView = require("../login-view/login-view");
-var _directorView = require("../director-view/director-view");
-//import PropTypes from 'prop-types';
+/* import { DirectorView } from '../director-view/director-view'; */ //import PropTypes from 'prop-types';
 var _reactRouterDom = require("react-router-dom");
 var _reactBootstrap = require("react-bootstrap");
 // Import React Bootstrap Components
@@ -43642,8 +43641,6 @@ var _col = require("react-bootstrap/Col");
 var _colDefault = parcelHelpers.interopDefault(_col);
 var _container = require("react-bootstrap/Container");
 var _containerDefault = parcelHelpers.interopDefault(_container);
-var _card = require("react-bootstrap/Card");
-var _cardDefault = parcelHelpers.interopDefault(_card);
 // Import custom SCSS
 var _directorViewScss = require("./director-view.scss");
 class DirectorView extends _reactDefault.default.Component {
@@ -43652,32 +43649,32 @@ class DirectorView extends _reactDefault.default.Component {
         return(/*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.BrowserRouter, {
             __source: {
                 fileName: "src/components/director-view/director-view.jsx",
-                lineNumber: 28
+                lineNumber: 27
             },
             __self: this,
-            children: /*#__PURE__*/ _jsxRuntime.jsx(_cardDefault.default, {
+            children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card, {
                 bg: "secondary",
                 text: "light",
                 border: "info",
                 align: "center",
                 __source: {
                     fileName: "src/components/director-view/director-view.jsx",
-                    lineNumber: 30
+                    lineNumber: 29
                 },
                 __self: this,
-                children: /*#__PURE__*/ _jsxRuntime.jsxs(_cardDefault.default.Body, {
+                children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card.Body, {
                     __source: {
                         fileName: "src/components/director-view/director-view.jsx",
-                        lineNumber: 31
+                        lineNumber: 30
                     },
                     __self: this,
                     children: [
-                        /*#__PURE__*/ _jsxRuntime.jsxs(_cardDefault.default.Header, {
+                        /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card.Header, {
                             className: "card-header",
                             as: "h3",
                             __source: {
                                 fileName: "src/components/director-view/director-view.jsx",
-                                lineNumber: 32
+                                lineNumber: 31
                             },
                             __self: this,
                             children: [
@@ -43685,18 +43682,18 @@ class DirectorView extends _reactDefault.default.Component {
                                 " "
                             ]
                         }),
-                        /*#__PURE__*/ _jsxRuntime.jsx(_cardDefault.default.Text, {
+                        /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card.Text, {
                             __source: {
                                 fileName: "src/components/director-view/director-view.jsx",
-                                lineNumber: 33
+                                lineNumber: 32
                             },
                             __self: this,
                             children: movie.director.bio
                         }),
-                        /*#__PURE__*/ _jsxRuntime.jsxs(_cardDefault.default.Text, {
+                        /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card.Text, {
                             __source: {
                                 fileName: "src/components/director-view/director-view.jsx",
-                                lineNumber: 34
+                                lineNumber: 33
                             },
                             __self: this,
                             children: [
@@ -43708,7 +43705,7 @@ class DirectorView extends _reactDefault.default.Component {
                             className: "backButton",
                             __source: {
                                 fileName: "src/components/director-view/director-view.jsx",
-                                lineNumber: 37
+                                lineNumber: 36
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
@@ -43723,7 +43720,7 @@ class DirectorView extends _reactDefault.default.Component {
                                 },
                                 __source: {
                                     fileName: "src/components/director-view/director-view.jsx",
-                                    lineNumber: 38
+                                    lineNumber: 37
                                 },
                                 __self: this,
                                 children: "Back"
@@ -43735,7 +43732,7 @@ class DirectorView extends _reactDefault.default.Component {
         }));
     }
 }
-_directorView.DirectorView.propTypes = {
+DirectorView.propTypes = {
     director: _propTypesDefault.default.shape({
         name: _propTypesDefault.default.string.isRequired,
         bio: _propTypesDefault.default.string.isRequired,
@@ -43749,7 +43746,7 @@ _directorView.DirectorView.propTypes = {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","../login-view/login-view":"054li","../director-view/director-view":"ck15y","react-router-dom":"cpyQW","react-bootstrap":"h2YVd","react-bootstrap/Button":"9CzHT","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","react-bootstrap/Container":"2PRIq","react-bootstrap/Card":"MoOk8","./director-view.scss":"hWS1b","@parcel/transformer-js/src/esmodule-helpers.js":"kDBJf","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"3jiko"}],"hWS1b":[function() {},{}],"2E7Aw":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","../login-view/login-view":"054li","react-router-dom":"cpyQW","react-bootstrap":"h2YVd","react-bootstrap/Button":"9CzHT","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","react-bootstrap/Container":"2PRIq","./director-view.scss":"hWS1b","@parcel/transformer-js/src/esmodule-helpers.js":"kDBJf","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"3jiko"}],"hWS1b":[function() {},{}],"2E7Aw":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$58c6 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
