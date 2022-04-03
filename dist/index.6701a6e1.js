@@ -22745,6 +22745,7 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
+var _loginView = require("../login-view/login-view");
 var _movieCard = require("../movie-card/movie-card");
 var _movieView = require("../movie-view/movie-view");
 class MainView extends _reactDefault.default.Component {
@@ -22753,7 +22754,8 @@ class MainView extends _reactDefault.default.Component {
         super();
         this.state = {
             movies: [],
-            selectedMovie: null
+            selectedMovie: null,
+            user: null
         };
     }
     componentDidMount() {
@@ -22770,14 +22772,29 @@ class MainView extends _reactDefault.default.Component {
             selectedMovie: newSelectedMovie
         });
     }
+    onLoggedIn(user) {
+        this.setState({
+            user
+        });
+    }
     render() {
-        const { movies , selectedMovie  } = this.state;
+        const { movies , selectedMovie , user  } = this.state;
         // if (selectedMovie) return <MovieView movie={selectedMovie} />;
+        // If there is no user, the LoginView is rendered. If there is a user logged in, the user details are *passed as a prop to the LoginView
+        if (!user) return(/*#__PURE__*/ _jsxRuntime.jsx(_loginView.LoginView, {
+            onLoggedIn: (user1)=>this.onLoggedIn(user1)
+            ,
+            __source: {
+                fileName: "src/components/main-view/main-view.jsx",
+                lineNumber: 46
+            },
+            __self: this
+        }));
         if (movies.length === 0) return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
             className: "main-view",
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 39
+                lineNumber: 47
             },
             __self: this
         }));
@@ -22785,7 +22802,7 @@ class MainView extends _reactDefault.default.Component {
             className: "main-view",
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 42
+                lineNumber: 50
             },
             __self: this,
             children: selectedMovie ? /*#__PURE__*/ _jsxRuntime.jsx(_movieView.MovieView, {
@@ -22795,7 +22812,7 @@ class MainView extends _reactDefault.default.Component {
                 },
                 __source: {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 44
+                    lineNumber: 52
                 },
                 __self: this
             }) : movies.map((movie)=>/*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
@@ -22805,7 +22822,7 @@ class MainView extends _reactDefault.default.Component {
                     },
                     __source: {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 46
+                        lineNumber: 54
                     },
                     __self: this
                 }, movie._id)
@@ -22820,10 +22837,10 @@ exports.default = MainView;
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"5uZ6g","../movie-card/movie-card":"6EiBJ","../movie-view/movie-view":"ikZdr","@parcel/transformer-js/src/esmodule-helpers.js":"kDBJf","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"3jiko"}],"5uZ6g":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","../login-view/login-view":"054li","../movie-card/movie-card":"6EiBJ","../movie-view/movie-view":"ikZdr","@parcel/transformer-js/src/esmodule-helpers.js":"kDBJf","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"3jiko"}],"iYoWk":[function(require,module,exports) {
 module.exports = require('./lib/axios');
 
-},{"./lib/axios":"lPPYH"}],"lPPYH":[function(require,module,exports) {
+},{"./lib/axios":"3QmO2"}],"3QmO2":[function(require,module,exports) {
 'use strict';
 var utils = require('./utils');
 var bind = require('./helpers/bind');
@@ -22868,7 +22885,7 @@ module.exports = axios;
 // Allow use of default import syntax in TypeScript
 module.exports.default = axios;
 
-},{"./utils":"ijGz3","./helpers/bind":"lKAcg","./core/Axios":"9nlbg","./core/mergeConfig":"dqnqs","./defaults":"04hof","./cancel/Cancel":"dIJgj","./cancel/CancelToken":"5FeR1","./cancel/isCancel":"giNSI","./env/data":"hTeMG","./helpers/spread":"jrUTV","./helpers/isAxiosError":"7izTh"}],"ijGz3":[function(require,module,exports) {
+},{"./utils":"hOPY0","./helpers/bind":"4bHkG","./core/Axios":"KVzea","./core/mergeConfig":"8vb7m","./defaults":"iR3Q7","./cancel/Cancel":"iGO1D","./cancel/CancelToken":"6kJtU","./cancel/isCancel":"6KzET","./env/data":"7dluA","./helpers/spread":"3fmMu","./helpers/isAxiosError":"1NqDP"}],"hOPY0":[function(require,module,exports) {
 'use strict';
 var bind = require('./helpers/bind');
 // utils is a library of generic helper functions non-specific to axios
@@ -23134,7 +23151,7 @@ module.exports = {
     stripBOM: stripBOM
 };
 
-},{"./helpers/bind":"lKAcg"}],"lKAcg":[function(require,module,exports) {
+},{"./helpers/bind":"4bHkG"}],"4bHkG":[function(require,module,exports) {
 'use strict';
 module.exports = function bind(fn, thisArg) {
     return function wrap() {
@@ -23144,7 +23161,7 @@ module.exports = function bind(fn, thisArg) {
     };
 };
 
-},{}],"9nlbg":[function(require,module,exports) {
+},{}],"KVzea":[function(require,module,exports) {
 'use strict';
 var utils = require('./../utils');
 var buildURL = require('../helpers/buildURL');
@@ -23176,7 +23193,6 @@ var validators = validator.validators;
         config.url = configOrUrl;
     } else config = configOrUrl || {
     };
-    if (!config.url) throw new Error('Provided config url is not valid');
     config = mergeConfig(this.defaults, config);
     // Set config.method
     if (config.method) config.method = config.method.toLowerCase();
@@ -23232,7 +23248,6 @@ var validators = validator.validators;
     return promise;
 };
 Axios.prototype.getUri = function getUri(config) {
-    if (!config.url) throw new Error('Provided config url is not valid');
     config = mergeConfig(this.defaults, config);
     return buildURL(config.url, config.params, config.paramsSerializer).replace(/^\?/, '');
 };
@@ -23269,7 +23284,7 @@ utils.forEach([
 });
 module.exports = Axios;
 
-},{"./../utils":"ijGz3","../helpers/buildURL":"6Q8EC","./InterceptorManager":"2PyCp","./dispatchRequest":"J9tC1","./mergeConfig":"dqnqs","../helpers/validator":"5ylvg"}],"6Q8EC":[function(require,module,exports) {
+},{"./../utils":"hOPY0","../helpers/buildURL":"3Jodf","./InterceptorManager":"9kkIC","./dispatchRequest":"dmFav","./mergeConfig":"8vb7m","../helpers/validator":"4sigL"}],"3Jodf":[function(require,module,exports) {
 'use strict';
 var utils = require('./../utils');
 function encode(val) {
@@ -23310,7 +23325,7 @@ function encode(val) {
     return url;
 };
 
-},{"./../utils":"ijGz3"}],"2PyCp":[function(require,module,exports) {
+},{"./../utils":"hOPY0"}],"9kkIC":[function(require,module,exports) {
 'use strict';
 var utils = require('./../utils');
 function InterceptorManager() {
@@ -23353,7 +23368,7 @@ function InterceptorManager() {
 };
 module.exports = InterceptorManager;
 
-},{"./../utils":"ijGz3"}],"J9tC1":[function(require,module,exports) {
+},{"./../utils":"hOPY0"}],"dmFav":[function(require,module,exports) {
 'use strict';
 var utils = require('./../utils');
 var transformData = require('./transformData');
@@ -23409,10 +23424,10 @@ var Cancel = require('../cancel/Cancel');
     });
 };
 
-},{"./../utils":"ijGz3","./transformData":"yXzdB","../cancel/isCancel":"giNSI","../defaults":"04hof","../cancel/Cancel":"dIJgj"}],"yXzdB":[function(require,module,exports) {
+},{"./../utils":"hOPY0","./transformData":"57wgh","../cancel/isCancel":"6KzET","../defaults":"iR3Q7","../cancel/Cancel":"iGO1D"}],"57wgh":[function(require,module,exports) {
 'use strict';
 var utils = require('./../utils');
-var defaults = require('./../defaults');
+var defaults = require('../defaults');
 /**
  * Transform the data for a request or a response
  *
@@ -23428,12 +23443,13 @@ var defaults = require('./../defaults');
     return data;
 };
 
-},{"./../utils":"ijGz3","./../defaults":"04hof"}],"04hof":[function(require,module,exports) {
+},{"./../utils":"hOPY0","../defaults":"iR3Q7"}],"iR3Q7":[function(require,module,exports) {
 var process = require("process");
 'use strict';
-var utils = require('./utils');
-var normalizeHeaderName = require('./helpers/normalizeHeaderName');
-var enhanceError = require('./core/enhanceError');
+var utils = require('../utils');
+var normalizeHeaderName = require('../helpers/normalizeHeaderName');
+var enhanceError = require('../core/enhanceError');
+var transitionalDefaults = require('./transitional');
 var DEFAULT_CONTENT_TYPE = {
     'Content-Type': 'application/x-www-form-urlencoded'
 };
@@ -23443,9 +23459,9 @@ function setContentTypeIfUnset(headers, value) {
 function getDefaultAdapter() {
     var adapter;
     if (typeof XMLHttpRequest !== 'undefined') // For browsers use XHR adapter
-    adapter = require('./adapters/xhr');
+    adapter = require('../adapters/xhr');
     else if (typeof process !== 'undefined' && Object.prototype.toString.call(process) === '[object process]') // For node use HTTP adapter
-    adapter = require('./adapters/http');
+    adapter = require('../adapters/http');
     return adapter;
 }
 function stringifySafely(rawValue, parser, encoder) {
@@ -23458,11 +23474,7 @@ function stringifySafely(rawValue, parser, encoder) {
     return (encoder || JSON.stringify)(rawValue);
 }
 var defaults = {
-    transitional: {
-        silentJSONParsing: true,
-        forcedJSONParsing: true,
-        clarifyTimeoutError: false
-    },
+    transitional: transitionalDefaults,
     adapter: getDefaultAdapter(),
     transformRequest: [
         function transformRequest(data, headers) {
@@ -23532,7 +23544,7 @@ utils.forEach([
 });
 module.exports = defaults;
 
-},{"process":"3Y2J6","./utils":"ijGz3","./helpers/normalizeHeaderName":"4NqIi","./core/enhanceError":"gwOrx","./adapters/xhr":"8fXHG","./adapters/http":"8fXHG"}],"3Y2J6":[function(require,module,exports) {
+},{"process":"3Y2J6","../utils":"hOPY0","../helpers/normalizeHeaderName":"6GUF5","../core/enhanceError":"3f4N4","./transitional":"3REd2","../adapters/xhr":"4uZQD","../adapters/http":"4uZQD"}],"3Y2J6":[function(require,module,exports) {
 // shim for using process in browser
 var process = module.exports = {
 };
@@ -23681,7 +23693,7 @@ process.umask = function() {
     return 0;
 };
 
-},{}],"4NqIi":[function(require,module,exports) {
+},{}],"6GUF5":[function(require,module,exports) {
 'use strict';
 var utils = require('../utils');
 module.exports = function normalizeHeaderName(headers, normalizedName) {
@@ -23693,7 +23705,7 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
     });
 };
 
-},{"../utils":"ijGz3"}],"gwOrx":[function(require,module,exports) {
+},{"../utils":"hOPY0"}],"3f4N4":[function(require,module,exports) {
 'use strict';
 /**
  * Update an Error with the specified config, error code, and response.
@@ -23732,7 +23744,15 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
     return error;
 };
 
-},{}],"8fXHG":[function(require,module,exports) {
+},{}],"3REd2":[function(require,module,exports) {
+'use strict';
+module.exports = {
+    silentJSONParsing: true,
+    forcedJSONParsing: true,
+    clarifyTimeoutError: false
+};
+
+},{}],"4uZQD":[function(require,module,exports) {
 'use strict';
 var utils = require('./../utils');
 var settle = require('./../core/settle');
@@ -23742,7 +23762,7 @@ var buildFullPath = require('../core/buildFullPath');
 var parseHeaders = require('./../helpers/parseHeaders');
 var isURLSameOrigin = require('./../helpers/isURLSameOrigin');
 var createError = require('../core/createError');
-var defaults = require('../defaults');
+var transitionalDefaults = require('../defaults/transitional');
 var Cancel = require('../cancel/Cancel');
 module.exports = function xhrAdapter(config) {
     return new Promise(function dispatchXhrRequest(resolve, reject) {
@@ -23821,7 +23841,7 @@ module.exports = function xhrAdapter(config) {
         // Handle timeout
         request.ontimeout = function handleTimeout() {
             var timeoutErrorMessage = config.timeout ? 'timeout of ' + config.timeout + 'ms exceeded' : 'timeout exceeded';
-            var transitional = config.transitional || defaults.transitional;
+            var transitional = config.transitional || transitionalDefaults;
             if (config.timeoutErrorMessage) timeoutErrorMessage = config.timeoutErrorMessage;
             reject(createError(timeoutErrorMessage, config, transitional.clarifyTimeoutError ? 'ETIMEDOUT' : 'ECONNABORTED', request));
             // Clean up request
@@ -23868,7 +23888,7 @@ module.exports = function xhrAdapter(config) {
     });
 };
 
-},{"./../utils":"ijGz3","./../core/settle":"11gyl","./../helpers/cookies":"52Fif","./../helpers/buildURL":"6Q8EC","../core/buildFullPath":"7hLXd","./../helpers/parseHeaders":"aQDLL","./../helpers/isURLSameOrigin":"7UwW4","../core/createError":"9VqMi","../defaults":"04hof","../cancel/Cancel":"dIJgj"}],"11gyl":[function(require,module,exports) {
+},{"./../utils":"hOPY0","./../core/settle":"ehRY8","./../helpers/cookies":"dRE5q","./../helpers/buildURL":"3Jodf","../core/buildFullPath":"1RLcm","./../helpers/parseHeaders":"9TT83","./../helpers/isURLSameOrigin":"2SCwc","../core/createError":"cfxXs","../cancel/Cancel":"iGO1D","../defaults/transitional":"3REd2"}],"ehRY8":[function(require,module,exports) {
 'use strict';
 var createError = require('./createError');
 /**
@@ -23883,7 +23903,7 @@ var createError = require('./createError');
     else reject(createError('Request failed with status code ' + response.status, response.config, null, response.request, response));
 };
 
-},{"./createError":"9VqMi"}],"9VqMi":[function(require,module,exports) {
+},{"./createError":"cfxXs"}],"cfxXs":[function(require,module,exports) {
 'use strict';
 var enhanceError = require('./enhanceError');
 /**
@@ -23900,7 +23920,7 @@ var enhanceError = require('./enhanceError');
     return enhanceError(error, config, code, request, response);
 };
 
-},{"./enhanceError":"gwOrx"}],"52Fif":[function(require,module,exports) {
+},{"./enhanceError":"3f4N4"}],"dRE5q":[function(require,module,exports) {
 'use strict';
 var utils = require('./../utils');
 module.exports = utils.isStandardBrowserEnv() ? // Standard browser envs support document.cookie
@@ -23936,7 +23956,7 @@ module.exports = utils.isStandardBrowserEnv() ? // Standard browser envs support
     };
 })();
 
-},{"./../utils":"ijGz3"}],"7hLXd":[function(require,module,exports) {
+},{"./../utils":"hOPY0"}],"1RLcm":[function(require,module,exports) {
 'use strict';
 var isAbsoluteURL = require('../helpers/isAbsoluteURL');
 var combineURLs = require('../helpers/combineURLs');
@@ -23953,7 +23973,7 @@ var combineURLs = require('../helpers/combineURLs');
     return requestedURL;
 };
 
-},{"../helpers/isAbsoluteURL":"eigY1","../helpers/combineURLs":"9TqEL"}],"eigY1":[function(require,module,exports) {
+},{"../helpers/isAbsoluteURL":"8E1N1","../helpers/combineURLs":"e9OEH"}],"8E1N1":[function(require,module,exports) {
 'use strict';
 /**
  * Determines whether the specified URL is absolute
@@ -23967,7 +23987,7 @@ var combineURLs = require('../helpers/combineURLs');
     return /^([a-z][a-z\d+\-.]*:)?\/\//i.test(url);
 };
 
-},{}],"9TqEL":[function(require,module,exports) {
+},{}],"e9OEH":[function(require,module,exports) {
 'use strict';
 /**
  * Creates a new URL by combining the specified URLs
@@ -23979,7 +23999,7 @@ var combineURLs = require('../helpers/combineURLs');
     return relativeURL ? baseURL.replace(/\/+$/, '') + '/' + relativeURL.replace(/^\/+/, '') : baseURL;
 };
 
-},{}],"aQDLL":[function(require,module,exports) {
+},{}],"9TT83":[function(require,module,exports) {
 'use strict';
 var utils = require('./../utils');
 // Headers whose duplicates are ignored by node
@@ -24037,7 +24057,7 @@ var ignoreDuplicateOf = [
     return parsed;
 };
 
-},{"./../utils":"ijGz3"}],"7UwW4":[function(require,module,exports) {
+},{"./../utils":"hOPY0"}],"2SCwc":[function(require,module,exports) {
 'use strict';
 var utils = require('./../utils');
 module.exports = utils.isStandardBrowserEnv() ? // Standard browser envs have full support of the APIs needed to test
@@ -24088,7 +24108,7 @@ module.exports = utils.isStandardBrowserEnv() ? // Standard browser envs have fu
     };
 })();
 
-},{"./../utils":"ijGz3"}],"dIJgj":[function(require,module,exports) {
+},{"./../utils":"hOPY0"}],"iGO1D":[function(require,module,exports) {
 'use strict';
 /**
  * A `Cancel` is an object that is thrown when an operation is canceled.
@@ -24104,13 +24124,13 @@ Cancel.prototype.toString = function toString() {
 Cancel.prototype.__CANCEL__ = true;
 module.exports = Cancel;
 
-},{}],"giNSI":[function(require,module,exports) {
+},{}],"6KzET":[function(require,module,exports) {
 'use strict';
 module.exports = function isCancel(value) {
     return !!(value && value.__CANCEL__);
 };
 
-},{}],"dqnqs":[function(require,module,exports) {
+},{}],"8vb7m":[function(require,module,exports) {
 'use strict';
 var utils = require('../utils');
 /**
@@ -24188,7 +24208,7 @@ var utils = require('../utils');
     return config;
 };
 
-},{"../utils":"ijGz3"}],"5ylvg":[function(require,module,exports) {
+},{"../utils":"hOPY0"}],"4sigL":[function(require,module,exports) {
 'use strict';
 var VERSION = require('../env/data').version;
 var validators = {
@@ -24255,12 +24275,12 @@ module.exports = {
     validators: validators
 };
 
-},{"../env/data":"hTeMG"}],"hTeMG":[function(require,module,exports) {
+},{"../env/data":"7dluA"}],"7dluA":[function(require,module,exports) {
 module.exports = {
-    "version": "0.25.0"
+    "version": "0.26.1"
 };
 
-},{}],"5FeR1":[function(require,module,exports) {
+},{}],"6kJtU":[function(require,module,exports) {
 'use strict';
 var Cancel = require('./Cancel');
 /**
@@ -24342,7 +24362,7 @@ var Cancel = require('./Cancel');
 };
 module.exports = CancelToken;
 
-},{"./Cancel":"dIJgj"}],"jrUTV":[function(require,module,exports) {
+},{"./Cancel":"iGO1D"}],"3fmMu":[function(require,module,exports) {
 'use strict';
 /**
  * Syntactic sugar for invoking a function and expanding an array for arguments.
@@ -24369,7 +24389,7 @@ module.exports = CancelToken;
     };
 };
 
-},{}],"7izTh":[function(require,module,exports) {
+},{}],"1NqDP":[function(require,module,exports) {
 'use strict';
 var utils = require('./../utils');
 /**
@@ -24381,39 +24401,98 @@ var utils = require('./../utils');
     return utils.isObject(payload) && payload.isAxiosError === true;
 };
 
-},{"./../utils":"ijGz3"}],"6EiBJ":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$4249 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+},{"./../utils":"hOPY0"}],"054li":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$02dd = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$4249.prelude(module);
+$parcel$ReactRefreshHelpers$02dd.prelude(module);
 
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "MovieCard", ()=>MovieCard
+parcelHelpers.export(exports, "LoginView", ()=>LoginView
 );
 var _jsxRuntime = require("react/jsx-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
-class MovieCard extends _reactDefault.default.Component {
-    render() {
-        const { movie , onMovieClick  } = this.props;
-        return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
-            className: "movie-card",
-            onClick: ()=>{
-                onMovieClick(movie);
-            },
-            __source: {
-                fileName: "src/components/movie-card/movie-card.jsx",
-                lineNumber: 6
-            },
-            __self: this,
-            children: movie.Title
-        }));
-    }
+var _s = $RefreshSig$();
+function LoginView(props) {
+    _s();
+    const [username, setUsername] = _react.useState('');
+    const [password, setPassword] = _react.useState('');
+    const handleSubmit = (e)=>{
+        e.preventDefault();
+        console.log(username, password);
+        /* Send a request to the server for authentication */ /* then call props.onLoggedIn(username) */ props.onLoggedIn(username);
+    };
+    return(/*#__PURE__*/ _jsxRuntime.jsxs("form", {
+        __source: {
+            fileName: "src/components/login-view/login-view.jsx",
+            lineNumber: 16
+        },
+        __self: this,
+        children: [
+            /*#__PURE__*/ _jsxRuntime.jsxs("label", {
+                __source: {
+                    fileName: "src/components/login-view/login-view.jsx",
+                    lineNumber: 17
+                },
+                __self: this,
+                children: [
+                    "Username:",
+                    /*#__PURE__*/ _jsxRuntime.jsx("input", {
+                        type: "text",
+                        value: username,
+                        onChange: (e)=>setUsername(e.target.value)
+                        ,
+                        __source: {
+                            fileName: "src/components/login-view/login-view.jsx",
+                            lineNumber: 19
+                        },
+                        __self: this
+                    })
+                ]
+            }),
+            /*#__PURE__*/ _jsxRuntime.jsxs("label", {
+                __source: {
+                    fileName: "src/components/login-view/login-view.jsx",
+                    lineNumber: 21
+                },
+                __self: this,
+                children: [
+                    "Password:",
+                    /*#__PURE__*/ _jsxRuntime.jsx("input", {
+                        type: "password",
+                        value: password,
+                        onChange: (e)=>setPassword(e.target.value)
+                        ,
+                        __source: {
+                            fileName: "src/components/login-view/login-view.jsx",
+                            lineNumber: 23
+                        },
+                        __self: this
+                    })
+                ]
+            }),
+            /*#__PURE__*/ _jsxRuntime.jsx("button", {
+                type: "submit",
+                onClick: handleSubmit,
+                __source: {
+                    fileName: "src/components/login-view/login-view.jsx",
+                    lineNumber: 25
+                },
+                __self: this,
+                children: "Submit"
+            })
+        ]
+    }));
 }
+_s(LoginView, "9FY2cPL9VBDmuhjwpF2ik6flsHs=");
+_c = LoginView;
+var _c;
+$RefreshReg$(_c, "LoginView");
 
-  $parcel$ReactRefreshHelpers$4249.postlude(module);
+  $parcel$ReactRefreshHelpers$02dd.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
@@ -24570,7 +24649,61 @@ function registerExportsForReactRefresh(module) {
     }
 }
 
-},{"react-refresh/runtime":"bxWi8"}],"ikZdr":[function(require,module,exports) {
+},{"react-refresh/runtime":"bxWi8"}],"6EiBJ":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$4249 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$4249.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "MovieCard", ()=>MovieCard
+);
+var _jsxRuntime = require("react/jsx-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+class MovieCard extends _reactDefault.default.Component {
+    render() {
+        const { movie , onMovieClick  } = this.props;
+        return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
+            onClick: ()=>onMovieClick(movie)
+            ,
+            className: "movie-card",
+            __source: {
+                fileName: "src/components/movie-card/movie-card.jsx",
+                lineNumber: 7
+            },
+            __self: this,
+            children: movie.Title
+        }));
+    }
+}
+MovieCard.propTypes = {
+    movie: PropTypes.shape({
+        Title: PropTypes.string.isRequired,
+        Genre: PropTypes.shape({
+            Name: PropTypes.string.isRequired,
+            Description: PropTypes.string
+        }),
+        Director: PropTypes.shape({
+            Name: PropTypes.string.isRequired,
+            Bio: PropTypes.string,
+            Birth: PropTypes.string
+        }),
+        Description: PropTypes.string.isRequired,
+        ImagePath: PropTypes.string.isRequired,
+        Featured: PropTypes.string.isRequired
+    }).isRequired,
+    onMovieClick: PropTypes.func.isRequired
+};
+
+  $parcel$ReactRefreshHelpers$4249.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"kDBJf","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"3jiko"}],"ikZdr":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$3741 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
