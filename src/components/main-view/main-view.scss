@@ -1,0 +1,24 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: var(--main-font-size);
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+}
+
+/* this is the button */
+button {
+  position: center;
+  border: none;
+  width: 100px;
+  background: #dfdfdf;
+  color: blue;
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  cursor: pointer;
+}

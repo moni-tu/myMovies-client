@@ -1,0 +1,20 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  background-color: rgb(0, 0, 0);
+}
+
+.movie-title {
+  color: rgba(7, 91, 248, 0.965);
+}
+
+.fav-button {
+  float: right;
+}
+
+.movie-img {
+  display: block;
+  height: 23rem;
+  object-position: center;
+  object-fit: cover;
+}
