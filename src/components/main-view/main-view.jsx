@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import backgroundImage from './film-reel.png';
 
 //import Redux components
 import { connect } from 'react-redux';
@@ -105,7 +106,8 @@ class MainView extends React.Component {
     return (
       <Router>
         <NavbarView user= { user }/>
-        <Container/>        
+        <Container/>   
+             
           <Row className='main-view justify-content-md-center' >
           <Route exact path="/" render={() => {
             // if there is no user, Login view is rendered. if a user is logged in, its details are passed as a prop to LoginView
@@ -118,7 +120,10 @@ class MainView extends React.Component {
             )
             // before the movies have been loaded
             if (movies.length === 0) return <div className="main-view"></div>   
-            return <MoviesList movies={movies}/>;              
+            return <MoviesList 
+            movies={movies}
+            /* src={backgroundImage} alt="film-reel" *//>;
+                      
               /* return movies.map(m => (
               <Col md={3} key={m._id}>
                 <MovieCard movie={m} />

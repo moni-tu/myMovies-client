@@ -15,13 +15,13 @@ export class MovieCard extends React.Component {
     const { movie } = this.props;
 
     return (
-      <Card border= "dark">
-        <Card.Img className="movie-img" variant="top" crossOrigin='anonymous' src={movie.imagePath} />
+      <Card border= "dark" style={{margin: "2px"}}>
+        <Card.Img className="movie-img" variant="top" crossOrigin='anonymous' src={movie.imagePath} style={{resizeMode: 'contain', flex: 1}} />
       <Card.Body>
-          <Card.Title className="movie-title">{movie.title}</Card.Title>
+          <Card.Title className="movie-title" style={{textAlign:"center", fontSize: "20px"}}>{movie.title}</Card.Title>
           {/* <Card.Text>{movie.description}</Card.Text> */}
             <Link to={`/mymovies/${movie._id}`}>
-              <Button variant="outline-secondary" size="sm" >Open</Button> {/* onClick={() => onMovieClick(movie)} */}
+              <Button variant="primary" size="sm" style={{marginLeft:"55px", fontSize: "15px"}}>Open</Button> {/* onClick={() => onMovieClick(movie)} */}
             </Link>
             {/* <Button className="fav-button" variant="link" size='sm' onClick={(e) => this.addFavoriteMovie(e, movie)}> Add to favorites</Button> */}
         </Card.Body>
