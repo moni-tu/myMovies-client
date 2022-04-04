@@ -15,13 +15,13 @@ export class MovieCard extends React.Component {
     const { movie } = this.props;
 
     return (
-      <Card border= "dark" style={{margin: "2px"}}>
-        <Card.Img className="movie-img" variant="top" crossOrigin='anonymous' src={movie.imagePath} style={{resizeMode: 'contain', flex: 1}} />
+      <Card border= "dark" style={{marginBottom: "3px"}}>
+        <Card.Img style={{}} className="movie-img" variant="top" crossOrigin='true' src={movie.imagePath} /*  style={{'width': Dimensions.get('window').width, 'height': Dimensions.get('window').height}} */ />
       <Card.Body>
           <Card.Title className="movie-title" style={{textAlign:"center", fontSize: "20px"}}>{movie.title}</Card.Title>
           {/* <Card.Text>{movie.description}</Card.Text> */}
-            <Link to={`/mymovies/${movie._id}`}>
-              <Button variant="primary" size="sm" style={{marginLeft:"55px", fontSize: "15px"}}>Open</Button> {/* onClick={() => onMovieClick(movie)} */}
+            <Link to={`/mymovies/${movie._id}`} style={{marginLeft: "55px"}}>
+              <Button variant='danger' size="sm" position="center" style={{ textAlign:"center", fontSize: "15px"}}>Open</Button> {/* onClick={() => onMovieClick(movie)} */}
             </Link>
             {/* <Button className="fav-button" variant="link" size='sm' onClick={(e) => this.addFavoriteMovie(e, movie)}> Add to favorites</Button> */}
         </Card.Body>

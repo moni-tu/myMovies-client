@@ -43211,7 +43211,7 @@ class MovieCard extends _reactDefault.default.Component {
         return(/*#__PURE__*/ _jsxRuntime.jsxs(_cardDefault.default, {
             border: "dark",
             style: {
-                margin: "2px"
+                marginBottom: "3px"
             },
             __source: {
                 fileName: "src/components/movie-card/movie-card.jsx",
@@ -43220,14 +43220,12 @@ class MovieCard extends _reactDefault.default.Component {
             __self: this,
             children: [
                 /*#__PURE__*/ _jsxRuntime.jsx(_cardDefault.default.Img, {
+                    style: {
+                    },
                     className: "movie-img",
                     variant: "top",
-                    crossOrigin: "anonymous",
+                    crossOrigin: "true",
                     src: movie.imagePath,
-                    style: {
-                        resizeMode: 'contain',
-                        flex: 1
-                    },
                     __source: {
                         fileName: "src/components/movie-card/movie-card.jsx",
                         lineNumber: 19
@@ -43256,6 +43254,9 @@ class MovieCard extends _reactDefault.default.Component {
                         }),
                         /*#__PURE__*/ _jsxRuntime.jsxs(_reactRouterDom.Link, {
                             to: `/mymovies/${movie._id}`,
+                            style: {
+                                marginLeft: "55px"
+                            },
                             __source: {
                                 fileName: "src/components/movie-card/movie-card.jsx",
                                 lineNumber: 23
@@ -43263,10 +43264,11 @@ class MovieCard extends _reactDefault.default.Component {
                             __self: this,
                             children: [
                                 /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
-                                    variant: "primary",
+                                    variant: "danger",
                                     size: "sm",
+                                    position: "center",
                                     style: {
-                                        marginLeft: "55px",
+                                        textAlign: "center",
                                         fontSize: "15px"
                                     },
                                     __source: {
