@@ -21,7 +21,7 @@ USE GOALS
 The myMovies-client app is interface of the server-side myMovies app. MyMovies-client is used when making requests to, and receiving responses from, the server-side myMovies.
 
 APP PREVIEW
-![alt text](C:\Users\Utente\Documents\GitHub\myMovies-client\src\img/myMovies Login-preview.png)
+![plot](C:\Users\Utente\Documents\GitHub\myMovies-client\src\img/myMovies Login-preview.png)
 
 ### KEY FEATURES
 
