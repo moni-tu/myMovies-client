@@ -20,6 +20,9 @@ git clone https://github.com/moni-tu/myMovies-client.git
 USE GOALS
 The myMovies-client app is interface of the server-side myMovies app. MyMovies-client is used when making requests to, and receiving responses from, the server-side myMovies.
 
+APP PREVIEW
+![alt text](C:\Users\Utente\Documents\GitHub\myMovies-client\src\img/myMovies Login-preview.png)
+
 ### KEY FEATURES
 
 - Return data (description, genre, director, image URL) about a single movie by title.
@@ -42,6 +45,6 @@ The myMovies-client app is interface of the server-side myMovies app. MyMovies-c
 - The application is written with React Redux (hence respecting the Flux pattern)
 - The application uses Bootstrap as a UI library for styling and responsiveness
 - The application contains a mix of class components and function components
-- The API is deployed to Heroku ### <a href="">LIVE DEMO</a>.
+- The API is deployed to Netlify ### <a href="https://624b0be321937b090192e2e0--my-awesome-movies.netlify.app/">LIVE DEMO</a>.
 - The app is deployed to GitHub Pages ### <a href="https://github.com/moni-tu/myMovies-client">LIVE DEMO</a>.
 - The app works in Chrome, Firefox, Safari, Edge, and Internet Explorer 11.
