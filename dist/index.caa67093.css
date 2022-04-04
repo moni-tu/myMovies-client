@@ -89,9 +89,7 @@ body {
   display: block;
   height: 23rem;
   object-position: center;
-  object-fit: contain;
-  /* width: 100px;
-  height: 100px; */
+  object-fit: fit;
 }
 * {
   box-sizing: border-box;

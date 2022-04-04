@@ -43111,7 +43111,7 @@ function LoginView(props) {
                                 style: {
                                     marginTop: "80px"
                                 },
-                                class: "btn btn-primary btn-block",
+                                className: "btn btn-primary btn-block",
                                 fontSize: "30px",
                                 /* variant="primary" */ type: "submit",
                                 onClick: handleSubmit,
