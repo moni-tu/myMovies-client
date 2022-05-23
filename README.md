@@ -17,13 +17,18 @@ The easiest way to start is to clone the repository.
 git clone https://github.com/moni-tu/myMovies-client.git
 ```
 
-USE GOALS
+## USE GOALS
+
 The myMovies-client app is interface of the server-side myMovies app. MyMovies-client is used when making requests to, and receiving responses from, the server-side myMovies.
 
-APP PREVIEW
-Menu:
+## APP PREVIEW
+
+### Menu Page
+
 ![myMovies MainView-Preview](https://user-images.githubusercontent.com/91124224/161581058-2fbcd009-e77b-4026-b2f6-6ced916d591c.png)
-Login Page:
+
+### Login Page
+
 ![myMovies Login-preview](https://user-images.githubusercontent.com/91124224/161581881-8d246c05-cd70-4601-ae2d-9d4dd51eb90e.png)
 
 ### KEY FEATURES
